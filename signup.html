@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Athlete Account &amp; Register | STACKLY – SPORTS CLUB</title>
+  <meta name="description" content="Register your athlete or coach dossier with STACKLY Sports Club. Access world-class arena facilities, Olympic-grade telemetry, and championship masterclasses.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  
+  <!-- Main Stylesheet & Custom Auth Modules -->
+  <link rel="stylesheet" href="css/preloader.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,5 95,25 95,75 50,95 5,75 5,25' fill='%23FF5A1F'/><text x='50%' y='60%' text-anchor='middle' fill='%23FFFFFF' font-size='38' font-family='sans-serif' font-weight='900'>ST</text></svg>">
+
+  <!-- Open Graph & Social Share Metadata -->
+  <meta property="og:title" content="Create Athlete Account &amp; Register | STACKLY – SPORTS CLUB">
+  <meta property="og:description" content="Join STACKLY Sports Club: Register your profile for arena bookings, biometric telemetry, and tournament entries.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Stackly Sports Club">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Create Athlete Account &amp; Register | STACKLY – SPORTS CLUB">
+  <meta name="twitter:description" content="Join STACKLY Sports Club: Register your profile for arena bookings, biometric telemetry, and tournament entries.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80">
+</head>
+<body style="background: #09090c;">
+
+  <!-- ===================================================================
+       STACKLY Branded Full-Screen Preloader
+       =================================================================== -->
+  <!-- ===================================================================
+       STACKLY SPORTS CLUB - Cinematic Branded Preloader
+       =================================================================== -->
+  <div id="preloader" class="stackly-preloader" aria-live="polite" aria-label="Loading STACKLY Sports Club">
+    <!-- Cinematic Stadium Lighting Layers -->
+    <div class="stadium-lighting-backdrop" aria-hidden="true">
+      <div class="stadium-spotlight spotlight-left"></div>
+      <div class="stadium-spotlight spotlight-right"></div>
+      <div class="stadium-spotlight spotlight-center"></div>
+      <div class="stadium-floodlights-array">
+        <span class="floodlight-bulb"></span>
+        <span class="floodlight-bulb"></span>
+        <span class="floodlight-bulb"></span>
+        <span class="floodlight-bulb"></span>
+        <span class="floodlight-bulb"></span>
+        <span class="floodlight-bulb"></span>
+      </div>
+      <div class="stadium-arena-silhouette"></div>
+      <div class="stadium-dust-motes">
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+      </div>
+    </div>
+
+    <!-- Central Preloader Core -->
+    <div class="preloader-core">
+      <!-- Circular Athletic Ring & Logo Framing -->
+      <div class="preloader-emblem-stage">
+        <!-- SVG Background Ring Guidelines -->
+        <svg class="preloader-circular-bg" viewBox="0 0 280 280" aria-hidden="true">
+          <circle class="ring-track-outer" cx="140" cy="140" r="132" />
+          <circle class="ring-track-inner" cx="140" cy="140" r="116" />
+          <g class="ring-orbit-ticks">
+            <line x1="140" y1="4" x2="140" y2="14" />
+            <line x1="276" y1="140" x2="266" y2="140" />
+            <line x1="140" y1="276" x2="140" y2="266" />
+            <line x1="4" y1="140" x2="14" y2="140" />
+          </g>
+        </svg>
+
+        <!-- SVG Dedicated Progress Ring (Starts at 12 o'clock, perfectly centered) -->
+        <svg class="preloader-circular-progress" viewBox="0 0 280 280" aria-hidden="true">
+          <circle 
+            class="ring-progress-stroke" 
+            id="preloaderCircleProgress" 
+            cx="140" 
+            cy="140" 
+            r="124" 
+          />
+        </svg>
+
+        <!-- Ambient Center Glow Behind Logo -->
+        <div class="preloader-logo-glow" aria-hidden="true"></div>
+
+        <!-- STACKLY Official Logo with Orange Light Sweep -->
+        <div class="preloader-logo-wrapper">
+          <img src="images/stackly-logo-orange.webp" alt="STACKLY Sports Club" class="preloader-logo-img">
+          <div class="preloader-logo-sheen-mask" aria-hidden="true">
+            <div class="preloader-logo-sheen-beam"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Brand Typography & Tagline -->
+      <div class="preloader-brand-group">
+        <h2 class="preloader-brand-title">
+          <span class="brand-text-stackly">STACKLY</span>
+          <span class="brand-text-club">SPORTS CLUB</span>
+        </h2>
+        <p class="preloader-tagline" aria-label="Train Hard. Play Strong. Win Together.">
+          <span class="tagline-word">TRAIN HARD.</span>
+          <span class="tagline-sep">/</span>
+          <span class="tagline-word">PLAY STRONG.</span>
+          <span class="tagline-sep">/</span>
+          <span class="tagline-word">WIN TOGETHER.</span>
+        </p>
+      </div>
+
+      <!-- Real Loading Progress Bar & Percentage Counter -->
+      <div class="preloader-progress-module">
+        <div class="preloader-meta-row">
+          <span class="preloader-stage-label" id="preloaderStage">INITIALIZING ARENA</span>
+          <div class="preloader-counter-wrap">
+            <span class="preloader-percent-num" id="preloaderCounter">0</span>
+            <span class="preloader-percent-unit">%</span>
+          </div>
+        </div>
+
+        <div class="preloader-bar-track">
+          <div class="preloader-bar-fill" id="preloaderBar">
+            <span class="preloader-bar-flare"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="auth-split-wrapper">
+    
+    <!-- ===================================================================
+         SIDE A – SPORTS PHOTOGRAPHY & BRAND STORY
+         =================================================================== -->
+    <div class="auth-visual-side">
+      <div class="auth-visual-bg">
+        <img src="images/hero-athlete-stadium.webp" alt="Championship sports club training arena with floodlights" fetchpriority="high" loading="eager" decoding="async">
+      </div>
+      <div class="auth-visual-overlay"></div>
+
+      <div class="auth-visual-content">
+        <!-- Top Visual Tag -->
+        <div class="auth-visual-badge" data-aos="fade-down">
+          <i class="fa-solid fa-bolt-lightning"></i> Capped at 600 Athletes &bull; Olympic Protocols
+        </div>
+
+        <!-- Middle / Bottom Editorial Quote -->
+        <div class="auth-quote-box" data-aos="fade-up">
+          <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+          <p>
+            "Greatness is forged in the unseen hours of relentless dedication, biometric precision, and uncompromising discipline. Welcome to your athletic pinnacle."
+          </p>
+          <div class="auth-quote-author">Viktor Sterling &bull; Director of High Performance</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================================
+         SIDE B – REGISTRATION INTERFACE
+         =================================================================== -->
+    <div class="auth-form-side">
+      <div class="auth-form-container">
+
+        <!-- Topbar: Back to Home & Logo -->
+        <div class="auth-topbar">
+          <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+            <div class="brand-icon-box"><i class="fa-solid fa-bolt-lightning"></i></div>
+            <div class="brand-title-group">
+              <span class="brand-name">STACK<span>LY</span></span>
+              <span class="brand-subtitle">Sports Club &amp; Performance</span>
+            </div>
+          </a>
+
+          <a href="index.html" class="back-home-link">
+            <i class="fa-solid fa-arrow-left"></i> Back to Arena
+          </a>
+        </div>
+
+        <!-- Auth Navigation Tabs -->
+        <div class="auth-tabs-nav" role="tablist">
+          <a href="login.html" class="auth-tab-btn" role="tab" style="text-decoration:none; display:flex; align-items:center; justify-content:center;">
+            Sign In
+          </a>
+          <button class="auth-tab-btn active" role="tab" aria-selected="true">
+            Create Account
+          </button>
+        </div>
+
+        <!-- Status Alert Banner -->
+        <div class="auth-alert-box" id="authAlertBox">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <span id="authAlertText">Alert message</span>
+        </div>
+
+        <!-- Service Notice Banner -->
+        <div class="auth-service-notice">
+          <i class="fa-solid fa-shield-halved"></i>
+          <div>
+            <strong>Athlete Authentication:</strong>
+            Unified client-side authentication demonstration. Select your desired role below (User, Trainer, or Admin) to test instant registration and role-based dashboard redirection.
+          </div>
+        </div>
+
+        <!-- SIGNUP FORM PANE -->
+        <div class="auth-form-pane active">
+          <div class="auth-form-header">
+            <h2>START YOUR PERFORMANCE JOURNEY</h2>
+            <p>Create your verified dossier and unlock full access to Stackly facilities.</p>
+          </div>
+
+          <form id="standaloneSignupForm" novalidate>
+            <!-- Full Name -->
+            <div class="form-group">
+              <label class="form-label" for="regName">Full Name *</label>
+              <input type="text" id="regName" class="form-input" placeholder="e.g. Jordan Hayes" required autocomplete="name">
+              <div class="field-error-msg d-none" id="err-reg-name">
+                <i class="fa-solid fa-circle-exclamation"></i> Please enter your full name (minimum 2 characters).
+              </div>
+            </div>
+
+            <!-- Email & Phone Grid -->
+            <div class="form-group-row">
+              <div class="form-group">
+                <label class="form-label" for="regEmail">Email Address *</label>
+                <input type="email" id="regEmail" class="form-input" placeholder="athlete@example.com" required autocomplete="email">
+                <div class="field-error-msg d-none" id="err-reg-email">
+                  <i class="fa-solid fa-circle-exclamation"></i> Please enter a valid email address.
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="regPhone">Phone Number *</label>
+                <input type="tel" id="regPhone" class="form-input" placeholder="+1 (555) 000-0000" required autocomplete="tel">
+                <div class="field-error-msg d-none" id="err-reg-phone">
+                  <i class="fa-solid fa-circle-exclamation"></i> Valid phone number required (min 8 digits).
+                </div>
+              </div>
+            </div>
+
+            <!-- Select Role Dropdown (Athlete, Coach, Admin) -->
+            <div class="form-group">
+              <label class="form-label" for="regRole">Select Registration Role *</label>
+              <div class="role-select-wrap">
+                <select id="regRole" class="form-select role-select-box" required>
+                  <option value="" disabled>Choose Account Type...</option>
+                  <option value="user" selected>User &bull; Club Athlete Member</option>
+                  <option value="trainer">Trainer &bull; Certified Coach Faculty</option>
+                  <option value="admin">Admin &bull; Club Operations &amp; Governance</option>
+                </select>
+                <div class="role-select-arrow"><i class="fa-solid fa-chevron-down"></i></div>
+              </div>
+              <div class="field-error-msg d-none" id="err-reg-role">
+                <i class="fa-solid fa-circle-exclamation"></i> Please select your registration role.
+              </div>
+            </div>
+
+            <!-- Sport / Discipline Selection -->
+            <div class="form-group">
+              <label class="form-label" for="regSport">Primary Athletic Focus / Department *</label>
+              <div class="role-select-wrap">
+                <select id="regSport" class="form-select role-select-box" required>
+                  <option value="" disabled>Select Primary Focus...</option>
+                  <option value="Football" selected>Football &bull; Regulation Turf Pitches</option>
+                  <option value="Tennis">Tennis &bull; Grandstand Laykold Courts</option>
+                  <option value="Basketball">Basketball &bull; FIBA Hardwood Arenas</option>
+                  <option value="Cricket">Cricket &bull; Turf Nets &amp; Cages</option>
+                  <option value="Aquatics">Aquatics &bull; Olympic 50m Natatorium</option>
+                  <option value="Strength Lab">Strength Lab &bull; Biometric Performance</option>
+                  <option value="Sports Science">Sports Science &bull; Operations &amp; Recovery</option>
+                </select>
+                <div class="role-select-arrow"><i class="fa-solid fa-chevron-down"></i></div>
+              </div>
+              <div class="field-error-msg d-none" id="err-reg-sport">
+                <i class="fa-solid fa-circle-exclamation"></i> Please select your primary focus.
+              </div>
+            </div>
+
+            <!-- Password & Confirm Password Grid -->
+            <div class="form-group-row">
+              <div class="form-group">
+                <label class="form-label" for="regPassword">Create Password *</label>
+                <div class="password-field-wrap">
+                  <input type="password" id="regPassword" class="form-input" placeholder="Min. 6 chars" required autocomplete="new-password">
+                  <button type="button" class="password-toggle-btn" data-target="regPassword" aria-label="Toggle password visibility">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                </div>
+                <div class="field-error-msg d-none" id="err-reg-password">
+                  <i class="fa-solid fa-circle-exclamation"></i> Password must be at least 6 characters (digits, alphabets, symbols, or mixed).
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="regConfirm">Confirm Password *</label>
+                <div class="password-field-wrap">
+                  <input type="password" id="regConfirm" class="form-input" placeholder="Repeat password" required autocomplete="new-password">
+                  <button type="button" class="password-toggle-btn" data-target="regConfirm" aria-label="Toggle password visibility">
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                </div>
+                <div class="field-error-msg d-none" id="err-reg-confirm">
+                  <i class="fa-solid fa-circle-exclamation"></i> Passwords do not match.
+                </div>
+              </div>
+            </div>
+
+            <!-- Terms & Conditions Checkbox -->
+            <div class="form-group">
+              <label class="auth-terms-label">
+                <input type="checkbox" id="regTerms" required>
+                <span>
+                  I agree to the <a href="membership.html" target="_blank">Stackly Code of Conduct</a>, safety bylaws, and athlete facility regulations.
+                </span>
+              </label>
+              <div class="field-error-msg d-none" id="err-reg-terms">
+                <i class="fa-solid fa-circle-exclamation"></i> You must accept the terms to create your account.
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="regBtn" class="btn btn-primary w-100 btn-lg magnetic-btn">
+              <span>Create Performance Account</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <!-- Back to Sign In Link -->
+            <div class="auth-switch-prompt" style="text-align:center; margin-top:20px; font-size:0.9rem; color:var(--color-text-muted);">
+              Already have an active dossier? 
+              <a href="login.html" style="color:var(--color-accent); font-weight:600; text-decoration:none;">
+                Sign In to Portal
+              </a>
+            </div>
+
+            <!-- Demo hints -->
+            <div class="text-center" style="margin-top: 14px; font-size: 0.75rem; color: var(--color-text-muted);">
+              Instant seed credentials: User <code>athlete@stackly.com</code> &bull; Coach <code>coach@stackly.com</code> &bull; Admin <code>admin@stackly.com</code>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- GSAP & Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Preloader dismissal
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        setTimeout(() => {
+          preloader.classList.add('loaded');
+          if (typeof AOS !== 'undefined') AOS.init({ duration: 600, once: true });
+        }, 300);
+      }
+
+      // 2. Password toggle eye buttons
+      document.querySelectorAll('.password-toggle-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = btn.getAttribute('data-target');
+          const input = document.getElementById(targetId);
+          if (!input) return;
+          const isPass = input.type === 'password';
+          input.type = isPass ? 'text' : 'password';
+          btn.innerHTML = isPass ? '<i class="fa-solid fa-eye-slash"></i>' : '<i class="fa-solid fa-eye"></i>';
+        });
+      });
+
+      // 3. Form Validation & Submission
+      const form = document.getElementById('standaloneSignupForm');
+      const nameInput = document.getElementById('regName');
+      const emailInput = document.getElementById('regEmail');
+      const phoneInput = document.getElementById('regPhone');
+      const roleInput = document.getElementById('regRole');
+      const sportInput = document.getElementById('regSport');
+      const passInput = document.getElementById('regPassword');
+      const confirmInput = document.getElementById('regConfirm');
+      const termsInput = document.getElementById('regTerms');
+      const submitBtn = document.getElementById('regBtn');
+
+      const errName = document.getElementById('err-reg-name');
+      const errEmail = document.getElementById('err-reg-email');
+      const errPhone = document.getElementById('err-reg-phone');
+      const errRole = document.getElementById('err-reg-role');
+      const errSport = document.getElementById('err-reg-sport');
+      const errPass = document.getElementById('err-reg-password');
+      const errConfirm = document.getElementById('err-reg-confirm');
+
+      // Live password strength calculation
+      if (passInput) {
+        passInput.addEventListener('input', () => {
+          const val = passInput.value;
+          const bar = document.getElementById('passwordStrengthProgress');
+          const txt = document.getElementById('passwordStrengthText');
+          const hint = document.getElementById('passwordStrengthHint');
+          if (!bar || !txt) return;
+
+          let score = 0;
+          if (val.length >= 8) score += 1;
+          if (val.length >= 10) score += 1;
+          if (/[A-Z]/.test(val) && /[a-z]/.test(val)) score += 1;
+          if (/[0-9]/.test(val)) score += 1;
+          if (/[^A-Za-z0-9]/.test(val)) score += 1;
+
+          if (val.length === 0) {
+            bar.style.width = '0%';
+            txt.textContent = 'Strength: Min. 6 characters';
+            txt.style.color = 'var(--color-text-muted)';
+            if (hint) hint.textContent = 'Letters & numbers recommended';
+          } else if (val.length < 8) {
+            bar.style.width = '25%';
+            bar.style.backgroundColor = '#ff4757';
+            txt.textContent = 'Too Short (Min. 8 chars)';
+            txt.style.color = '#ff4757';
+            if (hint) hint.textContent = (8 - val.length) + ' more character(s) needed';
+          } else if (score <= 2) {
+            bar.style.width = '50%';
+            bar.style.backgroundColor = '#ffa502';
+            txt.textContent = 'Moderate';
+            txt.style.color = '#ffa502';
+            if (hint) hint.textContent = 'Add numbers or mixed case';
+          } else if (score <= 4) {
+            bar.style.width = '80%';
+            bar.style.backgroundColor = '#2ed573';
+            txt.textContent = 'Strong';
+            txt.style.color = '#2ed573';
+            if (hint) hint.textContent = 'Great password!';
+          } else {
+            bar.style.width = '100%';
+            bar.style.backgroundColor = '#2ed573';
+            txt.textContent = 'Excellent (Olympic-Grade)';
+            txt.style.color = '#2ed573';
+            if (hint) hint.textContent = 'Protected & robust';
+          }
+        });
+      }
+
+      const errTerms = document.getElementById('err-reg-terms');
+
+      const alertBox = document.getElementById('authAlertBox');
+      const alertText = document.getElementById('authAlertText');
+
+      function showAlert(msg, isSuccess = false) {
+        if (!alertBox || !alertText) return;
+        alertText.textContent = msg;
+        alertBox.className = 'auth-alert-box active ' + (isSuccess ? 'success' : 'error');
+        alertBox.querySelector('i').className = isSuccess ? 'fa-solid fa-circle-check' : 'fa-solid fa-circle-exclamation';
+      }
+
+      function hideAlert() {
+        if (alertBox) alertBox.className = 'auth-alert-box';
+      }
+
+      function setErr(input, errEl) {
+        if (input) input.classList.add('input-error');
+        if (errEl) errEl.classList.remove('d-none');
+      }
+
+      function clearErr(input, errEl) {
+        if (input) input.classList.remove('input-error');
+        if (errEl) errEl.classList.add('d-none');
+        hideAlert();
+      }
+
+      // Live clearance on input
+      [nameInput, emailInput, phoneInput, passInput, confirmInput].forEach(inp => {
+        inp?.addEventListener('input', () => {
+          inp.classList.remove('input-error');
+          const errEl = document.getElementById('err-' + inp.id.replace('reg', 'reg-').toLowerCase());
+          if (errEl) errEl.classList.add('d-none');
+        });
+      });
+      [roleInput, sportInput].forEach(sel => {
+        sel?.addEventListener('change', () => {
+          sel.classList.remove('input-error');
+          const errEl = document.getElementById('err-' + sel.id.replace('reg', 'reg-').toLowerCase());
+          if (errEl) errEl.classList.add('d-none');
+        });
+      });
+      termsInput?.addEventListener('change', () => {
+        if (termsInput.checked) errTerms?.classList.add('d-none');
+      });
+
+      // Submit handler
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let isValid = true;
+
+        // Name
+        if (!nameInput.value.trim() || nameInput.value.trim().length < 2) {
+          setErr(nameInput, errName);
+          isValid = false;
+        } else {
+          clearErr(nameInput, errName);
+        }
+
+        // Email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailInput.value.trim() || !emailRegex.test(emailInput.value.trim())) {
+          setErr(emailInput, errEmail);
+          isValid = false;
+        } else {
+          clearErr(emailInput, errEmail);
+        }
+
+        // Phone
+        if (!phoneInput.value.trim() || phoneInput.value.trim().length < 8) {
+          setErr(phoneInput, errPhone);
+          isValid = false;
+        } else {
+          clearErr(phoneInput, errPhone);
+        }
+
+        // Role
+        if (!roleInput.value) {
+          setErr(roleInput, errRole);
+          isValid = false;
+        } else {
+          clearErr(roleInput, errRole);
+        }
+
+        // Sport
+        if (!sportInput.value) {
+          setErr(sportInput, errSport);
+          isValid = false;
+        } else {
+          clearErr(sportInput, errSport);
+        }
+
+        // Password (min 6)
+        if (!passInput.value || passInput.value.length < 6) {
+          setErr(passInput, errPass);
+          isValid = false;
+        } else {
+          clearErr(passInput, errPass);
+        }
+
+        // Confirm Password
+        if (confirmInput.value !== passInput.value) {
+          setErr(confirmInput, errConfirm);
+          isValid = false;
+        } else {
+          clearErr(confirmInput, errConfirm);
+        }
+
+        // Terms
+        if (!termsInput.checked) {
+          setErr(termsInput, errTerms);
+          isValid = false;
+        } else {
+          clearErr(termsInput, errTerms);
+        }
+
+        if (!isValid) return;
+
+        // Visual loading feedback
+        const origBtnHtml = submitBtn.innerHTML;
+        submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Registering Dossier...`;
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+          const result = StacklyAuth.signup({
+            name: nameInput.value.trim(),
+            email: emailInput.value.trim(),
+            phone: phoneInput.value.trim(),
+            role: roleInput.value,
+            sport: sportInput.value,
+            password: passInput.value
+          });
+
+          submitBtn.innerHTML = origBtnHtml;
+          submitBtn.disabled = false;
+
+          if (result.success) {
+            showAlert(result.message, true);
+            if (typeof showToast === 'function') {
+              showToast('Account Created!', `Profile registered as ${result.user.role.toUpperCase()}. Directing to your dashboard...`);
+            }
+            form.reset();
+            setTimeout(() => {
+              window.location.href = result.redirectUrl;
+            }, 650);
+          } else {
+            showAlert(result.message, false);
+            if (typeof showToast === 'function') {
+              showToast('Registration Error', result.message, 'error');
+            }
+            setErr(emailInput, errEmail);
+          }
+        }, 350);
+      });
+    });
+  </script>
+  <!-- Preloader Engine -->
+  <script src="js/preloader.js"></script>
+</body>
+</html>

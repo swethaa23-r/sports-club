@@ -1,0 +1,21 @@
+/* ==========================================================================
+   STACKLY SPORTS CLUB - 01. TOKENS, VARIABLES & UNIVERSAL RESET
+   Component Module: tokens.css
+   Description: CSS custom properties, typography tokens, box-sizing, zero-overflow guards, background scroll lock and reusable utility classes.
+   ========================================================================== */
+
+:root {
+  /* Typography System */
+  --font-hero: 'Bebas Neue', Impact, 'Oswald', sans-serif;
+  --font-display: 'Bebas Neue', Impact, sans-serif;
+  --font-athletic: 'Bebas Neue', Impact, sans-serif;
+  --font-heading: 'Oswald', sans-serif;
+  --font-subheading: 'Oswald', sans-serif;
+  --font-btn: 'Oswald', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-accent: 'Inter', -apple-system, sans-serif;
+  --font-nav: 'Inter', -apple-system, sans-serif;
+  --font-form: 'Inter', -apple-system, sans-serif;
+  --font-dash: 'Inter', -apple-system, sans-serif;
+}
+

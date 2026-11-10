@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events &amp; Tournaments | STACKLY – SPORTS CLUB</title>
+  <meta name="description" content="Compete, challenge, conquer. Explore upcoming tournaments, invitationals, championships, and event archives across 8 sports disciplines at STACKLY.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/preloader.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .events-filter-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 44px;
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,5 95,25 95,75 50,95 5,75 5,25' fill='%23FF5A1F'/><text x='50%' y='60%' text-anchor='middle' fill='%23FFFFFF' font-size='38' font-family='sans-serif' font-weight='900'>ST</text></svg>">
+
+  <!-- Open Graph & Social Share Metadata -->
+  <meta property="og:title" content="Events &amp; Tournaments | STACKLY – SPORTS CLUB">
+  <meta property="og:description" content="Compete, challenge, conquer. Explore upcoming tournaments, invitationals, championships, and event archives across 8 sports disciplines at STACKLY.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Stackly Sports Club">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Events &amp; Tournaments | STACKLY – SPORTS CLUB">
+  <meta name="twitter:description" content="Compete, challenge, conquer. Explore upcoming tournaments, invitationals, championships, and event archives across 8 sports disciplines at STACKLY.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80">
+
+</head>
+<body>
+
+  <!-- ===================================================================
+       STACKLY Branded Full-Screen Preloader
+       =================================================================== -->
+  <!-- ===================================================================
+       STACKLY SPORTS CLUB - Cinematic Branded Preloader
+       =================================================================== -->
+  <div id="preloader" class="stackly-preloader" aria-live="polite" aria-label="Loading STACKLY Sports Club">
+    <!-- Cinematic Stadium Lighting Layers -->
+    <div class="stadium-lighting-backdrop" aria-hidden="true">
+      <div class="stadium-spotlight spotlight-left"></div>
+      <div class="stadium-spotlight spotlight-right"></div>
+      <div class="stadium-spotlight spotlight-center"></div>
+      <div class="stadium-floodlights-array">
+        <span class="floodlight-bulb"></span>
+        <span class="floodlight-bulb"></span>
+        <span class="floodlight-bulb"></span>
+        <span class="floodlight-bulb"></span>
+        <span class="floodlight-bulb"></span>
+        <span class="floodlight-bulb"></span>
+      </div>
+      <div class="stadium-arena-silhouette"></div>
+      <div class="stadium-dust-motes">
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+      </div>
+    </div>
+
+    <!-- Central Preloader Core -->
+    <div class="preloader-core">
+      <!-- Circular Athletic Ring & Logo Framing -->
+      <div class="preloader-emblem-stage">
+        <!-- SVG Background Ring Guidelines -->
+        <svg class="preloader-circular-bg" viewBox="0 0 280 280" aria-hidden="true">
+          <circle class="ring-track-outer" cx="140" cy="140" r="132" />
+          <circle class="ring-track-inner" cx="140" cy="140" r="116" />
+          <g class="ring-orbit-ticks">
+            <line x1="140" y1="4" x2="140" y2="14" />
+            <line x1="276" y1="140" x2="266" y2="140" />
+            <line x1="140" y1="276" x2="140" y2="266" />
+            <line x1="4" y1="140" x2="14" y2="140" />
+          </g>
+        </svg>
+
+        <!-- SVG Dedicated Progress Ring (Starts at 12 o'clock, perfectly centered) -->
+        <svg class="preloader-circular-progress" viewBox="0 0 280 280" aria-hidden="true">
+          <circle 
+            class="ring-progress-stroke" 
+            id="preloaderCircleProgress" 
+            cx="140" 
+            cy="140" 
+            r="124" 
+          />
+        </svg>
+
+        <!-- Ambient Center Glow Behind Logo -->
+        <div class="preloader-logo-glow" aria-hidden="true"></div>
+
+        <!-- STACKLY Official Logo with Orange Light Sweep -->
+        <div class="preloader-logo-wrapper">
+          <img src="images/stackly-logo-orange.webp" alt="STACKLY Sports Club" class="preloader-logo-img">
+          <div class="preloader-logo-sheen-mask" aria-hidden="true">
+            <div class="preloader-logo-sheen-beam"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Brand Typography & Tagline -->
+      <div class="preloader-brand-group">
+        <h2 class="preloader-brand-title">
+          <span class="brand-text-stackly">STACKLY</span>
+          <span class="brand-text-club">SPORTS CLUB</span>
+        </h2>
+        <p class="preloader-tagline" aria-label="Train Hard. Play Strong. Win Together.">
+          <span class="tagline-word">TRAIN HARD.</span>
+          <span class="tagline-sep">/</span>
+          <span class="tagline-word">PLAY STRONG.</span>
+          <span class="tagline-sep">/</span>
+          <span class="tagline-word">WIN TOGETHER.</span>
+        </p>
+      </div>
+
+      <!-- Real Loading Progress Bar & Percentage Counter -->
+      <div class="preloader-progress-module">
+        <div class="preloader-meta-row">
+          <span class="preloader-stage-label" id="preloaderStage">INITIALIZING ARENA</span>
+          <div class="preloader-counter-wrap">
+            <span class="preloader-percent-num" id="preloaderCounter">0</span>
+            <span class="preloader-percent-unit">%</span>
+          </div>
+        </div>
+
+        <div class="preloader-bar-track">
+          <div class="preloader-bar-fill" id="preloaderBar">
+            <span class="preloader-bar-flare"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <header class="elite-navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+        <div class="brand-icon-box"><i class="fa-solid fa-bolt-lightning"></i></div>
+        <div class="brand-title-group">
+          <span class="brand-name">STACK<span>LY</span></span>
+          <span class="brand-subtitle">Sports Club &amp; Performance</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+<li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+          <li class="nav-item"><a href="programs.html" class="nav-link">Programs</a></li>
+          <li class="nav-item"><a href="events.html" class="nav-link active">Events</a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="membership.html" class="nav-link">Membership</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav CTA Actions -->
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-primary btn-sm magnetic-btn nav-auth-btn" id="navLoginBtn">
+          <i class="fa-regular fa-user"></i> <span>Login</span>
+        </a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav" id="mobileNav" data-lenis-prevent="true">
+    <div class="mobile-nav-header">
+      <a href="index.html" class="brand-logo" style="text-decoration:none;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div class="brand-icon-box" style="width:34px; height:34px; font-size:1rem;"><i class="fa-solid fa-bolt-lightning"></i></div>
+          <span class="brand-name" style="font-size:1.45rem;">STACK<span>LY</span></span>
+        </div>
+      </a>
+      <button class="mobile-nav-close" aria-label="Close Navigation Menu"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <ul class="mobile-nav-menu">
+            <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+<li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+      <li><a href="courses.html" class="mobile-nav-link">Courses</a></li>
+      <li><a href="programs.html" class="mobile-nav-link">Programs</a></li>
+      <li><a href="events.html" class="mobile-nav-link active">Events</a></li>
+      <li><a href="gallery.html" class="mobile-nav-link">Gallery</a></li>
+      <li><a href="membership.html" class="mobile-nav-link">Membership</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      <li><a href="login.html" class="mobile-nav-link">Login</a></li>
+    </ul>
+    <div class="mobile-nav-actions">
+      <a href="login.html" class="btn btn-primary w-100" id="mobileNavLoginBtn">
+        <i class="fa-regular fa-user"></i> Login
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ===================================================================
+         SECTION 0 – HERO
+         =================================================================== -->
+    <section class="subpage-hero">
+      <div class="subpage-hero-bg">
+        <img src="images/hero-athlete-stadium.webp" alt="Athletic arena tournament atmosphere illuminated by stadium floodlights" fetchpriority="high" loading="eager" fetchpriority="high">
+      </div>
+      <div class="subpage-hero-overlay"></div>
+      <div class="container subpage-hero-content">
+        <div class="breadcrumbs" data-aos="fade-down">
+          <a href="index.html">Home</a>
+          <i class="fa-solid fa-angle-right text-xs"></i>
+          <span>Events &amp; Tournaments</span>
+        </div>
+        <div class="section-tag" data-aos="fade-down" data-aos-delay="100">
+          <i class="fa-solid fa-trophy"></i> Arena Championship Calendar
+        </div>
+        <h1 class="hero-title hero-title-responsive" data-aos="fade-up" data-aos-delay="150">
+          COMPETE. CHALLENGE. CONQUER.
+        </h1>
+        <p class="section-subtitle hero-desc-centered" data-aos="fade-up" data-aos-delay="200">
+          Where athletic potential meets championship pressure. Explore regional cups, invitationals, qualifiers, and pro showmatches across our 8 Olympic sports arenas.
+        </p>
+        <div class="hero-actions hero-actions-centered" data-aos="fade-up" data-aos-delay="250">
+          <a href="#upcomingEvents" class="btn btn-primary btn-lg magnetic-btn">
+            Explore Upcoming Tournaments <i class="fa-solid fa-arrow-down"></i>
+          </a>
+          <button type="button" class="btn btn-outline btn-lg magnetic-btn open-event-reg-modal" data-event-title="Winter Soccer Invitational" data-event-meta="Dec 18-20, 2026 &bull; Main Arena Turf Pitch A">Register Squad / Athlete <i class="fa-solid fa-flag-checkered"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 1 – FEATURED UPCOMING TOURNAMENT (SPOTLIGHT)
+         =================================================================== -->
+    <section class="section-padding" style="background: #09090c; border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <div class="section-tag"><i class="fa-solid fa-fire"></i> Headline Championship</div>
+          <h2 class="section-title">FEATURED MAJOR TOURNAMENT</h2>
+          <p class="section-subtitle">
+            The crown jewel of our winter athletic calendar. High-stakes competition with full broadcast coverage and professional scouting.
+          </p>
+        </div>
+
+        <div class="featured-tournament-bento" data-aos="fade-up" data-aos-delay="100">
+          <div class="featured-tournament-content">
+            <div class="featured-tournament-badge">
+              <i class="fa-solid fa-star"></i> Premier Multi-Sport Invitational
+            </div>
+            <h3 class="featured-tournament-title">
+              2026 CONTINENTAL CLASH CHAMPIONSHIP
+            </h3>
+            
+            <div class="featured-meta-grid">
+              <div class="featured-meta-item">
+                <i class="fa-regular fa-calendar-days"></i>
+                <span><strong>Date:</strong> December 18–20, 2026</span>
+              </div>
+              <div class="featured-meta-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span><strong>Venue:</strong> Grand Arena &amp; Laykold Courts</span>
+              </div>
+              <div class="featured-meta-item">
+                <i class="fa-solid fa-sitemap"></i>
+                <span><strong>Bracket:</strong> 32 Seeded Squads</span>
+              </div>
+              <div class="featured-meta-item">
+                <i class="fa-regular fa-clock"></i>
+                <span><strong>Deadline:</strong> Dec 10, 2026 (11:59 PM)</span>
+              </div>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="countdown-container">
+              <div class="countdown-label"><i class="fa-solid fa-stopwatch"></i> Kickoff Countdown</div>
+              <div class="countdown-timer-grid" id="mainCountdown">
+                <div class="countdown-box">
+                  <div class="countdown-val" id="cdDays">44</div>
+                  <div class="countdown-unit">Days</div>
+                </div>
+                <div class="countdown-box">
+                  <div class="countdown-val" id="cdHours">16</div>
+                  <div class="countdown-unit">Hours</div>
+                </div>
+                <div class="countdown-box">
+                  <div class="countdown-val" id="cdMins">28</div>
+                  <div class="countdown-unit">Mins</div>
+                </div>
+                <div class="countdown-box">
+                  <div class="countdown-val" id="cdSecs">50</div>
+                  <div class="countdown-unit">Secs</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <button type="button" class="btn btn-primary magnetic-btn open-event-reg-modal" data-event-title="Winter Soccer Invitational" data-event-meta="Dec 18-20, 2026 &bull; Main Arena Turf Pitch A">Register Team Seed <i class="fa-solid fa-check"></i></button>
+              <button class="btn btn-secondary magnetic-btn open-event-detail-modal" data-event-id="continental">
+                View Tournament Rules &amp; Bracket <i class="fa-solid fa-file-lines"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="featured-tournament-media">
+            <img src="images/soccer-rain-stadium.webp" alt="Continental Clash Championship under stadium lights" loading="lazy">
+            <div class="featured-prize-tag">
+              <i class="fa-solid fa-trophy"></i>
+              <span>$50,000 Total Purse</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 2 – UPCOMING EVENTS (WITH CATEGORY FILTERS)
+         =================================================================== -->
+    <section class="section-padding" id="upcomingEvents">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <div class="section-tag"><i class="fa-solid fa-calendar-check"></i> Compete &amp; Qualify</div>
+          <h2 class="section-title">UPCOMING TOURNAMENTS &amp; EVENTS</h2>
+          <p class="section-subtitle">
+            Browse upcoming competitions across all eight sports disciplines. Secure your entry before brackets fill.
+          </p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="events-filter-bar" data-aos="fade-up">
+          <button class="filter-pill active" data-event-filter="all">All Events (8)</button>
+          <button class="filter-pill" data-event-filter="basketball">Basketball</button>
+          <button class="filter-pill" data-event-filter="tennis">Tennis</button>
+          <button class="filter-pill" data-event-filter="football">Football</button>
+          <button class="filter-pill" data-event-filter="cricket">Cricket</button>
+          <button class="filter-pill" data-event-filter="badminton">Badminton</button>
+          <button class="filter-pill" data-event-filter="aquatics">Aquatics</button>
+          <button class="filter-pill" data-event-filter="athletics">Athletics</button>
+        </div>
+
+        <!-- Events Grid -->
+        <div class="events-grid" id="eventsDirectoryGrid">
+
+          <!-- Event 1: Basketball -->
+          <div class="event-card" data-event-cat="basketball" data-event-id="bball-allstar" data-aos="fade-up">
+            <div class="event-card-header">
+              <img src="images/basketball-smoke-arena.webp" alt="Stackly All-Star Classic under arena lights" loading="lazy">
+              <div class="event-date-badge">
+                <span class="event-month">NOV</span>
+                <span class="event-day">28</span>
+              </div>
+            </div>
+            <div class="event-body">
+              <span class="event-category-tag">Basketball Championship</span>
+              <h3 class="event-title">Stackly All-Star Classic</h3>
+              <div class="event-details-list">
+                <span><i class="fa-regular fa-clock"></i> 06:00 PM – 10:30 PM</span>
+                <span><i class="fa-solid fa-location-dot"></i> FIBA Hardwood Arena (Court A)</span>
+                <span><i class="fa-solid fa-trophy"></i> $8,000 Championship Prize</span>
+              </div>
+              <div class="event-card-deadline-tag">
+                <i class="fa-regular fa-calendar-xmark"></i> Deadline: Nov 22, 2026
+              </div>
+              <div class="event-actions-row">
+                <button class="btn btn-secondary btn-sm magnetic-btn open-event-detail-modal" data-event-id="bball-allstar">
+                  View Details <i class="fa-solid fa-circle-info"></i>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm magnetic-btn open-event-reg-modal" data-event-title="Tri-State Hardwood 3x3 Classic" data-event-meta="Feb 05-07, 2027 &bull; Hardwood Arena">Register Squad <i class="fa-solid fa-check"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 2: Tennis -->
+          <div class="event-card" data-event-cat="tennis" data-event-id="tennis-open" data-aos="fade-up" data-aos-delay="50">
+            <div class="event-card-header">
+              <img src="images/tennis-spotlight-djokovic.webp" alt="Winter Grand Slam Tennis Open under tournament spotlight" loading="lazy">
+              <div class="event-date-badge">
+                <span class="event-month">DEC</span>
+                <span class="event-day">04</span>
+              </div>
+            </div>
+            <div class="event-body">
+              <span class="event-category-tag">Tennis Invitational</span>
+              <h3 class="event-title">Winter Grand Slam Tennis Open</h3>
+              <div class="event-details-list">
+                <span><i class="fa-regular fa-clock"></i> 08:30 AM – 06:00 PM</span>
+                <span><i class="fa-solid fa-location-dot"></i> Laykold Centre Stadium Courts</span>
+                <span><i class="fa-solid fa-trophy"></i> $12,000 Singles &amp; Doubles</span>
+              </div>
+              <div class="event-card-deadline-tag">
+                <i class="fa-regular fa-calendar-xmark"></i> Deadline: Nov 27, 2026
+              </div>
+              <div class="event-actions-row">
+                <button class="btn btn-secondary btn-sm magnetic-btn open-event-detail-modal" data-event-id="tennis-open">
+                  View Details <i class="fa-solid fa-circle-info"></i>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm magnetic-btn open-event-reg-modal" data-event-title="Winter All-Court Masters Championship" data-event-meta="Jan 15-18, 2027 &bull; Laykold Grandstand 1">Register Draw <i class="fa-solid fa-check"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 3: Football -->
+          <div class="event-card" data-event-cat="football" data-event-id="football-winter" data-aos="fade-up" data-aos-delay="100">
+            <div class="event-card-header">
+              <img src="images/hero-athlete-stadium.webp" alt="Premier 7v7 Floodlit Winter Cup strike under floodlights" loading="lazy">
+              <div class="event-date-badge">
+                <span class="event-month">DEC</span>
+                <span class="event-day">12</span>
+              </div>
+            </div>
+            <div class="event-body">
+              <span class="event-category-tag">Football Cup</span>
+              <h3 class="event-title">Premier 7v7 Floodlit Winter Cup</h3>
+              <div class="event-details-list">
+                <span><i class="fa-regular fa-clock"></i> 05:00 PM – 11:00 PM</span>
+                <span><i class="fa-solid fa-location-dot"></i> FIFA Main Floodlit Pitch</span>
+                <span><i class="fa-solid fa-shield-halved"></i> 16 Squads, Group &amp; Knockout</span>
+              </div>
+              <div class="event-card-deadline-tag">
+                <i class="fa-regular fa-calendar-xmark"></i> Deadline: Dec 05, 2026
+              </div>
+              <div class="event-actions-row">
+                <button class="btn btn-secondary btn-sm magnetic-btn open-event-detail-modal" data-event-id="football-winter">
+                  View Details <i class="fa-solid fa-circle-info"></i>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm magnetic-btn open-event-reg-modal" data-event-title="Tri-State Hardwood 3x3 Classic" data-event-meta="Feb 05-07, 2027 &bull; Hardwood Arena">Register Squad <i class="fa-solid fa-check"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 4: Cricket -->
+          <div class="event-card" data-event-cat="cricket" data-event-id="cricket-night" data-aos="fade-up" data-aos-delay="150">
+            <div class="event-card-header">
+              <img src="images/cricket-stadium-amber.webp" alt="Super-Over Cricket Night League in floodlit arena" loading="lazy">
+              <div class="event-date-badge">
+                <span class="event-month">DEC</span>
+                <span class="event-day">19</span>
+              </div>
+            </div>
+            <div class="event-body">
+              <span class="event-category-tag">Cricket Trophy</span>
+              <h3 class="event-title">Super-Over Cricket Night League</h3>
+              <div class="event-details-list">
+                <span><i class="fa-regular fa-clock"></i> 06:30 PM – 11:30 PM</span>
+                <span><i class="fa-solid fa-location-dot"></i> Floodlit Turf Cricket Oval</span>
+                <span><i class="fa-solid fa-trophy"></i> White Ball &amp; Electronic Speed Guns</span>
+              </div>
+              <div class="event-card-deadline-tag">
+                <i class="fa-regular fa-calendar-xmark"></i> Deadline: Dec 13, 2026
+              </div>
+              <div class="event-actions-row">
+                <button class="btn btn-secondary btn-sm magnetic-btn open-event-detail-modal" data-event-id="cricket-night">
+                  View Details <i class="fa-solid fa-circle-info"></i>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm magnetic-btn open-event-reg-modal" data-event-title="Red-Soil Turf Cricket Cup" data-event-meta="Mar 10-14, 2027 &bull; Turf Oval 1">Register XI <i class="fa-solid fa-check"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 5: Badminton -->
+          <div class="event-card" data-event-cat="badminton" data-event-id="badmin-smash" data-aos="fade-up" data-aos-delay="200">
+            <div class="event-card-header">
+              <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=800&q=80" alt="BWF Speed-Smash Badminton Championship" loading="lazy">
+              <div class="event-date-badge">
+                <span class="event-month">JAN</span>
+                <span class="event-day">08</span>
+              </div>
+            </div>
+            <div class="event-body">
+              <span class="event-category-tag">Badminton Championship</span>
+              <h3 class="event-title">Speed-Smash Badminton Masters</h3>
+              <div class="event-details-list">
+                <span><i class="fa-regular fa-clock"></i> 09:00 AM – 05:00 PM</span>
+                <span><i class="fa-solid fa-location-dot"></i> BWF International Badminton Hall</span>
+                <span><i class="fa-solid fa-trophy"></i> Men's &amp; Women's Singles/Doubles</span>
+              </div>
+              <div class="event-card-deadline-tag">
+                <i class="fa-regular fa-calendar-xmark"></i> Deadline: Jan 02, 2027
+              </div>
+              <div class="event-actions-row">
+                <button class="btn btn-secondary btn-sm magnetic-btn open-event-detail-modal" data-event-id="badmin-smash">
+                  View Details <i class="fa-solid fa-circle-info"></i>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm magnetic-btn open-event-reg-modal" data-event-title="All-Star Open Badminton Championship" data-event-meta="Mar 20-22, 2027 &bull; Hall 1">Register Player <i class="fa-solid fa-check"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 6: Aquatics -->
+          <div class="event-card" data-event-cat="aquatics" data-event-id="aquatics-meet" data-aos="fade-up" data-aos-delay="250">
+            <div class="event-card-header">
+              <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=800&q=80" alt="Winter Aquatics Speed Invitational" loading="lazy">
+              <div class="event-date-badge">
+                <span class="event-month">JAN</span>
+                <span class="event-day">15</span>
+              </div>
+            </div>
+            <div class="event-body">
+              <span class="event-category-tag">Aquatics Invitational</span>
+              <h3 class="event-title">Winter Aquatics Speed Meet (50M)</h3>
+              <div class="event-details-list">
+                <span><i class="fa-regular fa-clock"></i> 07:30 AM – 03:00 PM</span>
+                <span><i class="fa-solid fa-location-dot"></i> Olympic 50M Indoor Pool</span>
+                <span><i class="fa-solid fa-stopwatch"></i> Omega Touchpad Timing &amp; Relays</span>
+              </div>
+              <div class="event-card-deadline-tag">
+                <i class="fa-regular fa-calendar-xmark"></i> Deadline: Jan 09, 2027
+              </div>
+              <div class="event-actions-row">
+                <button class="btn btn-secondary btn-sm magnetic-btn open-event-detail-modal" data-event-id="aquatics-meet">
+                  View Details <i class="fa-solid fa-circle-info"></i>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm magnetic-btn open-event-reg-modal" data-event-title="Olympic Natatorium Invitational" data-event-meta="Apr 04-06, 2027 &bull; Natatorium">Register Swimmer <i class="fa-solid fa-check"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 7: Athletics -->
+          <div class="event-card" data-event-cat="athletics" data-event-id="track-sprint" data-aos="fade-up" data-aos-delay="300">
+            <div class="event-card-header">
+              <img src="https://images.unsplash.com/photo-1538592116845-119a3974c958?auto=format&fit=crop&w=800&q=80" alt="Metro Sprint & Agility Invitational" loading="lazy">
+              <div class="event-date-badge">
+                <span class="event-month">JAN</span>
+                <span class="event-day">22</span>
+              </div>
+            </div>
+            <div class="event-body">
+              <span class="event-category-tag">Track &amp; Field</span>
+              <h3 class="event-title">Metro Sprint &amp; Agility Invitational</h3>
+              <div class="event-details-list">
+                <span><i class="fa-regular fa-clock"></i> 09:00 AM – 04:00 PM</span>
+                <span><i class="fa-solid fa-location-dot"></i> IAAF Rekortan Stadium Track</span>
+                <span><i class="fa-solid fa-bolt"></i> 60m, 100m, 400m &amp; 4x100m Relays</span>
+              </div>
+              <div class="event-card-deadline-tag">
+                <i class="fa-regular fa-calendar-xmark"></i> Deadline: Jan 16, 2027
+              </div>
+              <div class="event-actions-row">
+                <button class="btn btn-secondary btn-sm magnetic-btn open-event-detail-modal" data-event-id="track-sprint">
+                  View Details <i class="fa-solid fa-circle-info"></i>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm magnetic-btn open-event-reg-modal" data-event-title="Metro Sprint Invitational" data-event-meta="Apr 18-19, 2027 &bull; Rekortan Stadium">Register Athlete <i class="fa-solid fa-check"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 8: Combat / Striking -->
+          <div class="event-card" data-event-cat="athletics" data-event-id="combat-night" data-aos="fade-up" data-aos-delay="350">
+            <div class="event-card-header">
+              <img src="https://images.unsplash.com/photo-1549476464-37392f717541?auto=format&fit=crop&w=800&q=80" alt="Ultimate Arena Fight Night" loading="lazy">
+              <div class="event-date-badge">
+                <span class="event-month">JAN</span>
+                <span class="event-day">30</span>
+              </div>
+            </div>
+            <div class="event-body">
+              <span class="event-category-tag">Combat Showcase</span>
+              <h3 class="event-title">Stackly Boxing &amp; Striking Open</h3>
+              <div class="event-details-list">
+                <span><i class="fa-regular fa-clock"></i> 06:00 PM – 11:00 PM</span>
+                <span><i class="fa-solid fa-location-dot"></i> Combat Arena Main Ring</span>
+                <span><i class="fa-solid fa-medal"></i> Sanctioned Amateur &amp; Pro Bouts</span>
+              </div>
+              <div class="event-card-deadline-tag">
+                <i class="fa-regular fa-calendar-xmark"></i> Deadline: Jan 24, 2027
+              </div>
+              <div class="event-actions-row">
+                <button class="btn btn-secondary btn-sm magnetic-btn open-event-detail-modal" data-event-id="combat-night">
+                  View Details <i class="fa-solid fa-circle-info"></i>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm magnetic-btn open-event-reg-modal" data-event-title="Combat Sports Invitational" data-event-meta="May 01-03, 2027 &bull; Combat Arena">Register Fighter <i class="fa-solid fa-check"></i></button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 3 – TOURNAMENT CATEGORIES
+         =================================================================== -->
+    <section class="section-padding" style="background: #0b0b0f; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <div class="section-tag"><i class="fa-solid fa-layer-group"></i> Competition Divisions</div>
+          <h2 class="section-title">TOURNAMENT TIERS &amp; CATEGORIES</h2>
+          <p class="section-subtitle">
+            Structured competitive brackets designed to ensure fair seeding, high parity, and thrilling matchplay.
+          </p>
+        </div>
+
+        <div class="tournament-categories-grid">
+          <!-- Category 1 -->
+          <div class="tournament-category-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="category-card-icon"><i class="fa-solid fa-award"></i></div>
+            <h3 class="category-card-title">Open Championship</h3>
+            <div class="category-card-eligibility">Top Tier &bull; National Athletes</div>
+            <p class="category-card-desc">
+              Uncapped elite division with official rankings, substantial cash prize pools, and international scouting presence.
+            </p>
+            <div class="category-bracket-tag"><i class="fa-solid fa-sitemap"></i> 16 to 32 Double Elimination</div>
+          </div>
+
+          <!-- Category 2 -->
+          <div class="tournament-category-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="category-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3 class="category-card-title">Academy &amp; U-21 Cup</h3>
+            <div class="category-card-eligibility">Rising Prospects &bull; Ages 16–21</div>
+            <p class="category-card-desc">
+              High-intensity competition for young academy players aiming for collegiate athletic scholarships and professional trial contracts.
+            </p>
+            <div class="category-bracket-tag"><i class="fa-solid fa-sitemap"></i> Group Stage + Knockout</div>
+          </div>
+
+          <!-- Category 3 -->
+          <div class="tournament-category-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="category-card-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <h3 class="category-card-title">Corporate League</h3>
+            <div class="category-card-eligibility">Company Squads &bull; Evening Series</div>
+            <p class="category-card-desc">
+              Weeknight corporate brackets for tech founders, finance firms, and enterprise teams seeking camaraderie and competitive fitness.
+            </p>
+            <div class="category-bracket-tag"><i class="fa-solid fa-sitemap"></i> 8-Week Round Robin</div>
+          </div>
+
+          <!-- Category 4 -->
+          <div class="tournament-category-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="category-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3 class="category-card-title">Masters &amp; Veterans</h3>
+            <div class="category-card-eligibility">Athletes 35+ &bull; Lifelong Mastery</div>
+            <p class="category-card-desc">
+              Tactical, high-skill division celebrating athletic longevity, seasoned game intelligence, and healthy masterclass rivalries.
+            </p>
+            <div class="category-bracket-tag"><i class="fa-solid fa-sitemap"></i> Seeded Knockout Draw</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 4 – REGISTRATION INFORMATION & CRITERIA
+         =================================================================== -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <div class="section-tag"><i class="fa-solid fa-clipboard-check"></i> Competition Standards</div>
+          <h2 class="section-title">REGISTRATION GUIDELINES &amp; CRITERIA</h2>
+          <p class="section-subtitle">
+            Everything team captains and individual athletes need to know prior to submitting competition entries.
+          </p>
+        </div>
+
+        <div class="reg-criteria-grid" data-aos="fade-up">
+          <div class="reg-criteria-card">
+            <div class="criteria-num">01</div>
+            <h3 class="criteria-title">Eligibility &amp; Roster Checks</h3>
+            <p class="criteria-desc">
+              All players must submit government or federation ID verification. Rosters lock strictly 48 hours prior to tournament draw day.
+            </p>
+          </div>
+          <div class="reg-criteria-card">
+            <div class="criteria-num">02</div>
+            <h3 class="criteria-title">Certified Officials &amp; Telemetry</h3>
+            <p class="criteria-desc">
+              Every match is officiated by certified federation referees. High-speed video review (VAR/Hawkeye) is available for key decisions.
+            </p>
+          </div>
+          <div class="reg-criteria-card">
+            <div class="criteria-num">03</div>
+            <h3 class="criteria-title">Entry Fees &amp; Inclusions</h3>
+            <p class="criteria-desc">
+              Entry fee includes refereeing, official match balls, medical paramedic standby, hydration station access, and 4K match video archives.
+            </p>
+          </div>
+          <div class="reg-criteria-card">
+            <div class="criteria-num">04</div>
+            <h3 class="criteria-title">Prize Money &amp; Accolades</h3>
+            <p class="criteria-desc">
+              Purse payouts are wired within 48 hours post-championship. Winners receive handcrafted Stackly gold trophies and individual medals.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 5 – PREVIOUS TOURNAMENTS (ARCHIVE)
+         =================================================================== -->
+    <section class="section-padding section-bg-dark">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <div class="section-tag"><i class="fa-solid fa-clock-rotate-left"></i> Championship History</div>
+          <h2 class="section-title">RECENT TOURNAMENT ARCHIVES</h2>
+          <p class="section-subtitle">
+            A look back at recent championship thrillers and milestone showdowns hosted inside our arena.
+          </p>
+        </div>
+
+        <div class="prev-tournaments-grid">
+          <!-- Archive 1 -->
+          <div class="prev-tournament-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="prev-tournament-media">
+              <img src="images/soccer-rain-stadium.webp" alt="Summer Football Champions League under stadium floodlights" loading="lazy">
+              <div class="prev-tournament-date">August 2026</div>
+            </div>
+            <div class="prev-tournament-body">
+              <div class="event-category-tag" style="margin-bottom: 6px;">Football</div>
+              <h3 class="prev-tournament-title">Summer Champions Cup</h3>
+              <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+                32 regional football squads battled over 3 days. Spartan City FC edged Apex United 3–2 in a stoppage-time thriller.
+              </p>
+              <div class="prev-tournament-stats">
+                <span><strong>Purse:</strong> $25,000</span>
+                <span><strong>Teams:</strong> 32</span>
+                <span><strong>Attendance:</strong> 1,420</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Archive 2 -->
+          <div class="prev-tournament-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="prev-tournament-media">
+              <img src="images/tennis-female-action.webp" alt="National Laykold Open Tennis tournament action" loading="lazy">
+              <div class="prev-tournament-date">June 2026</div>
+            </div>
+            <div class="prev-tournament-body">
+              <div class="event-category-tag" style="margin-bottom: 6px;">Tennis</div>
+              <h3 class="prev-tournament-title">National Laykold Masters</h3>
+              <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+                A grueling 64-player knockout draw featuring ATP-ranked guests. Marcus Vance prevailed after a five-set final on stadium court.
+              </p>
+              <div class="prev-tournament-stats">
+                <span><strong>Purse:</strong> $15,000</span>
+                <span><strong>Draw:</strong> 64 Singles</span>
+                <span><strong>Aces:</strong> 312 Total</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Archive 3 -->
+          <div class="prev-tournament-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="prev-tournament-media">
+              <img src="images/cricket-batsman-shot.webp" alt="Inter-Academy Cricket Trophy night floodlight match" loading="lazy">
+              <div class="prev-tournament-date">May 2026</div>
+            </div>
+            <div class="prev-tournament-body">
+              <div class="event-category-tag" style="margin-bottom: 6px;">Cricket</div>
+              <h3 class="prev-tournament-title">Inter-Academy Cricket Trophy</h3>
+              <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 16px;">
+                Night floodlight matches on our premier turf oval. Titans XI chased down 188 runs in the final over with two balls to spare.
+              </p>
+              <div class="prev-tournament-stats">
+                <span><strong>Purse:</strong> $10,000</span>
+                <span><strong>Matches:</strong> 24</span>
+                <span><strong>Run Rate:</strong> 9.4 RPO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 6 – WINNERS AND ACHIEVEMENTS HALL OF FAME
+         =================================================================== -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <div class="section-tag"><i class="fa-solid fa-crown"></i> Hall of Champions</div>
+          <h2 class="section-title">REIGNING TOURNAMENT CHAMPIONS</h2>
+          <p class="section-subtitle">
+            Celebrating the elite squads and individual champions who conquered the podium at Stackly.
+          </p>
+        </div>
+
+        <div class="winners-podium-grid">
+          <!-- Winner 1 -->
+          <div class="winner-podium-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="winner-trophy-badge"><i class="fa-solid fa-trophy"></i></div>
+            <div class="winner-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=600&q=80" alt="Spartan City FC" loading="lazy">
+            </div>
+            <div class="winner-info-box">
+              <div class="winner-sport-tag">Football Champions</div>
+              <h3 class="winner-champion-name">Spartan City FC</h3>
+              <div class="winner-event-title">Summer Champions Cup 2026</div>
+              <span class="winner-stat-pill">MVP: Liam Thorne (9 Goals)</span>
+            </div>
+          </div>
+
+          <!-- Winner 2 -->
+          <div class="winner-podium-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="winner-trophy-badge"><i class="fa-solid fa-trophy"></i></div>
+            <div class="winner-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Chloe Bennett" loading="lazy">
+            </div>
+            <div class="winner-info-box">
+              <div class="winner-sport-tag">Tennis Open Champion</div>
+              <h3 class="winner-champion-name">Chloe Bennett</h3>
+              <div class="winner-event-title">Laykold Masters Invitational 2026</div>
+              <span class="winner-stat-pill">Finals Score: 6-4, 7-5</span>
+            </div>
+          </div>
+
+          <!-- Winner 3 -->
+          <div class="winner-podium-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="winner-trophy-badge"><i class="fa-solid fa-trophy"></i></div>
+            <div class="winner-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=600&q=80" alt="Metro Hawks" loading="lazy">
+            </div>
+            <div class="winner-info-box">
+              <div class="winner-sport-tag">Basketball Cup Winners</div>
+              <h3 class="winner-champion-name">Metro Hawks</h3>
+              <div class="winner-event-title">All-Star Hardwood Classic 2026</div>
+              <span class="winner-stat-pill">Final Score: 94–89 (OT)</span>
+            </div>
+          </div>
+
+          <!-- Winner 4 -->
+          <div class="winner-podium-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="winner-trophy-badge"><i class="fa-solid fa-trophy"></i></div>
+            <div class="winner-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="David Thorne" loading="lazy">
+            </div>
+            <div class="winner-info-box">
+              <div class="winner-sport-tag">Aquatics Record Holder</div>
+              <h3 class="winner-champion-name">David Thorne</h3>
+              <div class="winner-event-title">50M Freestyle State Speed Meet</div>
+              <span class="winner-stat-pill">Arena Record: 21.84s</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 7 – EVENT GALLERY (VISUAL WALL OF CHAMPIONS)
+         =================================================================== -->
+    <section class="section-padding section-bg-dark">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <div class="section-tag"><i class="fa-solid fa-images"></i> Atmospheric Moments</div>
+          <h2 class="section-title">THE CHAMPIONSHIP GALLERY</h2>
+          <p class="section-subtitle">
+            Raw emotion, clutch game-winners, and trophy celebrations captured inside the arena.
+          </p>
+        </div>
+
+        <div class="event-gallery-grid" data-aos="fade-up">
+          <!-- Tile 1 (Wide) -->
+          <div class="gallery-tile tile-wide">
+            <img src="images/hero-athlete-stadium.webp" alt="Championship Match Stoppage Time" loading="lazy">
+            <div class="gallery-tile-overlay">
+              <div class="gallery-tile-caption">Stoppage Time Winner Celebration</div>
+              <div class="gallery-tile-sub">Summer Football Champions Cup</div>
+            </div>
+          </div>
+
+          <!-- Tile 2 -->
+          <div class="gallery-tile">
+            <img src="images/basketball-orange-accent.webp" alt="Hardwood Dunk" loading="lazy">
+            <div class="gallery-tile-overlay">
+              <div class="gallery-tile-caption">Fastbreak Slam Dunk</div>
+              <div class="gallery-tile-sub">FIBA All-Star Semifinal</div>
+            </div>
+          </div>
+
+          <!-- Tile 3 -->
+          <div class="gallery-tile">
+            <img src="images/tennis-spotlight-djokovic.webp" alt="Serve Return" loading="lazy">
+            <div class="gallery-tile-overlay">
+              <div class="gallery-tile-caption">128 MPH Forehand Ace</div>
+              <div class="gallery-tile-sub">Laykold Stadium Championship Point</div>
+            </div>
+          </div>
+
+          <!-- Tile 4 -->
+          <div class="gallery-tile">
+            <img src="images/basketball-smoke-arena.webp" alt="Arena Spotlight Moment" loading="lazy">
+            <div class="gallery-tile-overlay">
+              <div class="gallery-tile-caption">Arena Spotlight Atmosphere</div>
+              <div class="gallery-tile-sub">Championship Pre-Game Huddle</div>
+            </div>
+          </div>
+
+          <!-- Tile 5 (Wide) -->
+          <div class="gallery-tile tile-wide">
+            <img src="images/stadium-silhouette-lights.webp" alt="Track Sprint Photo Finish" loading="lazy">
+            <div class="gallery-tile-overlay">
+              <div class="gallery-tile-caption">100M Dash Photo Finish</div>
+              <div class="gallery-tile-sub">Rekortan Athletics Sprint Invitational</div>
+            </div>
+          </div>
+
+          <!-- Tile 6 -->
+          <div class="gallery-tile">
+            <img src="images/basketball-powder-action.webp" alt="Trophy Lift" loading="lazy">
+            <div class="gallery-tile-overlay">
+              <div class="gallery-tile-caption">Podium Trophy Presentation</div>
+              <div class="gallery-tile-sub">Continental Clash Trophy Lift</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 8 – REGISTER FOR AN EVENT CTA
+         =================================================================== -->
+    <section class="section-padding">
+      <div class="container">
+        <div style="background: linear-gradient(135deg, #16161f 0%, #0c0c10 100%); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 56px 44px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 32px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);" data-aos="fade-up">
+          <div style="max-width: 660px;">
+            <div class="section-tag mb-10">
+              <i class="fa-solid fa-flag-checkered"></i> Join The Bracket
+            </div>
+            <h2 style="font-family: var(--font-athletic); font-size: clamp(2rem, 3.4vw, 2.8rem); text-transform: uppercase; margin-bottom: 12px; color: var(--color-white);">
+              READY TO COMPETE ON THE CHAMPIONSHIP STAGE?
+            </h2>
+            <p style="color: var(--color-text-muted); font-size: 0.96rem; line-height: 1.6; margin-bottom: 20px;">
+              Tournament brackets are strictly seeded by registration timestamp. Lock in your team captain credentials, select your division, and prepare to bring your highest level to Stackly.
+            </p>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+              <span class="coach-pill"><i class="fa-solid fa-check"></i> Certified Federation Referees</span>
+              <span class="coach-pill"><i class="fa-solid fa-check"></i> 4K Video Telemetry &amp; VAR</span>
+              <span class="coach-pill"><i class="fa-solid fa-check"></i> Guaranteed Minimum Matches</span>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary btn-lg magnetic-btn open-event-reg-modal" data-event-title="Tournament Entry" data-event-meta="Championship Series">Register For An Event <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="elite-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+            <div class="brand-icon-box"><i class="fa-solid fa-bolt-lightning"></i></div>
+            <div class="brand-title-group">
+              <span class="brand-name">STACK<span>LY</span></span>
+              <span class="brand-subtitle">Sports Club &amp; Performance</span>
+            </div>
+          </a>
+          <p>The pinnacle of athletic infrastructure. Dedicated to human performance, world-class athletic discipline, and comprehensive biometric recovery.</p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+                <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+                <!-- Arenas & Disciplines -->
+        <div class="footer-col">
+          <h4>The Arenas</h4>
+          <ul class="footer-links-list">
+            <li><a href="courses.html#football-course">Championship Football Pitch</a></li>
+            <li><a href="courses.html#cricket-course">Turf Cricket Academy</a></li>
+            <li><a href="courses.html#basketball-course">FIBA Hardwood Court</a></li>
+            <li><a href="courses.html#tennis-course">Laykold Tennis Stadium</a></li>
+            <li><a href="courses.html#badminton-course">BWF Badminton Hall</a></li>
+            <li><a href="courses.html#athletics-course">IAAF Rekortan Track</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Club Hours</h4>
+          <div class="footer-hours-item">
+            <span>Monday – Friday:</span>
+            <span>05:00 AM – 11:00 PM</span>
+          </div>
+          <div class="footer-hours-item">
+            <span>Saturday – Sunday:</span>
+            <span>06:00 AM – 10:00 PM</span>
+          </div>
+          <div class="footer-hours-item">
+            <span>Diamond Members:</span>
+            <span>24/7 Keycard Access</span>
+          </div>
+          <h4 class="mt-24-mb-10">Insider Drop</h4>
+                    <form class="newsletter-form" novalidate>
+            <input type="email" placeholder="Enter your email" class="newsletter-input" aria-label="Your email address">
+            <button type="submit" class="btn btn-primary btn-sm" aria-label="Subscribe to newsletter"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 STACKLY SPORTS CLUB. All rights reserved. Built with Olympic standards.</div>
+                <div class="footer-legal-links">
+          <a href="membership.html#rules">Membership Agreement</a>
+          <a href="membership.html#rules">Guest Policies</a>
+          <a href="membership.html#rules">Privacy Notice</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       MODALS
+       =================================================================== -->
+
+  <!-- Modal 1: Interactive Event Detail Modal -->
+  <div class="modal-overlay" id="eventDetailModal">
+    <div class="modal-dialog" style="max-width: 860px;">
+      <button class="modal-close-btn" aria-label="Close Event Details Dialog"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <span class="modal-tag" id="medTag"><i class="fa-solid fa-trophy"></i> Tournament Specification</span>
+        <h3 class="modal-title" id="medTitle">Event Title</h3>
+      </div>
+
+      <div class="modal-event-layout">
+        <div>
+          <div class="modal-event-banner">
+            <img src="" alt="Event Banner" id="medImg" loading="lazy">
+          </div>
+          <table class="modal-event-meta-table">
+            <tbody>
+              <tr>
+                <td>Sport Category:</td>
+                <td id="medCategory">Basketball</td>
+              </tr>
+              <tr>
+                <td>Date &amp; Time:</td>
+                <td id="medDateTime">Nov 28, 2026 | 06:00 PM</td>
+              </tr>
+              <tr>
+                <td>Competition Venue:</td>
+                <td id="medVenue">FIBA Hardwood Court A</td>
+              </tr>
+              <tr>
+                <td>Registration Cutoff:</td>
+                <td id="medDeadline" class="text-accent">Nov 22, 2026</td>
+              </tr>
+              <tr>
+                <td>Prize Pool:</td>
+                <td id="medPurse">$8,000</td>
+              </tr>
+              <tr>
+                <td>Bracket Format:</td>
+                <td id="medBracket">16 Teams Knockout</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h4 style="font-family: var(--font-athletic); font-size: 1.2rem; text-transform: uppercase; color: var(--color-white); margin-bottom: 8px;">
+            Overview &amp; Tournament Rules
+          </h4>
+          <p id="medDesc" style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 20px;">
+            Detailed description of tournament rules, eligibility, seeding, and official equipment specifications.
+          </p>
+
+          <h4 style="font-family: var(--font-athletic); font-size: 1.1rem; text-transform: uppercase; color: var(--color-white); margin-bottom: 8px;">
+            Matchday Schedule
+          </h4>
+          <ul style="list-style: none; font-size: 0.85rem; color: var(--color-text-main); display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px;" id="medSchedule">
+            <li><i class="fa-regular fa-clock" style="color: var(--color-accent); margin-right: 6px;"></i> 05:00 PM &ndash; Captains Technical Meeting</li>
+            <li><i class="fa-regular fa-clock" style="color: var(--color-accent); margin-right: 6px;"></i> 06:00 PM &ndash; Preliminary Round Matches</li>
+            <li><i class="fa-regular fa-clock" style="color: var(--color-accent); margin-right: 6px;"></i> 09:30 PM &ndash; Grand Championship Final</li>
+          </ul>
+
+          <button type="button" class="btn btn-primary w-100 btn-lg open-event-reg-modal" id="medBridgeRegBtn" data-event-title="Tournament Entry" data-event-meta="Championship Series">Proceed to Registration <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Event Registration Form Modal -->
+  <div class="modal-overlay" id="eventRegModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" aria-label="Close Registration Dialog"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <span class="modal-tag">Tournament Registration</span>
+        <h3 class="modal-title">Register For Championship</h3>
+        <p class="text-muted text-subtle-sm">
+          Lock in your squad or individual athlete seed in the tournament draw.
+        </p>
+      </div>
+
+      <form id="eventRegistrationForm">
+        <div class="form-group">
+          <label class="form-label">Selected Tournament</label>
+          <input type="text" id="targetEventTitle" class="form-input" readonly>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Date &amp; Venue</label>
+          <input type="text" id="targetEventMeta" class="form-input" readonly>
+        </div>
+        <div class="form-group-row">
+          <div class="form-group">
+            <label class="form-label">Team Captain / Athlete Full Name *</label>
+            <input type="text" class="form-input" required placeholder="Marcus Vance">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Team / Club Affiliation</label>
+            <input type="text" class="form-input" placeholder="e.g. Spartan City FC or Independent">
+          </div>
+        </div>
+        <div class="form-group-row">
+          <div class="form-group">
+            <label class="form-label">Contact Email *</label>
+            <input type="email" class="form-input" required placeholder="captain@example.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number *</label>
+            <input type="tel" class="form-input" required placeholder="+1 (555) 000-0000">
+          </div>
+        </div>
+        <div class="form-group-row">
+          <div class="form-group">
+            <label class="form-label">Competition Division</label>
+            <select class="form-select">
+              <option>Open Professional Championship</option>
+              <option>Academy &amp; U-21 Division</option>
+              <option>Corporate League</option>
+              <option>Masters (35+)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Squad Size</label>
+            <select class="form-select">
+              <option>Individual (1 Athlete)</option>
+              <option>Doubles Pair (2 Athletes)</option>
+              <option>Small Squad (5–8 Players)</option>
+              <option>Full Squad (9–18 Players)</option>
+            </select>
+          </div>
+        </div>
+        <div style="margin-bottom: 20px; font-size: 0.84rem; color: var(--color-text-muted);">
+          <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer;">
+            <input type="checkbox" required style="accent-color: var(--color-accent); margin-top: 3px;">
+            <span>I confirm medical clearance and accept tournament rules &amp; conduct guidelines.</span>
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 btn-lg">
+          Submit Tournament Entry <i class="fa-solid fa-flag-checkered"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal 3: VIP Tour Modal -->
+  <div class="modal-overlay" id="tourModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" aria-label="Close Tour Dialog"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <span class="modal-tag">Private Appointment</span>
+        <h3 class="modal-title">Book a VIP Arena Tour</h3>
+      </div>
+      <form id="tourBookingForm">
+        <div class="form-group-row">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" name="fullname" class="form-input" required placeholder="Jordan Hayes">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-input" required placeholder="jordan@example.com">
+          </div>
+        </div>
+        <div class="form-group-row">
+          <div class="form-group">
+            <label class="form-label">Phone</label>
+            <input type="tel" name="phone" class="form-input" required placeholder="+1 (555) 000-0000">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Preferred Date</label>
+            <input type="date" name="date" class="form-input" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 btn-lg mt-10">
+          Confirm VIP Reservation <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Official Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <!-- Stackly Common Auth Engine -->
+  <script src="js/auth.js"></script>
+  <!-- Stackly Lenis Controller -->
+  <script src="js/lenis-init.js"></script>
+  <!-- Stackly Full-Width Mobile Navigation -->
+  <script src="js/navigation.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    // Detailed Events Database for Modal
+    const eventsData = {
+      continental: {
+        title: "2026 Continental Clash Championship",
+        category: "Multi-Sport Invitational",
+        dateTime: "Dec 18–20, 2026 | 09:00 AM – 10:00 PM",
+        venue: "Grand Arena & Laykold Stadium Courts",
+        deadline: "Dec 10, 2026 (11:59 PM)",
+        purse: "$50,000 Total Purse",
+        bracket: "32 Seeded Squads Double Elimination",
+        img: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1000&q=80",
+        desc: "The premier multi-sport spectacle featuring elite competition in Football, Laykold Tennis, and Hardwood Basketball. Broadcast live with professional scouting panels present.",
+        schedule: [
+          "Dec 18 &bull; 08:00 AM – Opening Ceremony & Technical Draw",
+          "Dec 18 &bull; 10:00 AM – Preliminary Group Fixtures",
+          "Dec 19 &bull; 01:00 PM – Quarterfinals & Semifinal Showdowns",
+          "Dec 20 &bull; 06:00 PM – Grand Finals & Awards Ceremony"
+        ]
+      },
+      "bball-allstar": {
+        title: "Stackly All-Star Classic",
+        category: "Basketball Championship",
+        dateTime: "Nov 28, 2026 | 06:00 PM – 10:30 PM",
+        venue: "FIBA Hardwood Arena (Court A)",
+        deadline: "Nov 22, 2026",
+        purse: "$8,000 Championship Purse",
+        bracket: "16-Team Single Elimination",
+        img: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=800&q=80",
+        desc: "High-octane four-quarter basketball tournament. Full 24-second shot clock, official FIBA referees, and 3-point contest at halftime.",
+        schedule: [
+          "05:00 PM – Team Warmups & Roster Validation",
+          "06:00 PM – Round of 16 Tipoff",
+          "08:15 PM – Halftime 3-Point Contest",
+          "09:30 PM – Championship Final"
+        ]
+      },
+      "tennis-open": {
+        title: "Winter Grand Slam Tennis Open",
+        category: "Tennis Invitational",
+        dateTime: "Dec 04, 2026 | 08:30 AM – 06:00 PM",
+        venue: "Laykold Centre Stadium Courts",
+        deadline: "Nov 27, 2026",
+        purse: "$12,000 Total Draw",
+        bracket: "32 Singles & 16 Doubles",
+        img: "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=800&q=80",
+        desc: "Sanctioned Laykold hardcourt tournament. Full Hawkeye electronic line calling on stadium court with new Dunlop balls every 9 games.",
+        schedule: [
+          "08:00 AM – Player Check-in & Practice Courts",
+          "08:30 AM – Round 1 Singles",
+          "02:00 PM – Doubles Semifinals",
+          "04:30 PM – Finals on Center Court"
+        ]
+      },
+      "football-winter": {
+        title: "Premier 7v7 Floodlit Winter Cup",
+        category: "Football Cup",
+        dateTime: "Dec 12, 2026 | 05:00 PM – 11:00 PM",
+        venue: "FIFA Main Floodlit Pitch",
+        deadline: "Dec 05, 2026",
+        purse: "$10,000 Winner-Takes-All",
+        bracket: "16 Squads, 4 Groups + Knockout",
+        img: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80",
+        desc: "Fast-paced 7v7 football on pristine floodlit turf. 20-minute halves, rolling substitutions, and certified federation referees.",
+        schedule: [
+          "04:30 PM – Captains Tactical Meeting",
+          "05:00 PM – Group Stage Fixtures",
+          "08:30 PM – Semifinals",
+          "10:00 PM – Grand Final Under Floodlights"
+        ]
+      },
+      "cricket-night": {
+        title: "Super-Over Cricket Night League",
+        category: "Cricket Trophy",
+        dateTime: "Dec 19, 2026 | 06:30 PM – 11:30 PM",
+        venue: "Floodlit Turf Cricket Oval",
+        deadline: "Dec 13, 2026",
+        purse: "$7,500 Cash Purse & Trophy",
+        bracket: "8 Franchises Round Robin + Final",
+        img: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80",
+        desc: "T10 super-over format played under international-standard LED stadium lights with white Kookaburra balls and speed radar guns.",
+        schedule: [
+          "06:00 PM – Toss & Team Sheets Lock",
+          "06:30 PM – League Phase Matches",
+          "09:45 PM – Eliminator & Qualifier",
+          "10:45 PM – Super Final"
+        ]
+      },
+      "badmin-smash": {
+        title: "Speed-Smash Badminton Masters",
+        category: "Badminton Championship",
+        dateTime: "Jan 08, 2027 | 09:00 AM – 05:00 PM",
+        venue: "BWF International Badminton Hall",
+        deadline: "Jan 02, 2027",
+        purse: "$5,000 Prize Pool",
+        bracket: "32 Singles & 16 Doubles",
+        img: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=800&q=80",
+        desc: "Played on 8 tournament-grade green Taraflex courts. High-speed shuttlecock speed testing and BWF standard scoring (best of 3 sets to 21).",
+        schedule: [
+          "08:30 AM – Shuttler Check-in",
+          "09:00 AM – Preliminary Knockout Draws",
+          "01:30 PM – Quarterfinals & Semis",
+          "03:45 PM – Championship Matches"
+        ]
+      },
+      "aquatics-meet": {
+        title: "Winter Aquatics Speed Meet (50M)",
+        category: "Aquatics Invitational",
+        dateTime: "Jan 15, 2027 | 07:30 AM – 03:00 PM",
+        venue: "Olympic 50M Indoor Pool",
+        deadline: "Jan 09, 2027",
+        purse: "$6,000 & State Ranking Points",
+        bracket: "Timed Heats & Championship Finals",
+        img: "https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=800&q=80",
+        desc: "50m Olympic indoor racing featuring electronic Omega touchpads, backstroke start ledges, and underwater video telemetry cameras.",
+        schedule: [
+          "06:30 AM – Pool Warm-up & Lane Sprints",
+          "07:30 AM – 50M & 100M Freestyle Heats",
+          "11:00 AM – Butterfly, Breaststroke & Backstroke",
+          "01:30 PM – Medley Relays & Final Heats"
+        ]
+      },
+      "track-sprint": {
+        title: "Metro Sprint & Agility Invitational",
+        category: "Track & Field",
+        dateTime: "Jan 22, 2027 | 09:00 AM – 04:00 PM",
+        venue: "IAAF Rekortan Stadium Track",
+        deadline: "Jan 16, 2027",
+        purse: "$6,500 Individual & Relay Medals",
+        bracket: "Heats, Semis & Finals",
+        img: "https://images.unsplash.com/photo-1538592116845-119a3974c958?auto=format&fit=crop&w=800&q=80",
+        desc: "Olympic-grade Rekortan track surface. Fully automated timing (FAT) with wind gauge verification across 60m, 100m, 400m, and 4x100m relays.",
+        schedule: [
+          "08:00 AM – Athlete Bib Collection & Warmup",
+          "09:00 AM – 60m & 100m Preliminary Heats",
+          "01:00 PM – 400m Sprint & Field Events",
+          "03:00 PM – 4x100m Relay Showdowns"
+        ]
+      },
+      "combat-night": {
+        title: "Stackly Boxing & Striking Open",
+        category: "Combat Showcase",
+        dateTime: "Jan 30, 2027 | 06:00 PM – 11:00 PM",
+        venue: "Combat Arena Main Ring",
+        deadline: "Jan 24, 2027",
+        purse: "$10,000 Fight Night Honors",
+        bracket: "10 Sanctioned Bout Card",
+        img: "https://images.unsplash.com/photo-1549476464-37392f717541?auto=format&fit=crop&w=800&q=80",
+        desc: "Sanctioned amateur and professional boxing showcase under championship lights. Certified ringside medical staff and official judges.",
+        schedule: [
+          "04:00 PM – Official Weigh-in & Medicals",
+          "06:00 PM – Undercard Bouts (3 Rounds)",
+          "08:30 PM – Co-Main Event",
+          "09:45 PM – Championship Main Event"
+        ]
+      }
+    };
+
+    // Filter Handler
+    const filterPills = document.querySelectorAll('[data-event-filter]');
+    const eventCards = document.querySelectorAll('#eventsDirectoryGrid .event-card');
+
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const filter = pill.getAttribute('data-event-filter');
+
+        eventCards.forEach(card => {
+          const cat = card.getAttribute('data-event-cat');
+          if (filter === 'all' || cat === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Detail Modal Handler
+    const detailModal = document.getElementById('eventDetailModal');
+    let currentDetailEvent = null;
+
+    document.querySelectorAll('.open-event-detail-modal').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-event-id');
+        const data = eventsData[id];
+        if (data) {
+          currentDetailEvent = data;
+          document.getElementById('medTitle').textContent = data.title;
+          document.getElementById('medCategory').textContent = data.category;
+          document.getElementById('medDateTime').textContent = data.dateTime;
+          document.getElementById('medVenue').textContent = data.venue;
+          document.getElementById('medDeadline').textContent = data.deadline;
+          document.getElementById('medPurse').textContent = data.purse;
+          document.getElementById('medBracket').textContent = data.bracket;
+          document.getElementById('medImg').src = data.img;
+          document.getElementById('medImg').alt = data.title;
+          document.getElementById('medDesc').textContent = data.desc;
+
+          const schedEl = document.getElementById('medSchedule');
+          schedEl.innerHTML = '';
+          data.schedule.forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = `<i class="fa-regular fa-clock" style="color: var(--color-accent); margin-right: 6px;"></i> ${item}`;
+            schedEl.appendChild(li);
+          });
+
+          if (detailModal) {
+            detailModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+          }
+        }
+      });
+    });
+
+    // Bridge from Detail Modal to Registration Modal
+    const bridgeRegBtn = document.getElementById('medBridgeRegBtn');
+    if (bridgeRegBtn) {
+      bridgeRegBtn.addEventListener('click', () => {
+        if (detailModal) detailModal.classList.remove('active');
+        if (currentDetailEvent) {
+          openRegModal(currentDetailEvent.title, `${currentDetailEvent.dateTime.split('|')[0]} | ${currentDetailEvent.venue}`);
+        }
+      });
+    }
+
+    // Registration Modal Openers
+    const regModal = document.getElementById('eventRegModal');
+    function openRegModal(title, meta) {
+      document.getElementById('targetEventTitle').value = title;
+      document.getElementById('targetEventMeta').value = meta;
+      if (regModal) {
+        regModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    document.querySelectorAll('.open-event-reg-modal').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const title = btn.getAttribute('data-event-title') || 'Championship Tournament';
+        const meta = btn.getAttribute('data-event-meta') || 'Stackly Stadium Grounds';
+        openRegModal(title, meta);
+      });
+    });
+
+    // Registration Form Submission
+    const eventRegForm = document.getElementById('eventRegistrationForm');
+    if (eventRegForm) {
+      eventRegForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const tournament = document.getElementById('targetEventTitle').value || 'Championship Tournament';
+        const athleteName = eventRegForm.querySelector('input[name="athlete_name"]')?.value || 'Athlete';
+        if (regModal) regModal.classList.remove('active');
+        document.body.style.overflow = '';
+
+        if (window.EliteAuth) {
+          window.EliteAuth.registerForEvent({
+            title: tournament,
+            athlete: athleteName,
+            venue: document.getElementById('targetEventMeta')?.value || 'Stackly Stadium'
+          });
+        }
+
+        showToast('Registration Confirmed!', `Athlete ${athleteName}, your entry for "${tournament}" is locked into the championship seed.`);
+        eventRegForm.reset();
+      });
+    }
+
+    // Dynamic Live Countdown Timer
+    function startCountdown() {
+      // Target: Dec 18, 2026
+      const targetDate = new Date('December 18, 2026 09:00:00').getTime();
+
+      setInterval(() => {
+        const now = new Date().getTime();
+        const diff = targetDate - now;
+
+        if (diff > 0) {
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+          const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+          const elD = document.getElementById('cdDays');
+          const elH = document.getElementById('cdHours');
+          const elM = document.getElementById('cdMins');
+          const elS = document.getElementById('cdSecs');
+
+          if (elD) elD.textContent = days;
+          if (elH) elH.textContent = hours < 10 ? '0' + hours : hours;
+          if (elM) elM.textContent = mins < 10 ? '0' + mins : mins;
+          if (elS) elS.textContent = secs < 10 ? '0' + secs : secs;
+        }
+      }, 1000);
+    }
+    startCountdown();
+  </script>
+  <!-- Preloader Engine -->
+  <script src="js/preloader.js"></script>
+</body>
+</html>

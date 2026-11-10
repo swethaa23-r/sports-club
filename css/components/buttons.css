@@ -1,0 +1,19 @@
+/* ==========================================================================
+   STACKLY SPORTS CLUB - 03. BUTTONS & INTERACTIVE CONTROLS
+   Component Module: buttons.css
+   Description: Primary, secondary, outline, and ghost buttons with spring hover physics, magnetic cursor interactions, and filter pills.
+   ========================================================================== */
+
+.btn,
+.magnetic-btn,
+.filter-pill,
+.day-tab-btn,
+.gallery-filter-btn,
+.chart-period-btn,
+.session-checkin-btn {
+  font-family: var(--font-btn, 'Oswald', sans-serif) !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+}
+

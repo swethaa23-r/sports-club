@@ -1,0 +1,30 @@
+/* ==========================================================================
+   STACKLY SPORTS CLUB - 13. MEMBER DASHBOARD
+   Component Module: dashboard.css
+   Description: Responsive sidebar drawer, athlete profile card, activity chart, membership plan manager, and quick actions.
+   ========================================================================== */
+
+.dash-welcome-title,
+.dash-card-title,
+.dash-section-title {
+  font-family: var(--font-heading, 'Oswald', sans-serif) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+
+.dash-kpi-value {
+  font-family: var(--font-hero, 'Bebas Neue', sans-serif) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.03em !important;
+}
+
+.dash-body,
+.dash-nav-link,
+.dash-table,
+.dash-user-tier,
+.dash-user-name,
+.dash-kpi-subtext {
+  font-family: var(--font-dash, 'Inter', sans-serif) !important;
+}
+

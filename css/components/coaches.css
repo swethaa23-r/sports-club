@@ -1,0 +1,39 @@
+/* ==========================================================================
+   STACKLY SPORTS CLUB - 07. COACHES & TRAINERS SHOWCASE
+   Component Module: coaches.css
+   Description: Trainer profile cards, live search bar, specialty category filtering, and credentials modal.
+   ========================================================================== */
+
+.trainers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.trainer-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.trainer-info {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+  padding: 24px;
+}
+
+.trainer-cred {
+  min-height: 40px;
+}
+
+.trainer-bio {
+  flex-grow: 1 !important;
+  margin-bottom: 20px;
+}
+
+.trainer-info .btn {
+  margin-top: auto !important;
+  width: 100%;
+}

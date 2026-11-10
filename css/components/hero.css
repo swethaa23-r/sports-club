@@ -1,0 +1,22 @@
+/* ==========================================================================
+   STACKLY SPORTS CLUB - 05. HERO & SUBPAGE BANNERS
+   Component Module: hero.css
+   Description: Homepage atmospheric hero banner, subpage header hero, breadcrumb navigation, and partner logo marquee.
+   ========================================================================== */
+
+.hero-title,
+.subpage-hero-title,
+.hero-title-responsive {
+  font-family: var(--font-hero, 'Bebas Neue', sans-serif) !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  line-height: 0.96 !important;
+}
+
+.hero-lead,
+.subpage-hero-desc {
+  font-family: var(--font-body, 'Inter', sans-serif) !important;
+  line-height: 1.62 !important;
+}
+

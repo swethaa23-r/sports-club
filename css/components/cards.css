@@ -1,0 +1,31 @@
+/* ==========================================================================
+   STACKLY SPORTS CLUB - 04. CARDS & BENTO GRID SYSTEM
+   Component Module: cards.css
+   Description: Uniform card elevation hovers, bento grid layout, facility highlights, and stats showcases.
+   ========================================================================== */
+
+.section-title,
+.card-title,
+.bento-title,
+.sport-cat-title,
+.why-title,
+.program-title,
+.event-title,
+.pricing-tier-name,
+.coach-name {
+  font-family: var(--font-heading, 'Oswald', sans-serif) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+
+.card-desc,
+.why-desc,
+.bento-desc,
+.program-desc,
+.coach-bio,
+.pricing-feature-item {
+  font-family: var(--font-body, 'Inter', sans-serif) !important;
+  line-height: 1.6 !important;
+}
+

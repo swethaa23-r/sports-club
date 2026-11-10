@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports Gallery &amp; Visual Archives | STACKLY – SPORTS CLUB</title>
+  <meta name="description" content="Moments that define champions. Explore our visual gallery capturing football, cricket, basketball, high-performance training, tournaments, and team life at STACKLY.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/preloader.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,5 95,25 95,75 50,95 5,75 5,25' fill='%23FF5A1F'/><text x='50%' y='60%' text-anchor='middle' fill='%23FFFFFF' font-size='38' font-family='sans-serif' font-weight='900'>ST</text></svg>">
+
+  <!-- Open Graph & Social Share Metadata -->
+  <meta property="og:title" content="Sports Gallery &amp; Visual Archives | STACKLY – SPORTS CLUB">
+  <meta property="og:description" content="Moments that define champions. Explore our visual gallery capturing football, cricket, basketball, high-performance training, tournaments, and team life at STACKLY.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Stackly Sports Club">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sports Gallery &amp; Visual Archives | STACKLY – SPORTS CLUB">
+  <meta name="twitter:description" content="Moments that define champions. Explore our visual gallery capturing football, cricket, basketball, high-performance training, tournaments, and team life at STACKLY.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80">
+
+</head>
+<body>
+
+  <!-- ===================================================================
+       STACKLY Branded Full-Screen Preloader
+       =================================================================== -->
+  <!-- ===================================================================
+       STACKLY SPORTS CLUB - Cinematic Branded Preloader
+       =================================================================== -->
+  <div id="preloader" class="stackly-preloader" aria-live="polite" aria-label="Loading STACKLY Sports Club">
+    <!-- Cinematic Stadium Lighting Layers -->
+    <div class="stadium-lighting-backdrop" aria-hidden="true">
+      <div class="stadium-spotlight spotlight-left"></div>
+      <div class="stadium-spotlight spotlight-right"></div>
+      <div class="stadium-spotlight spotlight-center"></div>
+      <div class="stadium-floodlights-array">
+        <span class="floodlight-bulb"></span>
+        <span class="floodlight-bulb"></span>
+        <span class="floodlight-bulb"></span>
+        <span class="floodlight-bulb"></span>
+        <span class="floodlight-bulb"></span>
+        <span class="floodlight-bulb"></span>
+      </div>
+      <div class="stadium-arena-silhouette"></div>
+      <div class="stadium-dust-motes">
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+      </div>
+    </div>
+
+    <!-- Central Preloader Core -->
+    <div class="preloader-core">
+      <!-- Circular Athletic Ring & Logo Framing -->
+      <div class="preloader-emblem-stage">
+        <!-- SVG Background Ring Guidelines -->
+        <svg class="preloader-circular-bg" viewBox="0 0 280 280" aria-hidden="true">
+          <circle class="ring-track-outer" cx="140" cy="140" r="132" />
+          <circle class="ring-track-inner" cx="140" cy="140" r="116" />
+          <g class="ring-orbit-ticks">
+            <line x1="140" y1="4" x2="140" y2="14" />
+            <line x1="276" y1="140" x2="266" y2="140" />
+            <line x1="140" y1="276" x2="140" y2="266" />
+            <line x1="4" y1="140" x2="14" y2="140" />
+          </g>
+        </svg>
+
+        <!-- SVG Dedicated Progress Ring (Starts at 12 o'clock, perfectly centered) -->
+        <svg class="preloader-circular-progress" viewBox="0 0 280 280" aria-hidden="true">
+          <circle 
+            class="ring-progress-stroke" 
+            id="preloaderCircleProgress" 
+            cx="140" 
+            cy="140" 
+            r="124" 
+          />
+        </svg>
+
+        <!-- Ambient Center Glow Behind Logo -->
+        <div class="preloader-logo-glow" aria-hidden="true"></div>
+
+        <!-- STACKLY Official Logo with Orange Light Sweep -->
+        <div class="preloader-logo-wrapper">
+          <img src="images/stackly-logo-orange.webp" alt="STACKLY Sports Club" class="preloader-logo-img">
+          <div class="preloader-logo-sheen-mask" aria-hidden="true">
+            <div class="preloader-logo-sheen-beam"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Brand Typography & Tagline -->
+      <div class="preloader-brand-group">
+        <h2 class="preloader-brand-title">
+          <span class="brand-text-stackly">STACKLY</span>
+          <span class="brand-text-club">SPORTS CLUB</span>
+        </h2>
+        <p class="preloader-tagline" aria-label="Train Hard. Play Strong. Win Together.">
+          <span class="tagline-word">TRAIN HARD.</span>
+          <span class="tagline-sep">/</span>
+          <span class="tagline-word">PLAY STRONG.</span>
+          <span class="tagline-sep">/</span>
+          <span class="tagline-word">WIN TOGETHER.</span>
+        </p>
+      </div>
+
+      <!-- Real Loading Progress Bar & Percentage Counter -->
+      <div class="preloader-progress-module">
+        <div class="preloader-meta-row">
+          <span class="preloader-stage-label" id="preloaderStage">INITIALIZING ARENA</span>
+          <div class="preloader-counter-wrap">
+            <span class="preloader-percent-num" id="preloaderCounter">0</span>
+            <span class="preloader-percent-unit">%</span>
+          </div>
+        </div>
+
+        <div class="preloader-bar-track">
+          <div class="preloader-bar-fill" id="preloaderBar">
+            <span class="preloader-bar-flare"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <header class="elite-navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+        <div class="brand-icon-box"><i class="fa-solid fa-bolt-lightning"></i></div>
+        <div class="brand-title-group">
+          <span class="brand-name">STACK<span>LY</span></span>
+          <span class="brand-subtitle">Sports Club &amp; Performance</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+<li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+          <li class="nav-item"><a href="programs.html" class="nav-link">Programs</a></li>
+          <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link active">Gallery</a></li>
+          <li class="nav-item"><a href="membership.html" class="nav-link">Membership</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav CTA Actions -->
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-primary btn-sm magnetic-btn nav-auth-btn" id="navLoginBtn">
+          <i class="fa-regular fa-user"></i> <span>Login</span>
+        </a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav" id="mobileNav" data-lenis-prevent="true">
+    <div class="mobile-nav-header">
+      <a href="index.html" class="brand-logo" style="text-decoration:none;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div class="brand-icon-box" style="width:34px; height:34px; font-size:1rem;"><i class="fa-solid fa-bolt-lightning"></i></div>
+          <span class="brand-name" style="font-size:1.45rem;">STACK<span>LY</span></span>
+        </div>
+      </a>
+      <button class="mobile-nav-close" aria-label="Close Navigation Menu"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <ul class="mobile-nav-menu">
+            <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+<li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+      <li><a href="courses.html" class="mobile-nav-link">Courses</a></li>
+      <li><a href="programs.html" class="mobile-nav-link">Programs</a></li>
+      <li><a href="events.html" class="mobile-nav-link">Events</a></li>
+      <li><a href="gallery.html" class="mobile-nav-link active">Gallery</a></li>
+      <li><a href="membership.html" class="mobile-nav-link">Membership</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      <li><a href="login.html" class="mobile-nav-link">Login</a></li>
+    </ul>
+    <div class="mobile-nav-actions">
+      <a href="login.html" class="btn btn-primary w-100" id="mobileNavLoginBtn">
+        <i class="fa-regular fa-user"></i> Login
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ===================================================================
+         SECTION 1 – HERO
+         =================================================================== -->
+    <section class="subpage-hero">
+      <div class="subpage-hero-bg">
+        <img src="images/cricket-stadium-amber.webp" alt="Athletes in championship arena illuminated by floodlights" fetchpriority="high" loading="lazy" decoding="async">
+      </div>
+      <div class="subpage-hero-overlay"></div>
+      <div class="container subpage-hero-content">
+        <div class="breadcrumbs" data-aos="fade-down">
+          <a href="index.html">Home</a>
+          <i class="fa-solid fa-angle-right text-xs"></i>
+          <span>Sports Gallery</span>
+        </div>
+        <div class="section-tag" data-aos="fade-down" data-aos-delay="100">
+          <i class="fa-solid fa-camera-retro"></i> Visual Performance Archives
+        </div>
+        <h1 class="hero-title hero-title-responsive" data-aos="fade-up" data-aos-delay="150">
+          MOMENTS THAT DEFINE CHAMPIONS.
+        </h1>
+        <p class="section-subtitle hero-desc-centered" data-aos="fade-up" data-aos-delay="200">
+          Unfiltered athletic emotion, game-winning clutch plays, and scientific training discipline captured inside the walls of Stackly.
+        </p>
+        <div class="hero-actions hero-actions-centered" data-aos="fade-up" data-aos-delay="250">
+          <a href="#galleryShowcase" class="btn btn-primary btn-lg magnetic-btn">
+            Explore Visual Moments <i class="fa-solid fa-arrow-down"></i>
+          </a>
+          <button class="btn btn-outline btn-lg magnetic-btn" data-modal-target="tourModal">
+            Experience Arena Live <i class="fa-solid fa-calendar-check"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 2 – MASONRY SPORTS GALLERY WITH CATEGORY FILTERS
+         =================================================================== -->
+    <section class="section-padding" id="galleryShowcase">
+      <div class="container">
+        
+        <div class="section-header text-center" data-aos="fade-up">
+          <div class="section-tag"><i class="fa-solid fa-photo-film"></i> Curated Collection</div>
+          <h2 class="section-title">THE CHAMPIONSHIP CHRONICLES</h2>
+          <p class="section-subtitle">
+            Filter through matchday action, sport disciplines, training telemetry, and team camaraderie.
+          </p>
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div class="gallery-filter-bar" data-aos="fade-up">
+          <button class="filter-pill active" data-gallery-filter="all">All Moments (24)</button>
+          <button class="filter-pill" data-gallery-filter="football">Football</button>
+          <button class="filter-pill" data-gallery-filter="cricket">Cricket</button>
+          <button class="filter-pill" data-gallery-filter="basketball">Basketball</button>
+          <button class="filter-pill" data-gallery-filter="training">Training</button>
+          <button class="filter-pill" data-gallery-filter="events">Events</button>
+          <button class="filter-pill" data-gallery-filter="team">Team Life</button>
+        </div>
+
+        <!-- Masonry Grid (24 High-Resolution Moments) -->
+        <div class="sports-masonry-grid" id="sportsMasonryContainer" data-aos="fade-up">
+
+          <!-- Item 1: Football (Span Wide) -->
+          <div class="gallery-card span-wide" data-gallery-cat="football" data-img-src="images/soccer-rain-stadium.webp" data-title="Stoppage Time Winner Celebration" data-category="Football" data-meta="Summer Champions Cup &bull; FIFA Floodlit Pitch">
+            <div class="gallery-img-wrap">
+              <img src="images/soccer-rain-stadium.webp" alt="Stoppage Time Winner Celebration" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Football</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">Stoppage Time Winner Celebration</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-location-dot"></i> FIFA Main Floodlit Pitch &bull; 90+3' Winner</div>
+            </div>
+          </div>
+
+          <!-- Item 2: Basketball (Span Tall) -->
+          <div class="gallery-card span-tall" data-gallery-cat="basketball" data-img-src="images/basketball-orange-accent.webp" data-title="High-Flying Fastbreak Dunk" data-category="Basketball" data-meta="FIBA All-Star Classic &bull; Hardwood Court A">
+            <div class="gallery-img-wrap">
+              <img src="images/basketball-orange-accent.webp" alt="High-Flying Fastbreak Dunk" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Basketball</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">High-Flying Fastbreak Dunk</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-location-dot"></i> FIBA Hardwood Arena &bull; 44" Vertical</div>
+            </div>
+          </div>
+
+          <!-- Item 3: Training -->
+          <div class="gallery-card" data-gallery-cat="training" data-img-src="images/basketball-powder-action.webp" data-title="Eleiko Barbell Clean &amp; Jerk" data-category="Training" data-meta="Olympic Weightlifting Lab &bull; S&amp;C Center">
+            <div class="gallery-img-wrap">
+              <img src="images/basketball-powder-action.webp" alt="Eleiko Barbell Clean & Jerk" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Training</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">Eleiko Barbell Clean &amp; Jerk</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-dumbbell"></i> Olympic Strength Lab &bull; Velocity Telemetry</div>
+            </div>
+          </div>
+
+          <!-- Item 4: Cricket -->
+          <div class="gallery-card" data-gallery-cat="cricket" data-img-src="images/cricket-batsman-shot.webp" data-title="145 KM/H Fast Bowling Release" data-category="Cricket" data-meta="Turf Cricket Oval &bull; High-Speed Motion Capture">
+            <div class="gallery-img-wrap">
+              <img src="images/cricket-batsman-shot.webp" alt="145 KM/H Fast Bowling Release" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Cricket</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">145 KM/H Fast Bowling Release</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-bolt"></i> Turf Cricket Academy &bull; Seam &amp; Pace</div>
+            </div>
+          </div>
+
+          <!-- Item 5: Events -->
+          <div class="gallery-card" data-gallery-cat="events" data-img-src="images/stadium-silhouette-lights.webp" data-title="Continental Clash Trophy Lift" data-category="Events" data-meta="Podium Honors &bull; Grand Stadium Dome">
+            <div class="gallery-img-wrap">
+              <img src="images/stadium-silhouette-lights.webp" alt="Continental Clash Trophy Lift" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Events</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">Continental Clash Trophy Lift</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-trophy"></i> Championship Awards &bull; Gold Medalists</div>
+            </div>
+          </div>
+
+          <!-- Item 6: Team Life (Span Tall) -->
+          <div class="gallery-card span-tall" data-gallery-cat="team" data-img-src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=1400&q=85" data-title="Pre-Match Brotherhood Huddle" data-category="Team Life" data-meta="Team Spirit &bull; Tunnel Walkway">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=800&q=80" alt="Pre-Match Brotherhood Huddle" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Team Life</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">Pre-Match Brotherhood Huddle</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-users"></i> Spartan City Squad &bull; Final Huddle</div>
+            </div>
+          </div>
+
+          <!-- Item 7: Football -->
+          <div class="gallery-card" data-gallery-cat="football" data-img-src="images/hero-athlete-stadium.webp" data-title="Floodlit Counter-Attack Volley" data-category="Football" data-meta="Winter Cup Final &bull; FIFA Turf">
+            <div class="gallery-img-wrap">
+              <img src="images/hero-athlete-stadium.webp" alt="Floodlit Counter-Attack Volley" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Football</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">Floodlit Counter-Attack Volley</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-futbol"></i> Winter Cup &bull; 88th Minute Equalizer</div>
+            </div>
+          </div>
+
+          <!-- Item 8: Cricket (Span Wide) -->
+          <div class="gallery-card span-wide" data-gallery-cat="cricket" data-img-src="images/cricket-stadium-amber.webp" data-title="Floodlit Cricket Oval Atmosphere" data-category="Cricket" data-meta="Night League Super-Over &bull; Center Turf Pitch">
+            <div class="gallery-img-wrap">
+              <img src="images/cricket-stadium-amber.webp" alt="Floodlit Cricket Oval Atmosphere" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Cricket</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">Floodlit Cricket Oval Atmosphere</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-moon"></i> Night League Final &bull; 1,200 Spectators</div>
+            </div>
+          </div>
+
+          <!-- Item 9: Basketball -->
+          <div class="gallery-card" data-gallery-cat="basketball" data-img-src="images/basketball-smoke-arena.webp" data-title="Buzzer-Beater Perimeter Three" data-category="Basketball" data-meta="Quarterfinal Thriller &bull; Court A">
+            <div class="gallery-img-wrap">
+              <img src="images/basketball-smoke-arena.webp" alt="Buzzer-Beater Perimeter Three" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Basketball</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">Buzzer-Beater Perimeter Three</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-basketball"></i> FIBA Hardwood &bull; 0.4s on the Clock</div>
+            </div>
+          </div>
+
+          <!-- Item 10: Training (Span Tall) -->
+          <div class="gallery-card span-tall" data-gallery-cat="training" data-img-src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=1400&q=85" data-title="Vald Force Plate Biometric Jump" data-category="Training" data-meta="Biomechanical Audit Lab &bull; S&amp;C">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=800&q=80" alt="Vald Force Plate Biometric Jump" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Training</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">Vald Force Plate Biometric Jump</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-chart-line"></i> RFD Analysis &bull; Rate of Force Development</div>
+            </div>
+          </div>
+
+          <!-- Item 11: Events -->
+          <div class="gallery-card" data-gallery-cat="events" data-img-src="images/tennis-spotlight-djokovic.webp" data-title="Laykold Tennis Championship Point" data-category="Events" data-meta="Centre Stadium Court &bull; Match Point Serve">
+            <div class="gallery-img-wrap">
+              <img src="images/tennis-spotlight-djokovic.webp" alt="Laykold Tennis Championship Point" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Events</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">Laykold Tennis Championship Point</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-trophy"></i> Laykold Stadium &bull; 128 MPH Ace</div>
+            </div>
+          </div>
+
+          <!-- Item 12: Team Life -->
+          <div class="gallery-card" data-gallery-cat="team" data-img-src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=85" data-title="Post-Match Athlete Recovery &amp; Fueling" data-category="Team Life" data-meta="VIP Member Lounge &bull; Nutrition Station">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Post-Match Athlete Recovery & Fueling" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Team Life</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">Post-Match Recovery &amp; Fueling</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-utensils"></i> Athlete Lounge &bull; High-Performance Rehydration</div>
+            </div>
+          </div>
+
+          <!-- Item 13: Football (Span Wide) -->
+          <div class="gallery-card span-wide" data-gallery-cat="football" data-img-src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=1600&q=85" data-title="Goalkeeper Full-Stretch Diving Save" data-category="Football" data-meta="Penalty Shootout Drama &bull; FIFA Goalframe">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=1000&q=80" alt="Goalkeeper Full-Stretch Diving Save" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Football</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">Goalkeeper Full-Stretch Diving Save</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-hand"></i> Semifinal Shootout &bull; Top-Corner Denial</div>
+            </div>
+          </div>
+
+          <!-- Item 14: Cricket -->
+          <div class="gallery-card" data-gallery-cat="cricket" data-img-src="images/cricket-batsman-night.webp" data-title="Cover Drive Classical Execution" data-category="Cricket" data-meta="Day-Night Tournament &bull; Turf Oval">
+            <div class="gallery-img-wrap">
+              <img src="images/cricket-batsman-night.webp" alt="Cover Drive Classical Execution" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Cricket</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">Cover Drive Classical Execution</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-cricket-bat-ball"></i> Inter-Academy Cup &bull; Boundary Four</div>
+            </div>
+          </div>
+
+          <!-- Item 15: Basketball -->
+          <div class="gallery-card" data-gallery-cat="basketball" data-img-src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1400&q=85" data-title="Low-Stance Full-Court Press Defense" data-category="Basketball" data-meta="Hardwood Stadium &bull; Championship Lockdown">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=800&q=80" alt="Low-Stance Full-Court Press Defense" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Basketball</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">Low-Stance Full-Court Press</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-shield"></i> Hardwood Court &bull; 8-Second Violation Forced</div>
+            </div>
+          </div>
+
+          <!-- Item 16: Training -->
+          <div class="gallery-card" data-gallery-cat="training" data-img-src="https://images.unsplash.com/photo-1538592116845-119a3974c958?auto=format&fit=crop&w=1400&q=85" data-title="Rekortan Track Sled Acceleration" data-category="Training" data-meta="Sprint Acceleration Camp &bull; 1080 Sprint">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1538592116845-119a3974c958?auto=format&fit=crop&w=800&q=80" alt="Rekortan Track Sled Acceleration" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Training</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">Rekortan Track Sled Acceleration</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-person-running"></i> IAAF Track &bull; Horizontal Force Vector</div>
+            </div>
+          </div>
+
+          <!-- Item 17: Events (Span Tall) -->
+          <div class="gallery-card span-tall" data-gallery-cat="events" data-img-src="images/tennis-female-action.webp" data-title="Championship Match Point Volley" data-category="Events" data-meta="State Tournament &bull; Stadium Court">
+            <div class="gallery-img-wrap">
+              <img src="images/tennis-female-action.webp" alt="Championship Match Point Volley" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Events</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">Championship Match Point Volley</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-trophy"></i> Stadium Court &bull; Championship Point</div>
+            </div>
+          </div>
+
+          <!-- Item 18: Team Life -->
+          <div class="gallery-card" data-gallery-cat="team" data-img-src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1400&q=85" data-title="Master Coach Tactical Video Audit" data-category="Team Life" data-meta="Video Room &bull; Biomechanical Playback">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80" alt="Master Coach Tactical Video Audit" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Team Life</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">Master Coach Tactical Audit</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-video"></i> Coaching Suite &bull; Telemetry Review</div>
+            </div>
+          </div>
+
+          <!-- Item 19: Football -->
+          <div class="gallery-card" data-gallery-cat="football" data-img-src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?auto=format&fit=crop&w=1400&q=85" data-title="Championship Match Tunnel Walkout" data-category="Football" data-meta="Continental Clash &bull; Matchday Atmosphere">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?auto=format&fit=crop&w=800&q=80" alt="Championship Match Tunnel Walkout" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Football</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">Championship Tunnel Walkout</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-door-open"></i> Player Tunnel &bull; Pre-Kickoff Focus</div>
+            </div>
+          </div>
+
+          <!-- Item 20: Cricket -->
+          <div class="gallery-card" data-gallery-cat="cricket" data-img-src="https://images.unsplash.com/photo-1563299796-17596ed6b017?auto=format&fit=crop&w=1400&q=85" data-title="Slip Cordon Diving Reflex Catch" data-category="Cricket" data-meta="Floodlit Oval &bull; 0.28s Reaction Speed">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1563299796-17596ed6b017?auto=format&fit=crop&w=800&q=80" alt="Slip Cordon Diving Reflex Catch" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Cricket</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">Slip Cordon Diving Reflex Catch</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-hand-fist"></i> First Slip &bull; Edge to Wicketkeeper</div>
+            </div>
+          </div>
+
+          <!-- Item 21: Basketball (Span Wide) -->
+          <div class="gallery-card span-wide" data-gallery-cat="basketball" data-img-src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1600&q=85" data-title="Bench Eruption on Clutch Three" data-category="Basketball" data-meta="FIBA Hardwood &bull; Fourth Quarter Drama">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1000&q=80" alt="Bench Eruption on Clutch Three" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Basketball</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">Bench Eruption on Clutch Three</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-fire"></i> Court B &bull; Overtime Momentum Swing</div>
+            </div>
+          </div>
+
+          <!-- Item 22: Training -->
+          <div class="gallery-card" data-gallery-cat="training" data-img-src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=1400&q=85" data-title="-110°C Cryotherapy Chamber Recovery" data-category="Training" data-meta="Bio-Restoration Lab &bull; Autonomic Reset">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80" alt="-110°C Cryotherapy Chamber Recovery" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Training</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">-110°C Cryo Recovery Chamber</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-snowflake"></i> Cryo Lab &bull; Vagal Nerve Stimulation</div>
+            </div>
+          </div>
+
+          <!-- Item 23: Events -->
+          <div class="gallery-card" data-gallery-cat="events" data-img-src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1400&q=85" data-title="100M Dash Championship Photo Finish" data-category="Events" data-meta="IAAF Rekortan Track &bull; 9.94s Arena Record">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=800&q=80" alt="100M Dash Championship Photo Finish" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Events</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">100M Dash Photo Finish</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-stopwatch"></i> Track Stadium &bull; FAT Laser Timing</div>
+            </div>
+          </div>
+
+          <!-- Item 24: Team Life -->
+          <div class="gallery-card" data-gallery-cat="team" data-img-src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1400&q=85" data-title="Championship Ring Presentation" data-category="Team Life" data-meta="Club Banquet &bull; Annual Honors Gala">
+            <div class="gallery-img-wrap">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80" alt="Championship Ring Presentation" loading="lazy">
+            </div>
+            <div class="gallery-card-top">
+              <span class="gallery-cat-badge">Team Life</span>
+              <div class="gallery-zoom-btn"><i class="fa-solid fa-expand"></i></div>
+            </div>
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-caption">Championship Ring Presentation</h3>
+              <div class="gallery-card-meta"><i class="fa-solid fa-crown"></i> Grand Ballroom &bull; Season Commendation</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 3 – FINAL CTA
+         =================================================================== -->
+    <section class="section-padding" style="background: #09090c; border-top: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div style="background: linear-gradient(135deg, #16161f 0%, #0c0c10 100%); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 56px 44px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 32px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);" data-aos="fade-up">
+          <div style="max-width: 660px;">
+            <div class="section-tag mb-10">
+              <i class="fa-solid fa-trophy"></i> Make Your Mark
+            </div>
+            <h2 style="font-family: var(--font-athletic); font-size: clamp(2rem, 3.4vw, 2.8rem); text-transform: uppercase; margin-bottom: 12px; color: var(--color-white);">
+              READY TO CREATE YOUR OWN LEGENDARY MOMENTS?
+            </h2>
+            <p style="color: var(--color-text-muted); font-size: 0.96rem; line-height: 1.6; margin-bottom: 20px;">
+              Join a club where every training repetition is tracked and every competitive breakthrough is celebrated. Membership tiers are capped at 600 athletes.
+            </p>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+              <span class="coach-pill"><i class="fa-solid fa-check"></i> Olympic Arena Facilities</span>
+              <span class="coach-pill"><i class="fa-solid fa-check"></i> 8 Sports Disciplines</span>
+              <span class="coach-pill"><i class="fa-solid fa-check"></i> Master Coaching Faculty</span>
+            </div>
+          </div>
+          <a href="membership.html" class="btn btn-primary btn-lg magnetic-btn">
+            Become A Member Today <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="elite-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+            <div class="brand-icon-box"><i class="fa-solid fa-bolt-lightning"></i></div>
+            <div class="brand-title-group">
+              <span class="brand-name">STACK<span>LY</span></span>
+              <span class="brand-subtitle">Sports Club &amp; Performance</span>
+            </div>
+          </a>
+          <p>The pinnacle of athletic infrastructure. Dedicated to human performance, world-class athletic discipline, and comprehensive biometric recovery.</p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+                <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+                <!-- Arenas & Disciplines -->
+        <div class="footer-col">
+          <h4>The Arenas</h4>
+          <ul class="footer-links-list">
+            <li><a href="courses.html#football-course">Championship Football Pitch</a></li>
+            <li><a href="courses.html#cricket-course">Turf Cricket Academy</a></li>
+            <li><a href="courses.html#basketball-course">FIBA Hardwood Court</a></li>
+            <li><a href="courses.html#tennis-course">Laykold Tennis Stadium</a></li>
+            <li><a href="courses.html#badminton-course">BWF Badminton Hall</a></li>
+            <li><a href="courses.html#athletics-course">IAAF Rekortan Track</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Club Hours</h4>
+          <div class="footer-hours-item">
+            <span>Monday – Friday:</span>
+            <span>05:00 AM – 11:00 PM</span>
+          </div>
+          <div class="footer-hours-item">
+            <span>Saturday – Sunday:</span>
+            <span>06:00 AM – 10:00 PM</span>
+          </div>
+          <div class="footer-hours-item">
+            <span>Diamond Members:</span>
+            <span>24/7 Keycard Access</span>
+          </div>
+          <h4 class="mt-24-mb-10">Insider Drop</h4>
+                    <form class="newsletter-form" novalidate>
+            <input type="email" placeholder="Enter your email" class="newsletter-input" aria-label="Your email address">
+            <button type="submit" class="btn btn-primary btn-sm" aria-label="Subscribe to newsletter"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 STACKLY SPORTS CLUB. All rights reserved. Built with Olympic standards.</div>
+                <div class="footer-legal-links">
+          <a href="membership.html#rules">Membership Agreement</a>
+          <a href="membership.html#rules">Guest Policies</a>
+          <a href="membership.html#rules">Privacy Notice</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       FULLSCREEN CINEMA LIGHTBOX (KEYBOARD & TOUCH ENABLED)
+       =================================================================== -->
+  <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-label="Sports Image Lightbox" aria-modal="true">
+    
+    <!-- Topbar -->
+    <div class="lightbox-topbar">
+      <div class="lightbox-counter-badge" id="lightboxCounter">01 / 24</div>
+      <button class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close Lightbox">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Center Stage -->
+    <div class="lightbox-center">
+      <button class="lightbox-nav-btn lightbox-nav-prev" id="lightboxPrevBtn" aria-label="Previous Image">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <div class="lightbox-img-holder">
+        <img src="" alt="Fullscreen Sports Moment" id="lightboxMainImg" loading="lazy">
+      </div>
+
+      <button class="lightbox-nav-btn lightbox-nav-next" id="lightboxNextBtn" aria-label="Next Image">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <!-- Bottombar -->
+    <div class="lightbox-bottombar">
+      <h3 class="lightbox-caption-title" id="lightboxTitle">Image Title</h3>
+      <div class="lightbox-caption-sub" id="lightboxMeta">Category &bull; Venue Details</div>
+    </div>
+
+  </div>
+
+  <!-- Modal: VIP Tour -->
+  <div class="modal-overlay" id="tourModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" aria-label="Close Tour Dialog"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <span class="modal-tag">Private Appointment</span>
+        <h3 class="modal-title">Book a VIP Arena Tour</h3>
+      </div>
+      <form id="tourBookingForm" novalidate>
+        <div class="form-group-row">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" name="fullname" class="form-input" required placeholder="Jordan Hayes">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-input" required placeholder="jordan@example.com">
+          </div>
+        </div>
+        <div class="form-group-row">
+          <div class="form-group">
+            <label class="form-label">Phone</label>
+            <input type="tel" name="phone" class="form-input" required placeholder="+1 (555) 000-0000">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Preferred Date</label>
+            <input type="date" name="date" class="form-input" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 btn-lg mt-10">
+          Confirm VIP Reservation <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Official Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <!-- Stackly Common Auth Engine -->
+  <script src="js/auth.js"></script>
+  <!-- Stackly Lenis Controller -->
+  <script src="js/lenis-init.js"></script>
+  <!-- Stackly Full-Width Mobile Navigation -->
+  <script src="js/navigation.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    // Gallery Filtering Logic
+    const galleryPills = document.querySelectorAll('[data-gallery-filter]');
+    const allGalleryCards = Array.from(document.querySelectorAll('.gallery-card'));
+    let activeCards = [...allGalleryCards];
+    let currentIndex = 0;
+
+    galleryPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        galleryPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const filter = pill.getAttribute('data-gallery-filter');
+
+        activeCards = [];
+        allGalleryCards.forEach(card => {
+          const cat = card.getAttribute('data-gallery-cat');
+          if (filter === 'all' || cat === filter) {
+            card.style.display = 'block';
+            activeCards.push(card);
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Lightbox Controls
+    const lightbox = document.getElementById('galleryLightbox');
+    const mainImg = document.getElementById('lightboxMainImg');
+    const counterBadge = document.getElementById('lightboxCounter');
+    const titleEl = document.getElementById('lightboxTitle');
+    const metaEl = document.getElementById('lightboxMeta');
+    const closeBtn = document.getElementById('lightboxCloseBtn');
+    const prevBtn = document.getElementById('lightboxPrevBtn');
+    const nextBtn = document.getElementById('lightboxNextBtn');
+
+    function updateLightbox(index) {
+      if (!activeCards.length) return;
+      currentIndex = (index + activeCards.length) % activeCards.length;
+      const card = activeCards[currentIndex];
+
+      const src = card.getAttribute('data-img-src') || card.querySelector('img').src;
+      const title = card.getAttribute('data-title') || 'Sports Moment';
+      const meta = card.getAttribute('data-meta') || 'Stackly Stadium';
+      const category = card.getAttribute('data-category') || 'Athletics';
+
+      // Preload image for smooth transition
+      mainImg.style.opacity = '0';
+      mainImg.style.transform = 'scale(0.96)';
+      mainImg.src = src;
+      mainImg.alt = title;
+
+      mainImg.onload = () => {
+        mainImg.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+        mainImg.style.opacity = '1';
+        mainImg.style.transform = 'scale(1)';
+      };
+
+      counterBadge.textContent = `${String(currentIndex + 1).padStart(2, '0')} / ${String(activeCards.length).padStart(2, '0')}`;
+      titleEl.textContent = title;
+      metaEl.innerHTML = `<span style="color: var(--color-accent); font-weight: 600;">${category}</span> &bull; ${meta}`;
+    }
+
+    function openLightbox(index) {
+      updateLightbox(index);
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function showPrev() {
+      updateLightbox(currentIndex - 1);
+    }
+
+    function showNext() {
+      updateLightbox(currentIndex + 1);
+    }
+
+    // Card click events
+    allGalleryCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const idx = activeCards.indexOf(card);
+        if (idx !== -1) {
+          openLightbox(idx);
+        }
+      });
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
+    nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
+
+    // Close on backdrop click (outside image)
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target.classList.contains('lightbox-center')) {
+        closeLightbox();
+      }
+    });
+
+    // Keyboard Accessibility
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'ArrowRight') showNext();
+    });
+
+    // Touch-Friendly Swipe for Mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    lightbox.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const threshold = 40;
+      if (touchEndX < touchStartX - threshold) {
+        showNext(); // Swiped left -> next
+      }
+      if (touchEndX > touchStartX + threshold) {
+        showPrev(); // Swiped right -> previous
+      }
+    }
+  </script>
+  <!-- Preloader Engine -->
+  <script src="js/preloader.js"></script>
+</body>
+</html>

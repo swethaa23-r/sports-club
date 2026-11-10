@@ -1,0 +1,545 @@
+/* ==========================================================================
+   STACKLY SPORTS CLUB - Unified Multi-Tier Responsive Engine
+   Tested & Optimized Across All 16 Viewport Profiles:
+   320px, 360px, 375px, 390px, 414px, 425px, 480px, 576px,
+   768px, 820px, 992px, 1024px, 1200px, 1366px, 1440px, 1920px
+   ========================================================================== */
+
+/* Universal Layout & Overflow Protection */
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+html, body {
+  overflow-x: hidden !important;
+  overflow-x: clip !important;
+  max-width: 100% !important;
+  width: 100%;
+}
+
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* Base Container Rules */
+.container {
+  width: 100%;
+  padding-right: clamp(16px, 3vw, 32px);
+  padding-left: clamp(16px, 3vw, 32px);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* ==========================================================================
+   1. Large Screens & 4K Displays (1441px - 1920px+)
+   ========================================================================== */
+@media (min-width: 1441px) {
+  .container {
+    max-width: 1420px;
+  }
+  .hero-title {
+    font-size: clamp(3.8rem, 5.5vw, 5.6rem) !important;
+  }
+}
+
+/* ==========================================================================
+   2. Standard Desktops (1200px - 1440px)
+   ========================================================================== */
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .container {
+    max-width: 1200px;
+  }
+  .nav-menu {
+    gap: clamp(10px, 1.4vw, 20px) !important;
+  }
+  .nav-link {
+    font-size: 0.86rem !important;
+  }
+  .nav-actions {
+    gap: 10px !important;
+  }
+}
+
+/* ==========================================================================
+   2b. Medium Laptops & Compact Desktops (1024px - 1199px)
+   Ensures 8 nav links + logo + login button sit comfortably without wrapping
+   ========================================================================== */
+@media (min-width: 1025px) and (max-width: 1199px) {
+  .container {
+    max-width: 1000px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .nav-menu {
+    gap: 10px !important;
+  }
+  .nav-link {
+    font-size: 0.80rem !important;
+    padding: 6px 2px !important;
+  }
+  .nav-actions {
+    gap: 8px !important;
+  }
+  .nav-actions .btn {
+    padding: 7px 12px !important;
+    font-size: 0.80rem !important;
+  }
+}
+
+/* ==========================================================================
+   3. Small Laptops & Tablets (under 1024px)
+      Switch Desktop Navigation to Mobile Full-Screen Hamburger
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .nav-menu,
+  .nav-actions .nav-auth-btn,
+  .nav-actions .btn-primary {
+    display: none !important;
+  }
+  .menu-toggle {
+    display: flex !important;
+  }
+
+  /* Two-column layout for major card grids */
+  .sports-categories-grid,
+  .pricing-grid-4,
+  .trainers-grid,
+  .coaches-roster-grid,
+  .programs-grid,
+  .why-choose-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .stats-grid,
+  .hero-stats-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+}
+
+/* ==========================================================================
+   4. Tablets (769px - 992px & 820px iPad Air)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .intro-grid,
+  .contact-grid,
+  .featured-tournament-bento,
+  .auth-split-wrapper {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+
+  .auth-visual-side {
+    display: none !important;
+  }
+
+  .auth-form-side {
+    padding: 30px 20px !important;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 32px !important;
+  }
+
+  /* Dashboard Sidebar as Off-Canvas Drawer */
+  .dash-sidebar {
+    position: fixed !important;
+    left: 0;
+    top: 0;
+    width: 290px !important;
+    max-width: 85vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    z-index: 10000 !important;
+    transform: translateX(-100%) !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: 14px 0 45px rgba(0, 0, 0, 0.9) !important;
+  }
+
+  .dash-sidebar.open {
+    transform: translateX(0) !important;
+  }
+
+  .dash-sidebar-close,
+  .dash-menu-toggle {
+    display: flex !important;
+  }
+
+  .dash-main {
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 16px !important;
+  }
+}
+
+/* ==========================================================================
+   5. Small Tablets & Phablets (577px - 768px)
+   ========================================================================== */
+@media (min-width: 481px) and (max-width: 768px) {
+  .sports-categories-grid,
+  .pricing-grid,
+  .pricing-grid-4,
+  .events-grid,
+  .trainers-grid,
+  .coaches-roster-grid,
+  .about-facilities-grid,
+  .tournament-categories-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .class-card {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
+  }
+
+  .counter-box:not(:last-child)::after {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   6. Mobile Devices (320px - 480px)
+      Covers: 320px, 360px, 375px, 390px, 414px, 425px, 480px
+   ========================================================================== */
+@media (max-width: 480px) {
+  /* Complete single-column collapse for all grids */
+  .pricing-grid,
+  .pricing-grid-4,
+  .sports-categories-grid,
+  .sport-hub-grid,
+  .programs-grid,
+  .events-grid,
+  .trainers-grid,
+  .coaches-roster-grid,
+  .gallery-grid,
+  .why-choose-grid,
+  .about-facilities-grid,
+  .tournament-categories-grid,
+  .reg-criteria-grid,
+  .prev-tournaments-grid,
+  .winners-podium-grid,
+  .event-gallery-grid,
+  .contact-grid,
+  .social-channels-grid,
+  .dash-content-grid,
+  .dash-charts-grid,
+  .dash-profile-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  /* Two-column stat count on mobile so stats are compact */
+  .stats-grid,
+  .hero-stats-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+  }
+
+  .counter-box:not(:last-child)::after {
+    display: none !important;
+  }
+
+  .counter-number {
+    font-size: clamp(2rem, 8vw, 2.6rem) !important;
+  }
+
+  .counter-title {
+    font-size: 0.8rem !important;
+  }
+
+  /* Typography Scaling */
+  .hero-title {
+    font-size: clamp(2.1rem, 9.8vw, 3.2rem) !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  .subpage-hero-title,
+  .section-title {
+    font-size: clamp(1.8rem, 7.8vw, 2.4rem) !important;
+  }
+
+  .hero-animated-subtext {
+    font-size: 0.92rem !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  .hero-lead {
+    font-size: 0.95rem !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* Hero Actions Stack Vertically */
+  .hero-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+  .hero-actions .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Trainer Cards on Mobile */
+  .trainer-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .trainer-image-wrap {
+    aspect-ratio: 4 / 5 !important;
+    max-height: 320px !important;
+  }
+  .trainer-socials {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .trainer-info {
+    padding: 18px 16px !important;
+  }
+  .trainer-name {
+    font-size: 1.3rem !important;
+  }
+  .trainer-discipline {
+    font-size: 0.86rem !important;
+  }
+
+  /* Single Column Footer */
+  .footer-top-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column !important;
+    gap: 14px !important;
+    text-align: center !important;
+  }
+
+  /* Responsive Modals */
+  .modal-dialog,
+  .dash-modal-dialog {
+    padding: 22px 16px !important;
+    margin: 12px !important;
+    max-width: calc(100vw - 24px) !important;
+    border-radius: 14px !important;
+  }
+
+  /* Form Elements - Ensure no iOS zoom */
+  .form-input,
+  .form-select,
+  .form-textarea {
+    font-size: 16px !important;
+  }
+
+  .form-group-row {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Dashboard Responsive Telemetry */
+  .dash-kpi-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .dash-topbar {
+    padding: 12px 14px !important;
+  }
+
+  .dash-topbar-title {
+    font-size: 1.1rem !important;
+  }
+
+  .dash-user-tier,
+  .dash-user-status-pill {
+    display: none !important;
+  }
+
+  /* Section Padding for Compact Screens */
+  .section-padding {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+}
+
+/* ==========================================================================
+   7. Micro-Screens (320px - 359px)
+   ========================================================================== */
+@media (max-width: 359px) {
+  .brand-name {
+    font-size: 1.35rem !important;
+  }
+  .brand-subtitle {
+    display: none !important;
+  }
+  .hero-title {
+    font-size: 2rem !important;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ==========================================================================
+   8. Full-Width Mobile Hamburger Navigation (100vw x 100dvh)
+   ========================================================================== */
+.mobile-nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  width: 100dvw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  background: rgba(9, 9, 12, 0.985) !important;
+  backdrop-filter: blur(28px) !important;
+  -webkit-backdrop-filter: blur(28px) !important;
+  z-index: 99999 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  padding: clamp(16px, 3vh, 28px) clamp(16px, 4.5vw, 32px) !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity 0.28s ease, visibility 0.28s !important;
+}
+
+.mobile-nav.open {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.mobile-nav-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding-bottom: 14px !important;
+  margin-bottom: 8px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  flex-shrink: 0 !important;
+}
+
+.mobile-nav-close {
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(255, 255, 255, 0.07) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 8px !important;
+  color: #ffffff !important;
+  font-size: 1.3rem !important;
+  cursor: pointer !important;
+  touch-action: manipulation !important;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease !important;
+}
+
+.mobile-nav-close:hover,
+.mobile-nav-close:active {
+  background: var(--color-accent, #FF5A1F) !important;
+  color: #ffffff !important;
+  transform: rotate(90deg) !important;
+}
+
+.mobile-nav-menu {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: clamp(4px, 1vh, 8px) !important;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-athletic, 'Oswald', sans-serif) !important;
+  font-size: clamp(1.15rem, 3.2vh, 1.55rem) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  color: #a8a8b2 !important;
+  padding: clamp(8px, 1.2vh, 12px) 14px !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  transition: all 0.2s ease !important;
+  text-decoration: none !important;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: #ffffff !important;
+  background: rgba(255, 90, 31, 0.15) !important;
+  border-left: 3px solid var(--color-accent, #FF5A1F) !important;
+  padding-left: 20px !important;
+}
+
+.mobile-nav-actions {
+  flex-shrink: 0 !important;
+  margin-top: auto !important;
+  padding-top: 14px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+/* Background Lock on Mobile Open */
+html.menu-open,
+body.menu-open {
+  overflow: hidden !important;
+  height: 100% !important;
+  touch-action: none !important;
+}
+
+/* ==========================================================================
+   9. Touch-Compliant Interactive Controls
+   ========================================================================== */
+.btn,
+.nav-link,
+.mobile-nav-link,
+.dash-nav-item,
+.dash-nav-link,
+.form-input,
+.form-select {
+  min-height: 44px;
+}
+
+/* Table Responsive Container */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .table-responsive::after {
+    content: '\2190  Swipe horizontally to view full table  \2192';
+    display: block;
+    text-align: center;
+    padding: 8px 10px;
+    font-size: 0.74rem;
+    color: var(--color-accent, #FF5A1F);
+    background: rgba(255, 90, 31, 0.08);
+    border-top: 1px solid var(--border-subtle, rgba(255,255,255,0.08));
+    font-family: var(--font-body, 'Inter', sans-serif);
+  }
+}

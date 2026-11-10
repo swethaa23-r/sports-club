@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coach &amp; Master Faculty Command Portal | STACKLY</title>
+  <meta name="description" content="Master coach and faculty portal at Stackly Sports Club. Manage athlete training rosters, live attendance, kinetic telemetry, and tournament preparations.">
+
+  <!-- Google Fonts: Bebas Neue, Oswald & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Chart.js CDN for Coach Analytics -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Core & Component Stylesheets -->
+  <link rel="stylesheet" href="css/preloader.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,5 95,25 95,75 50,95 5,75 5,25' fill='%23FF5A1F'/><text x='50%' y='60%' text-anchor='middle' fill='%23FFFFFF' font-size='38' font-family='sans-serif' font-weight='900'>ST</text></svg>">
+  <script src="js/auth.js"></script>
+  <script>
+    if (!window.StacklyAuth || !StacklyAuth.requireAuth(['trainer', 'admin'])) {
+      // Direct redirect triggered immediately
+    }
+  </script>
+</head>
+<body class="dashboard-body" style="background:#09090c; color:#fff; min-height:100vh;">
+
+  <!-- ===================================================================
+       STACKLY Branded Full-Screen Preloader
+       =================================================================== -->
+  <!-- ===================================================================
+       STACKLY SPORTS CLUB - Cinematic Branded Preloader
+       =================================================================== -->
+  <div id="preloader" class="stackly-preloader" aria-live="polite" aria-label="Loading STACKLY Sports Club">
+    <!-- Cinematic Stadium Lighting Layers -->
+    <div class="stadium-lighting-backdrop" aria-hidden="true">
+      <div class="stadium-spotlight spotlight-left"></div>
+      <div class="stadium-spotlight spotlight-right"></div>
+      <div class="stadium-spotlight spotlight-center"></div>
+      <div class="stadium-floodlights-array">
+        <span class="floodlight-bulb"></span>
+        <span class="floodlight-bulb"></span>
+        <span class="floodlight-bulb"></span>
+        <span class="floodlight-bulb"></span>
+        <span class="floodlight-bulb"></span>
+        <span class="floodlight-bulb"></span>
+      </div>
+      <div class="stadium-arena-silhouette"></div>
+      <div class="stadium-dust-motes">
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+        <span class="mote"></span>
+      </div>
+    </div>
+
+    <!-- Central Preloader Core -->
+    <div class="preloader-core">
+      <!-- Circular Athletic Ring & Logo Framing -->
+      <div class="preloader-emblem-stage">
+        <!-- SVG Background Ring Guidelines -->
+        <svg class="preloader-circular-bg" viewBox="0 0 280 280" aria-hidden="true">
+          <circle class="ring-track-outer" cx="140" cy="140" r="132" />
+          <circle class="ring-track-inner" cx="140" cy="140" r="116" />
+          <g class="ring-orbit-ticks">
+            <line x1="140" y1="4" x2="140" y2="14" />
+            <line x1="276" y1="140" x2="266" y2="140" />
+            <line x1="140" y1="276" x2="140" y2="266" />
+            <line x1="4" y1="140" x2="14" y2="140" />
+          </g>
+        </svg>
+
+        <!-- SVG Dedicated Progress Ring (Starts at 12 o'clock, perfectly centered) -->
+        <svg class="preloader-circular-progress" viewBox="0 0 280 280" aria-hidden="true">
+          <circle 
+            class="ring-progress-stroke" 
+            id="preloaderCircleProgress" 
+            cx="140" 
+            cy="140" 
+            r="124" 
+          />
+        </svg>
+
+        <!-- Ambient Center Glow Behind Logo -->
+        <div class="preloader-logo-glow" aria-hidden="true"></div>
+
+        <!-- STACKLY Official Logo with Orange Light Sweep -->
+        <div class="preloader-logo-wrapper">
+          <img src="images/stackly-logo-orange.webp" alt="STACKLY Sports Club" class="preloader-logo-img">
+          <div class="preloader-logo-sheen-mask" aria-hidden="true">
+            <div class="preloader-logo-sheen-beam"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Brand Typography & Tagline -->
+      <div class="preloader-brand-group">
+        <h2 class="preloader-brand-title">
+          <span class="brand-text-stackly">STACKLY</span>
+          <span class="brand-text-club">SPORTS CLUB</span>
+        </h2>
+        <p class="preloader-tagline" aria-label="Train Hard. Play Strong. Win Together.">
+          <span class="tagline-word">TRAIN HARD.</span>
+          <span class="tagline-sep">/</span>
+          <span class="tagline-word">PLAY STRONG.</span>
+          <span class="tagline-sep">/</span>
+          <span class="tagline-word">WIN TOGETHER.</span>
+        </p>
+      </div>
+
+      <!-- Real Loading Progress Bar & Percentage Counter -->
+      <div class="preloader-progress-module">
+        <div class="preloader-meta-row">
+          <span class="preloader-stage-label" id="preloaderStage">INITIALIZING ARENA</span>
+          <div class="preloader-counter-wrap">
+            <span class="preloader-percent-num" id="preloaderCounter">0</span>
+            <span class="preloader-percent-unit">%</span>
+          </div>
+        </div>
+
+        <div class="preloader-bar-track">
+          <div class="preloader-bar-fill" id="preloaderBar">
+            <span class="preloader-bar-flare"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Mobile Sidebar Backdrop Overlay -->
+  <div class="dash-sidebar-backdrop" id="dashSidebarBackdrop"></div>
+
+  <div class="dashboard-layout">
+    
+    <!-- ===================================================================
+         SIDEBAR NAVIGATION
+         =================================================================== -->
+    <aside class="dash-sidebar" id="trainerSidebar" data-lenis-prevent="true">
+      <!-- Sidebar Header & Brand -->
+      <div class="dash-sidebar-header">
+        <a href="index.html" class="brand-logo" aria-label="Return to Stackly Home">
+          <div class="brand-icon-box"><i class="fa-solid fa-bolt-lightning"></i></div>
+          <div class="brand-title-group">
+            <span class="brand-name">STACK<span>LY</span></span>
+            <span class="brand-subtitle" style="color: #2ed573; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;">TRAINER DASHBOARD</span>
+          </div>
+        </a>
+        <button class="dash-sidebar-close" id="dashSidebarClose" aria-label="Close menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Coach Identity Card -->
+      <div class="dash-user-card" style="border-left: 3px solid #2ed573; background: rgba(255,255,255,0.03);">
+        <div class="dash-user-avatar-icon" style="border-color:#2ed573; color:#2ed573; background:rgba(46,213,115,0.15);">
+          <i class="fa-solid fa-user-ninja"></i>
+        </div>
+        <div class="dash-user-info">
+          <div class="dash-user-name trainer-name-display" id="sideTrainerName">Tariq Al-Mansoor</div>
+          <div class="dash-user-email" id="sideTrainerEmail" style="font-size: 0.78rem; color: #8c8c98; word-break: break-all;">coach@stackly.com</div>
+          <div class="dash-user-tier" id="sideTrainerTitle" style="margin-top: 3px; color:#2ed573;"><i class="fa-solid fa-medal"></i> MASTER COACH &bull; UEFA PRO</div>
+        </div>
+      </div>
+
+      <!-- Navigation Menu: 11 Required Modules -->
+      <nav class="dash-nav" aria-label="Trainer Navigation">
+        <div class="dash-nav-section-title">Coaching &amp; Execution</div>
+        
+        <!-- 1. Overview -->
+        <button class="dash-nav-link active" data-view="view-overview" id="navTrainerOverview">
+          <div class="dash-nav-item-left">
+            <i class="fa-solid fa-gauge-high"></i>
+            <span>Overview</span>
+          </div>
+        </button>
+
+        <!-- 2. My Profile -->
+        <button class="dash-nav-link" data-view="view-profile" id="navTrainerProfile">
+          <div class="dash-nav-item-left">
+            <i class="fa-regular fa-user"></i>
+            <span>My Profile</span>
+          </div>
+        </button>
+
+        <!-- 3. My Classes -->
+        <button class="dash-nav-link" data-view="view-classes" id="navTrainerClasses">
+          <div class="dash-nav-item-left">
+            <i class="fa-solid fa-dumbbell"></i>
+            <span>My Classes</span>
+          </div>
+          <span class="dash-nav-badge">3 Today</span>
+        </button>
+
+        <!-- 4. My Schedule -->
+        <button class="dash-nav-link" data-view="view-schedule" id="navTrainerSchedule">
+          <div class="dash-nav-item-left">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span>My Schedule</span>
+          </div>
+        </button>
+        <!-- 5. Manage Bookings -->
+        <button class="dash-nav-link" data-view="view-bookings" id="navTrainerBookings">
+          <div class="dash-nav-item-left">
+            <i class="fa-solid fa-ticket"></i>
+            <span>Manage Bookings</span>
+          </div>
+          <span class="badge" style="background:rgba(46,213,115,0.2); color:#2ed573; font-size:0.7rem; border-radius:12px; padding:2px 8px;">3 New</span>
+        </button>
+
+        <!-- 5. Assigned Members -->
+        <button class="dash-nav-link" data-view="view-members" id="navTrainerMembers">
+          <div class="dash-nav-item-left">
+            <i class="fa-solid fa-users"></i>
+            <span>Assigned Members</span>
+          </div>
+          <span class="badge" style="background:rgba(255,90,31,0.2); color:#FF5A1F; font-size:0.7rem; border-radius:12px; padding:2px 8px;">64</span>
+        </button>
+
+        <!-- 6. Attendance Management -->
+        <button class="dash-nav-link" data-view="view-attendance" id="navTrainerAttendance">
+          <div class="dash-nav-item-left">
+            <i class="fa-solid fa-clipboard-user"></i>
+            <span>Attendance Management</span>
+          </div>
+        </button>
+
+        <div class="dash-nav-section-title">Development &amp; Competitions</div>
+
+        <!-- 7. Training Programs -->
+        <button class="dash-nav-link" data-view="view-programs" id="navTrainerPrograms">
+          <div class="dash-nav-item-left">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Training Programs</span>
+          </div>
+        </button>
+
+        <!-- 8. Member Progress -->
+        <button class="dash-nav-link" data-view="view-progress" id="navTrainerProgress">
+          <div class="dash-nav-item-left">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Member Progress</span>
+          </div>
+        </button>
+
+        <!-- 9. Event Participation -->
+        <button class="dash-nav-link" data-view="view-events" id="navTrainerEvents">
+          <div class="dash-nav-item-left">
+            <i class="fa-solid fa-trophy"></i>
+            <span>Event Participation</span>
+          </div>
+        </button>
+
+        <!-- 10. Notifications -->
+        <button class="dash-nav-link" data-view="view-notifications" id="navTrainerNotifications">
+          <div class="dash-nav-item-left">
+            <i class="fa-regular fa-bell"></i>
+            <span>Notifications</span>
+          </div>
+          <span class="badge" style="background:#ff4757; color:#fff; font-size:0.68rem; border-radius:50%; width:18px; height:18px; display:flex; align-items:center; justify-content:center;">4</span>
+        </button>
+
+        <!-- 11. Settings -->
+        <button class="dash-nav-link" data-view="view-settings" id="navTrainerSettings">
+          <div class="dash-nav-item-left">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+          </div>
+        </button>
+
+        <div class="dash-nav-section-title">Portal Switcher</div>
+        <a href="index.html" class="dash-nav-link" style="color:var(--color-text-muted);">
+          <div class="dash-nav-item-left">
+            <i class="fa-solid fa-globe"></i>
+            <span>Public Arena Site</span>
+          </div>
+        </a>
+      </nav>
+
+      <!-- Sidebar Footer -->
+      <div class="dash-sidebar-footer">
+        <button class="dash-logout-btn btn-trainer-logout" id="trainerLogoutBtn" type="button">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Logout Coach Session</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ===================================================================
+         MAIN WORKSPACE CONTENT
+         =================================================================== -->
+    <main class="dash-main" data-lenis-prevent="true">
+      
+      <!-- Topbar Header -->
+      <header class="dash-topbar">
+        <div class="dash-topbar-left">
+          <button class="dash-menu-toggle" id="dashMenuToggle" aria-label="Open sidebar menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="dash-search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" class="dash-search-input" placeholder="Search athletes, rosters, tactical sessions...">
+          </div>
+        </div>
+
+        <div class="dash-topbar-right">
+          <!-- Notification Bell -->
+          <button class="dash-notif-btn" id="dashNotifBtn" title="View Notifications" aria-label="Notifications">
+            <i class="fa-regular fa-bell"></i>
+            <span class="dash-notif-dot"></span>
+          </button>
+
+          <!-- User Profile Quick Pill -->
+          <div class="dash-user-pill" id="dashTrainerPill" title="View Profile">
+            <div class="dash-pill-avatar-icon" style="border-color:#2ed573; color:#2ed573; background:rgba(46,213,115,0.15);">
+              <i class="fa-solid fa-user-ninja"></i>
+            </div>
+            <div class="dash-user-pill-text">
+              <span class="dash-pill-name trainer-name-display" id="topTrainerName">Tariq Al-Mansoor</span>
+              <span class="dash-pill-email" id="topTrainerEmail" style="font-size: 0.75rem; color: #8c8c98;">coach@stackly.com</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ===================================================================
+           VIEW 1: OVERVIEW (Default)
+           =================================================================== -->
+      <section class="dash-view-section" id="view-overview" style="display:block;">
+        
+        <!-- 4 KPI Stat Cards -->
+        <div class="dash-kpi-grid">
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-label">Total Assigned Members</span>
+              <div class="dash-kpi-icon"><i class="fa-solid fa-users"></i></div>
+            </div>
+            <div class="dash-kpi-value">64</div>
+            <div class="dash-kpi-delta positive"><i class="fa-solid fa-arrow-trend-up"></i> +8 athletes this month</div>
+          </div>
+
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-label">Today's Classes</span>
+              <div class="dash-kpi-icon"><i class="fa-solid fa-calendar-day"></i></div>
+            </div>
+            <div class="dash-kpi-value">3</div>
+            <div class="dash-kpi-delta neutral"><i class="fa-solid fa-clock"></i> Next: 02:00 PM (Kinetic Pressing)</div>
+          </div>
+
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-label">Completed Sessions</span>
+              <div class="dash-kpi-icon"><i class="fa-solid fa-circle-check"></i></div>
+            </div>
+            <div class="dash-kpi-value">184</div>
+            <div class="dash-kpi-delta positive"><i class="fa-solid fa-medal"></i> 100% curriculum compliance</div>
+          </div>
+
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-label">Average Attendance Rate</span>
+              <div class="dash-kpi-icon"><i class="fa-solid fa-user-check"></i></div>
+            </div>
+            <div class="dash-kpi-value">94.2%</div>
+            <div class="dash-kpi-delta positive"><i class="fa-solid fa-arrow-up"></i> +3.1% vs last quarter</div>
+          </div>
+        </div>
+
+        <!-- 2 Chart Bento Visualizations -->
+        <div class="dash-charts-grid">
+          <div class="dash-chart-card">
+            <div class="dash-chart-header">
+              <h3 class="dash-chart-title">Weekly Attendance &amp; Class Volume</h3>
+              <span style="font-size:0.78rem; color:#888894;">Real-time Arena Check-ins</span>
+            </div>
+            <div class="dash-chart-wrap">
+              <canvas id="trainerAttendanceChart"></canvas>
+            </div>
+          </div>
+
+          <div class="dash-chart-card">
+            <div class="dash-chart-header">
+              <h3 class="dash-chart-title">Cohort Performance Benchmark</h3>
+              <span style="font-size:0.78rem; color:#888894;">5-Pillar Telemetry</span>
+            </div>
+            <div class="dash-chart-wrap">
+              <canvas id="trainerSkillRadarChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Today's Schedule Quick Cards -->
+        <div class="dash-table-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+            <h3 class="dash-chart-title" style="margin:0;"><i class="fa-regular fa-clock" style="color:var(--color-accent);"></i> Today's Training Schedule</h3>
+            <span class="status-pill active"><i class="fa-solid fa-circle" style="font-size:0.5rem;"></i> Active Day</span>
+          </div>
+
+          <div class="session-card">
+            <div class="session-time-col">08:00 AM</div>
+            <div class="session-detail-col">
+              <h4 class="session-title">High-Velocity Spatial Pressing Drills</h4>
+              <div class="session-meta">Championship Football Pitch 1 &bull; 18 / 20 Registered &bull; Advanced Elite</div>
+            </div>
+            <span class="status-pill completed"><i class="fa-solid fa-check"></i> Finished</span>
+          </div>
+
+          <div class="session-card" style="border-left: 3px solid var(--color-accent);">
+            <div class="session-time-col">02:00 PM</div>
+            <div class="session-detail-col">
+              <h4 class="session-title">Kinetic Agility &amp; Transition Speed</h4>
+              <div class="session-meta">Indoor Fieldhouse Arena &bull; 16 / 18 Registered &bull; Intermediate &amp; Pro</div>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <button class="btn btn-primary btn-sm" onclick="document.querySelector('[data-view=view-attendance]').click();">Mark Roster</button>
+            </div>
+          </div>
+
+          <div class="session-card">
+            <div class="session-time-col">05:30 PM</div>
+            <div class="session-detail-col">
+              <h4 class="session-title">Youth Academy Mastery &amp; Kinetic Foundations</h4>
+              <div class="session-meta">Turf Practice Arena B &bull; 14 / 15 Registered &bull; Foundation Tier</div>
+            </div>
+            <span class="status-pill pending"><i class="fa-solid fa-clock"></i> Upcoming</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           VIEW 2: MY PROFILE
+           =================================================================== -->
+      <section class="dash-view-section" id="view-profile" style="display:none;">
+        <div class="dash-table-card">
+          <h3 class="dash-chart-title" style="margin-bottom:20px;"><i class="fa-regular fa-id-card" style="color:var(--color-accent);"></i> Coach Faculty Credentials</h3>
+          
+          <div style="display:grid; grid-template-columns: 260px 1fr; gap:28px;" class="dash-profile-grid">
+            <div style="text-align:center;">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80" alt="Coach Photo" class="trainer-avatar-img" style="width:180px; height:180px; border-radius:16px; object-fit:cover; border:2px solid var(--color-accent); margin-bottom:14px;" loading="lazy">
+              <h3 class="trainer-name-display" style="font-size:1.3rem; margin-bottom:4px;">Tariq Al-Mansoor</h3>
+              <p style="font-size:0.85rem; color:#888894;">UEFA Pro License #77491-EU</p>
+              <button class="btn btn-outline btn-sm w-100" style="margin-top:10px;"><i class="fa-solid fa-camera"></i> Update Portrait</button>
+            </div>
+
+            <div>
+              <form id="trainerProfileForm">
+                <div class="form-group-row">
+                  <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-input" value="Tariq Al-Mansoor" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-input" value="coach@stackly.com" readonly style="opacity:0.7;">
+                  </div>
+                </div>
+
+                <div class="form-group-row">
+                  <div class="form-group">
+                    <label class="form-label">Specialization Disciplines</label>
+                    <input type="text" class="form-input" value="Football Tactical Director & High-Performance Velocity">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Years of Coaching Experience</label>
+                    <input type="text" class="form-input" value="14 Years (Collegiate & International)">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Biography &amp; Training Philosophy</label>
+                  <textarea class="form-textarea" rows="4">Specializing in high-pressing spatial schemes, transition velocity, and collegiate scholarship prep. Former UEFA Pro international player committed to sculpting resilient athletic minds and peak physical execution.</textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Save Faculty Changes</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           VIEW 3: MY CLASSES
+           =================================================================== -->
+      <section class="dash-view-section" id="view-classes" style="display:none;">
+        <div class="dash-table-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;">
+            <h3 class="dash-chart-title" style="margin:0;"><i class="fa-solid fa-dumbbell" style="color:var(--color-accent);"></i> Active Masterclasses &amp; Clinics</h3>
+            <button class="btn btn-primary btn-sm" onclick="alert('Class Creation Dialog: Opened for Spring Masterclass scheduling.');"><i class="fa-solid fa-plus"></i> Create New Class</button>
+          </div>
+
+          <div class="table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Class Title</th>
+                  <th>Sport / Venue</th>
+                  <th>Schedule</th>
+                  <th>Roster Size</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Tactical Spatial Pressing</strong></td>
+                  <td>Football &bull; Pitch 1</td>
+                  <td>Mon, Wed, Fri (08:00 AM)</td>
+                  <td>18 / 20 Athletes</td>
+                  <td><span class="status-pill active">In Progress</span></td>
+                  <td>
+                    <button class="btn btn-outline btn-sm" onclick="document.querySelector('[data-view=view-attendance]').click();">Roster</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Kinetic Agility &amp; Acceleration</strong></td>
+                  <td>Fieldhouse Track</td>
+                  <td>Tue, Thu (02:00 PM)</td>
+                  <td>16 / 18 Athletes</td>
+                  <td><span class="status-pill pending">Upcoming</span></td>
+                  <td>
+                    <button class="btn btn-outline btn-sm" onclick="document.querySelector('[data-view=view-attendance]').click();">Roster</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Youth Academy Development</strong></td>
+                  <td>Turf Arena B</td>
+                  <td>Sat, Sun (09:00 AM)</td>
+                  <td>14 / 15 Athletes</td>
+                  <td><span class="status-pill active">Open</span></td>
+                  <td>
+                    <button class="btn btn-outline btn-sm" onclick="document.querySelector('[data-view=view-attendance]').click();">Roster</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           VIEW 4: MY SCHEDULE
+           =================================================================== -->
+      <section class="dash-view-section" id="view-schedule" style="display:none;">
+        <div class="dash-table-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <h3 class="dash-chart-title" style="margin:0;"><i class="fa-regular fa-calendar-days" style="color:var(--color-accent);"></i> Weekly Coaching Timetable</h3>
+            <span style="font-size:0.8rem; color:#888894;">Term 4: Nov 2026</span>
+          </div>
+
+          <div class="table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Day</th>
+                  <th>Morning (08:00 - 11:00)</th>
+                  <th>Afternoon (14:00 - 17:00)</th>
+                  <th>Evening (18:00 - 20:30)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Monday</strong></td>
+                  <td><span class="badge" style="background:rgba(255,90,31,0.15); color:#FF5A1F;">Tactical Pressing (Pitch 1)</span></td>
+                  <td>1-on-1 Athlete Screenings</td>
+                  <td>Advanced Striker Clinic</td>
+                </tr>
+                <tr>
+                  <td><strong>Tuesday</strong></td>
+                  <td>Rest &amp; Telemetry Review</td>
+                  <td><span class="badge" style="background:rgba(255,90,31,0.15); color:#FF5A1F;">Kinetic Agility (Track)</span></td>
+                  <td>Coach Staff Strategy Meeting</td>
+                </tr>
+                <tr>
+                  <td><strong>Wednesday</strong></td>
+                  <td><span class="badge" style="background:rgba(255,90,31,0.15); color:#FF5A1F;">Tactical Pressing (Pitch 1)</span></td>
+                  <td>High-Performance Lab Testing</td>
+                  <td>Open Member Mentorship</td>
+                </tr>
+                <tr>
+                  <td><strong>Thursday</strong></td>
+                  <td>Biometric Intake Screenings</td>
+                  <td><span class="badge" style="background:rgba(255,90,31,0.15); color:#FF5A1F;">Kinetic Agility (Track)</span></td>
+                  <td>Recovery Cryo Sessions</td>
+                </tr>
+                <tr>
+                  <td><strong>Friday</strong></td>
+                  <td><span class="badge" style="background:rgba(255,90,31,0.15); color:#FF5A1F;">Championship Simulation</span></td>
+                  <td>Tactical Video Analysis</td>
+                  <td>Weekend Briefing</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           VIEW 5: ASSIGNED MEMBERS
+           =================================================================== -->
+      <section class="dash-view-section" id="view-members" style="display:none;">
+        <div class="dash-table-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; flex-wrap:wrap; gap:12px;">
+            <h3 class="dash-chart-title" style="margin:0;"><i class="fa-solid fa-users" style="color:var(--color-accent);"></i> Assigned Athletes Dossier</h3>
+            <div style="display:flex; gap:10px;">
+              <input type="text" id="trainerMemberSearchInput" class="form-input" placeholder="Search athlete by name or ID..." style="min-width:240px; padding:8px 12px; font-size:0.85rem;">
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Athlete Name</th>
+                  <th>Sport Discipline</th>
+                  <th>Membership Tier</th>
+                  <th>Attendance</th>
+                  <th>Progress Score</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="assignedMembersTableBody">
+                <tr>
+                  <td>
+                    <div style="display:flex; align-items:center; gap:10px;">
+                      <div class="dash-user-avatar" style="width:32px; height:32px; min-width:32px;">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Jordan Hayes" loading="lazy">
+                      </div>
+                      <strong>Jordan Hayes</strong>
+                    </div>
+                  </td>
+                  <td>Football &bull; Midfielder</td>
+                  <td><span class="dash-nav-badge">Elite Black</span></td>
+                  <td>96%</td>
+                  <td><strong style="color:#2ed573;">94 / 100</strong></td>
+                  <td>
+                    <button class="btn btn-outline btn-sm" onclick="alert('Viewing athlete telemetry dossier for Jordan Hayes.');">View Dossier</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="display:flex; align-items:center; gap:10px;">
+                      <div class="dash-user-avatar" style="width:32px; height:32px; min-width:32px;">
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80" alt="Marcus Vance" loading="lazy">
+                      </div>
+                      <strong>Marcus Vance</strong>
+                    </div>
+                  </td>
+                  <td>Football &bull; Striker</td>
+                  <td><span class="dash-nav-badge">Pro Academy</span></td>
+                  <td>98%</td>
+                  <td><strong style="color:#2ed573;">97 / 100</strong></td>
+                  <td>
+                    <button class="btn btn-outline btn-sm" onclick="alert('Viewing athlete telemetry dossier for Marcus Vance.');">View Dossier</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="display:flex; align-items:center; gap:10px;">
+                      <div class="dash-user-avatar" style="width:32px; height:32px; min-width:32px;">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80" alt="Sophia Chen" loading="lazy">
+                      </div>
+                      <strong>Sophia Chen</strong>
+                    </div>
+                  </td>
+                  <td>Badminton &bull; Singles</td>
+                  <td><span class="dash-nav-badge">Platinum</span></td>
+                  <td>92%</td>
+                  <td><strong style="color:#2ed573;">91 / 100</strong></td>
+                  <td>
+                    <button class="btn btn-outline btn-sm" onclick="alert('Viewing athlete telemetry dossier for Sophia Chen.');">View Dossier</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           VIEW 6: ATTENDANCE MANAGEMENT
+           =================================================================== -->
+      <section class="dash-view-section" id="view-attendance" style="display:none;">
+        <div class="dash-table-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; flex-wrap:wrap; gap:12px;">
+            <div>
+              <h3 class="dash-chart-title" style="margin:0;"><i class="fa-solid fa-clipboard-check" style="color:var(--color-accent);"></i> Live Class Attendance Marking</h3>
+              <p style="font-size:0.8rem; color:#888894; margin:4px 0 0;">Active Session: High-Velocity Spatial Pressing &bull; Nov 4, 2026</p>
+            </div>
+            
+            <div style="display:flex; gap:12px; align-items:center;">
+              <span class="badge" style="background:rgba(46,213,115,0.15); color:#2ed573; padding:6px 12px; border-radius:8px;">Present: <strong id="attSummaryPresent">6</strong></span>
+              <span class="badge" style="background:rgba(255,71,87,0.15); color:#ff4757; padding:6px 12px; border-radius:8px;">Absent: <strong id="attSummaryAbsent">1</strong></span>
+              <span class="badge" style="background:rgba(255,171,0,0.15); color:#ffab00; padding:6px 12px; border-radius:8px;">Excused: <strong id="attSummaryExcused">1</strong></span>
+              <button class="btn btn-primary btn-sm" id="btnSaveAttendanceLedger"><i class="fa-solid fa-floppy-disk"></i> Save Ledger</button>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Athlete</th>
+                  <th>Tier</th>
+                  <th>Attendance Status</th>
+                  <th>Progress</th>
+                  <th style="text-align:right;">Mark Attendance</th>
+                </tr>
+              </thead>
+              <tbody id="liveAttendanceRoster">
+                <!-- Injected dynamically by js/trainer-dashboard.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           VIEW 7: TRAINING PROGRAMS
+           =================================================================== -->
+      <section class="dash-view-section" id="view-programs" style="display:none;">
+        <div class="dash-table-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <h3 class="dash-chart-title" style="margin:0;"><i class="fa-solid fa-graduation-cap" style="color:var(--color-accent);"></i> Designed Training Curricula</h3>
+            <button class="btn btn-primary btn-sm" onclick="alert('Creating new high-intensity training module.');"><i class="fa-solid fa-plus"></i> Add Drill Module</button>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
+            <div class="dash-kpi-card">
+              <span class="dash-nav-badge" style="width:fit-content; margin-bottom:12px;">Level 3 &bull; Advanced</span>
+              <h4 style="font-family:var(--font-athletic); font-size:1.2rem; margin:0 0 8px;">Spatial Tactical Pressing</h4>
+              <p style="font-size:0.85rem; color:#8c8c98; line-height:1.5;">Covers high-tempo Gegenpressing, spatial collapse, counter-pressing triggers and rapid vertical distribution.</p>
+              <div style="font-size:0.8rem; color:var(--color-accent); font-weight:600; margin-top:10px;">8 Weeks &bull; 24 Sessions Completed</div>
+            </div>
+
+            <div class="dash-kpi-card">
+              <span class="dash-nav-badge" style="width:fit-content; margin-bottom:12px;">Level 2 &bull; Competitive</span>
+              <h4 style="font-family:var(--font-athletic); font-size:1.2rem; margin:0 0 8px;">Kinetic Sprint Velocity</h4>
+              <p style="font-size:0.85rem; color:#8c8c98; line-height:1.5;">Bio-mechanical stride extension, force plate explosive starts, and anaerobic lactate threshold management.</p>
+              <div style="font-size:0.8rem; color:var(--color-accent); font-weight:600; margin-top:10px;">6 Weeks &bull; 18 Sessions Completed</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           VIEW 8: MEMBER PROGRESS
+           =================================================================== -->
+      <section class="dash-view-section" id="view-progress" style="display:none;">
+        <div class="dash-table-card">
+          <h3 class="dash-chart-title" style="margin-bottom:18px;"><i class="fa-solid fa-chart-line" style="color:var(--color-accent);"></i> Log Athlete Kinetic Telemetry</h3>
+          
+          <form id="trainerProgressLogForm">
+            <div class="form-group-row">
+              <div class="form-group">
+                <label class="form-label">Select Athlete</label>
+                <select id="logAthleteSelect" class="form-select" required>
+                  <option value="101">Jordan Hayes (#ATH-101) &bull; Football</option>
+                  <option value="102">Elena Rostova (#ATH-102) &bull; Tennis</option>
+                  <option value="103">Marcus Vance (#ATH-103) &bull; Football</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Session Date</label>
+                <input type="date" class="form-input" value="2026-11-04" required>
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label class="form-label">Sprint Top Speed (MPH)</label>
+                <input type="number" id="logSprintSpeed" class="form-input" step="0.1" value="21.4" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Tactical Execution Score (0 - 100)</label>
+                <input type="number" id="logTacticalScore" class="form-input" min="0" max="100" value="94" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Coach Tactical Feedback</label>
+              <textarea class="form-textarea" rows="3" placeholder="Enter personalized feedback for athlete's dossier...">Excellent spatial awareness in first 20 minutes. Maintain low center of gravity on reverse transitions.</textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Submit Telemetry Update</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           VIEW 9: EVENT PARTICIPATION
+           =================================================================== -->
+      <section class="dash-view-section" id="view-events" style="display:none;">
+        <div class="dash-table-card">
+          <h3 class="dash-chart-title" style="margin-bottom:18px;"><i class="fa-solid fa-trophy" style="color:var(--color-accent);"></i> Championship &amp; Tournament Assignments</h3>
+          
+          <div class="session-card">
+            <div class="session-time-col">NOV 21</div>
+            <div class="session-detail-col">
+              <h4 class="session-title">National Collegiate Football Scouting Combine</h4>
+              <div class="session-meta">Role: Head Coach &bull; 18 Stackly Athletes Registered &bull; FIFA Turf 1</div>
+            </div>
+            <span class="status-pill active">Confirmed</span>
+          </div>
+
+          <div class="session-card">
+            <div class="session-time-col">DEC 05</div>
+            <div class="session-detail-col">
+              <h4 class="session-title">Winter All-Stars Athletic Invitational</h4>
+              <div class="session-meta">Role: Tactical Director &bull; 32 Athletes Registered &bull; Championship Track</div>
+            </div>
+            <span class="status-pill pending">Upcoming</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           VIEW 10: NOTIFICATIONS
+           =================================================================== -->
+      <section class="dash-view-section" id="view-notifications" style="display:none;">
+        <div class="dash-table-card">
+          <h3 class="dash-chart-title" style="margin-bottom:18px;"><i class="fa-regular fa-bell" style="color:var(--color-accent);"></i> Faculty Alerts &amp; Directives</h3>
+          
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:16px;">
+              <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                <strong>Pitch 1 Floodlight Maintenance</strong>
+                <span style="font-size:0.75rem; color:#888894;">Today 10:30 AM</span>
+              </div>
+              <p style="font-size:0.85rem; color:#a1a1aa; margin:0;">Facilities crew will conduct calibration on Pitch 1 floodlights between 11:30 and 13:00. No training impact expected.</p>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:16px;">
+              <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                <strong>Athlete Check-In Milestone</strong>
+                <span style="font-size:0.75rem; color:#888894;">Yesterday</span>
+              </div>
+              <p style="font-size:0.85rem; color:#a1a1aa; margin:0;">Athlete Jordan Hayes achieved 100 consecutive training days under your tactical curriculum.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           VIEW 11: SETTINGS
+           =================================================================== -->
+      
+      <!-- ===============================================================
+           VIEW: MANAGE BOOKINGS & TRAINEE APPOINTMENTS
+           =============================================================== -->
+      <section class="dash-view-section" id="view-bookings" style="display:none;">
+        <div class="dash-section-header">
+          <div>
+            <h2 class="dash-section-title">MANAGE BOOKINGS &amp; ATHLETE APPOINTMENTS</h2>
+            <p class="dash-section-desc">Review reserved training sessions, allocate pitch lanes, confirm 1-on-1 consultations, and manage athlete schedules.</p>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="showToast('Roster Synced', 'All booked session rosters synchronized with arena gates.')">
+            <i class="fa-solid fa-arrows-rotate"></i> Sync Arena Gates
+          </button>
+        </div>
+
+        <!-- Bookings KPI Grid -->
+        <div class="dash-kpi-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-label">Active Bookings</span>
+              <div class="dash-kpi-icon"><i class="fa-solid fa-calendar-check"></i></div>
+            </div>
+            <div class="dash-kpi-value">38</div>
+            <div class="dash-kpi-delta positive"><i class="fa-solid fa-arrow-trend-up"></i> +8 This Week</div>
+          </div>
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-label">Pending Approval</span>
+              <div class="dash-kpi-icon" style="background:rgba(255,171,0,0.15); color:#ffab00;"><i class="fa-solid fa-clock"></i></div>
+            </div>
+            <div class="dash-kpi-value" id="kpiPendingBookings">3</div>
+            <div class="dash-kpi-delta" style="color:#ffab00;">Requires Coach Review</div>
+          </div>
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-label">Today's Sessions</span>
+              <div class="dash-kpi-icon" style="background:rgba(46,213,115,0.15); color:#2ed573;"><i class="fa-solid fa-stopwatch"></i></div>
+            </div>
+            <div class="dash-kpi-value">6</div>
+            <div class="dash-kpi-delta positive"><i class="fa-solid fa-check"></i> 4 Completed</div>
+          </div>
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-header">
+              <span class="dash-kpi-label">Lane Utilization</span>
+              <div class="dash-kpi-icon"><i class="fa-solid fa-gauge-high"></i></div>
+            </div>
+            <div class="dash-kpi-value">92%</div>
+            <div class="dash-kpi-delta positive">Peak Performance</div>
+          </div>
+        </div>
+
+        <!-- Bookings Filter & Table Card -->
+        <div class="dash-table-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
+            <div class="dash-search-box" style="display:flex; min-width:240px;">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="bookingSearchInput" class="dash-search-input" placeholder="Search athlete or session...">
+            </div>
+            <div style="display:flex; gap:10px;">
+              <select id="bookingStatusFilter" class="form-select" style="width:auto; padding:6px 12px; font-size:0.82rem;">
+                <option value="all">All Statuses</option>
+                <option value="Confirmed">Confirmed</option>
+                <option value="Pending">Pending Review</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="dash-table" id="trainerBookingsTable">
+              <thead>
+                <tr>
+                  <th>Athlete Dossier</th>
+                  <th>Discipline / Session</th>
+                  <th>Date &amp; Time</th>
+                  <th>Arena Facility</th>
+                  <th>Status</th>
+                  <th style="text-align:right;">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div style="font-weight:700; color:#fff;">Jordan Hayes</div>
+                    <div style="font-size:0.75rem; color:#8c8c98;">athlete@stackly.com &bull; Elite Black Pass</div>
+                  </td>
+                  <td style="color:#fff; font-weight:600;">High-Velocity Strike Mechanics</td>
+                  <td style="color:var(--color-accent); font-weight:600;">Tomorrow 07:30 AM</td>
+                  <td>Main Championship Pitch A</td>
+                  <td><span class="status-pill active"><i class="fa-solid fa-check"></i> Confirmed</span></td>
+                  <td style="text-align:right;">
+                    <button class="btn btn-outline btn-xs" onclick="rescheduleBooking(this, 'Jordan Hayes')" style="margin-right:4px;">Reschedule</button>
+                    <button class="btn btn-outline btn-xs" onclick="cancelTrainerBooking(this, 'Jordan Hayes')" style="color:#ff4757;">Cancel</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:700; color:#fff;">Serena Vance</div>
+                    <div style="font-size:0.75rem; color:#8c8c98;">serena.v@example.com &bull; Platinum Elite</div>
+                  </td>
+                  <td style="color:#fff; font-weight:600;">Grand Slam Topspin &amp; Volley Clinic</td>
+                  <td style="color:var(--color-accent); font-weight:600;">Thursday 09:00 AM</td>
+                  <td>Laykold Grandstand Court 1</td>
+                  <td><span class="status-pill pending"><i class="fa-solid fa-clock"></i> Pending Review</span></td>
+                  <td style="text-align:right;">
+                    <button class="btn btn-primary btn-xs" onclick="approveBooking(this, 'Serena Vance')" style="margin-right:4px;">Approve</button>
+                    <button class="btn btn-outline btn-xs" onclick="cancelTrainerBooking(this, 'Serena Vance')" style="color:#ff4757;">Decline</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:700; color:#fff;">Liam Sterling</div>
+                    <div style="font-size:0.75rem; color:#8c8c98;">liam.s@example.com &bull; Gold Pro</div>
+                  </td>
+                  <td style="color:#fff; font-weight:600;">Olympic Power Cleans &amp; Hypertrophy</td>
+                  <td style="color:var(--color-accent); font-weight:600;">Friday 06:00 AM</td>
+                  <td>Strength Lab &amp; Recovery Spa</td>
+                  <td><span class="status-pill active"><i class="fa-solid fa-check"></i> Confirmed</span></td>
+                  <td style="text-align:right;">
+                    <button class="btn btn-outline btn-xs" onclick="rescheduleBooking(this, 'Liam Sterling')" style="margin-right:4px;">Reschedule</button>
+                    <button class="btn btn-outline btn-xs" onclick="cancelTrainerBooking(this, 'Liam Sterling')" style="color:#ff4757;">Cancel</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-weight:700; color:#fff;">Aria Takahashi</div>
+                    <div style="font-size:0.75rem; color:#8c8c98;">aria.t@example.com &bull; Silver Club</div>
+                  </td>
+                  <td style="color:#fff; font-weight:600;">50M Natatorium Freestyle Agility</td>
+                  <td style="color:#8c8c98;">Yesterday 08:00 AM</td>
+                  <td>Olympic 50M Swimming Pool</td>
+                  <td><span class="status-pill completed"><i class="fa-solid fa-check-double"></i> Completed</span></td>
+                  <td style="text-align:right;">
+                    <button class="btn btn-outline btn-xs" onclick="showToast('Session Logged', 'Aria Takahashi attendance logged.')">View Log</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="dash-view-section" id="view-settings" style="display:none;">
+        <div class="dash-table-card">
+          <h3 class="dash-chart-title" style="margin-bottom:18px;"><i class="fa-solid fa-gear" style="color:var(--color-accent);"></i> Coach Account Settings</h3>
+          
+          <form id="trainerSettingsForm">
+            <div class="form-group-row">
+              <div class="form-group">
+                <label class="form-label">Weekly Working Hours Limit</label>
+                <input type="number" class="form-input" value="38" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Preferred Arena Facility</label>
+                <select class="form-select">
+                  <option selected>Championship Football Pitch 1</option>
+                  <option>Indoor Fieldhouse Track</option>
+                  <option>Turf Practice Arena B</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Notification Preferences</label>
+              <div style="display:flex; flex-direction:column; gap:8px; margin-top:6px;">
+                <label style="display:flex; align-items:center; gap:8px; font-size:0.85rem; cursor:pointer;">
+                  <input type="checkbox" checked style="accent-color:var(--color-accent);"> SMS alert when an athlete cancels under 2 hours
+                </label>
+                <label style="display:flex; align-items:center; gap:8px; font-size:0.85rem; cursor:pointer;">
+                  <input type="checkbox" checked style="accent-color:var(--color-accent);"> Daily morning attendance digest email
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="margin-top:14px;"><i class="fa-solid fa-check"></i> Save Preferences</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Shared Scripts -->
+  <script src="js/auth.js"></script>
+  <script src="js/trainer-dashboard.js"></script>
+  <script src="js/dashboard.js"></script>
+  <!-- Preloader Engine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/preloader.js"></script>
+<script>
+
+    // Synchronize logged in identity
+    document.addEventListener('DOMContentLoaded', () => {
+      const storedName = localStorage.getItem('stacklyUserName') || 'Tariq Al-Mansoor';
+      const storedEmail = localStorage.getItem('stacklyUserEmail') || 'coach@stackly.com';
+      document.querySelectorAll('#sideTrainerName, #topTrainerName, .trainer-name-display').forEach(el => {
+        if (el) el.textContent = storedName;
+      });
+      document.querySelectorAll('#sideTrainerEmail, #topTrainerEmail').forEach(el => {
+        if (el) el.textContent = storedEmail;
+      });
+    });
+</script>
+
+  <script>
+    function approveBooking(btn, athleteName) {
+      const row = btn.closest('tr');
+      const statusCell = row.querySelector('.status-pill');
+      if (statusCell) {
+        statusCell.className = 'status-pill active';
+        statusCell.innerHTML = '<i class="fa-solid fa-check"></i> Confirmed';
+      }
+      btn.outerHTML = '<button class="btn btn-outline btn-xs" onclick="rescheduleBooking(this, \'' + athleteName + '\')" style="margin-right:4px;">Reschedule</button>';
+      showToast('Booking Approved', athleteName + ' appointment confirmed. Arena lane notified.');
+      const pendingEl = document.getElementById('kpiPendingBookings');
+      if (pendingEl && parseInt(pendingEl.textContent) > 0) {
+        pendingEl.textContent = parseInt(pendingEl.textContent) - 1;
+      }
+    }
+
+    function cancelTrainerBooking(btn, athleteName) {
+      if (confirm('Cancel reservation for ' + athleteName + '? The slot will be restored to open inventory.')) {
+        const row = btn.closest('tr');
+        if (row) {
+          row.style.transition = 'all 0.3s ease';
+          row.style.opacity = '0.35';
+          const actionsCell = row.querySelector('td:last-child');
+          if (actionsCell) actionsCell.innerHTML = '<span style="color:#ff4757; font-size:0.75rem; font-weight:700;">Cancelled</span>';
+        }
+        showToast('Reservation Cancelled', 'Appointment with ' + athleteName + ' cancelled.');
+      }
+    }
+
+    function rescheduleBooking(btn, athleteName) {
+      const newTime = prompt('Enter new date and time for ' + athleteName + ' (e.g. Next Monday 08:30 AM):');
+      if (newTime && newTime.trim()) {
+        const row = btn.closest('tr');
+        const timeCell = row.querySelectorAll('td')[2];
+        if (timeCell) timeCell.textContent = newTime.trim();
+        showToast('Session Rescheduled', athleteName + ' session updated to ' + newTime.trim() + '.');
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting to Stackly Dashboard | STACKLY</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,5 95,25 95,75 50,95 5,75 5,25' fill='%23FF5A1F'/><text x='50%' y='60%' text-anchor='middle' fill='%23FFFFFF' font-size='38' font-family='sans-serif' font-weight='900'>ST</text></svg>">
+  <script src="js/auth.js"></script>
+  <script>
+    (function () {
+      if (!window.StacklyAuth || !StacklyAuth.isLoggedIn()) {
+        window.location.replace('login.html?redirect=user-dashboard.html');
+      } else {
+        const role = StacklyAuth.getRole();
+        window.location.replace(StacklyAuth.getDashboardUrlForRole(role));
+      }
+    })();
+  </script>
+</head>
+<body style="background:#09090c; color:#fff; font-family:'Inter', sans-serif; display:flex; align-items:center; justify-content:center; min-height:100vh; margin:0; text-align:center;">
+  <div>
+    <div style="font-size:2rem; color:#FF5A1F; font-weight:900; margin-bottom:12px;">STACKLY</div>
+    <p style="color:#888894; font-size:0.95rem;">Authenticating and dispatching to your assigned command center...</p>
+    <p><a href="user-dashboard.html" style="color:#FF5A1F; text-decoration:none; font-size:0.85rem;">Click here if you are not automatically redirected.</a></p>
+  </div>
+</body>
+</html>

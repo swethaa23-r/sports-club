@@ -1,0 +1,621 @@
+/* ===================================================================
+   STACKLY SPORTS CLUB - Cinematic Branded Preloader System
+   Module: css/preloader.css
+   Brand Colors: Deep Black (#090909), White (#FFFFFF), Electric Orange (#FF5A1F)
+   Typography: Bebas Neue, Oswald, Inter
+   =================================================================== */
+
+/* Prevent scrolling while loading */
+html.stackly-loading,
+body.stackly-loading {
+  overflow: hidden !important;
+  height: 100vh !important;
+  touch-action: none !important;
+  -ms-touch-action: none !important;
+}
+
+/* Master Preloader Full-Screen Container */
+#preloader,
+#preloader.stackly-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999999;
+  background-color: #090909;
+  background-image: 
+    radial-gradient(circle at 50% 42%, rgba(255, 90, 31, 0.16) 0%, rgba(9, 9, 9, 0.94) 55%, #050505 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.65s ease;
+  will-change: opacity, visibility;
+}
+
+#preloader.loaded,
+#preloader.stackly-preloader.loaded {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* ===================================================================
+   CINEMATIC STADIUM LIGHTING ENVIRONMENT
+   =================================================================== */
+.stadium-lighting-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Overhead Floodlights Array */
+.stadium-floodlights-array {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 960px;
+  height: 36px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  opacity: 0.85;
+}
+
+.floodlight-bulb {
+  width: 22px;
+  height: 6px;
+  background: #ffffff;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 
+    0 0 16px rgba(255, 255, 255, 0.95),
+    0 0 35px rgba(255, 90, 31, 0.8),
+    0 10px 45px rgba(255, 90, 31, 0.45);
+  animation: floodlightBulbGlint 3s ease-in-out infinite alternate;
+}
+
+.floodlight-bulb:nth-child(2) { animation-delay: 0.4s; }
+.floodlight-bulb:nth-child(3) { animation-delay: 0.8s; }
+.floodlight-bulb:nth-child(4) { animation-delay: 1.2s; }
+.floodlight-bulb:nth-child(5) { animation-delay: 0.6s; }
+.floodlight-bulb:nth-child(6) { animation-delay: 1.0s; }
+
+/* Conical Stadium Spotlight Beams */
+.stadium-spotlight {
+  position: absolute;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  will-change: opacity, transform;
+}
+
+.spotlight-left {
+  top: -15%;
+  left: -20%;
+  width: 85vw;
+  height: 130vh;
+  background: linear-gradient(135deg, rgba(255, 90, 31, 0.18) 0%, rgba(255, 255, 255, 0.06) 20%, transparent 60%);
+  transform: rotate(14deg);
+  transform-origin: top left;
+  animation: spotlightSwayLeft 7s ease-in-out infinite alternate;
+}
+
+.spotlight-right {
+  top: -15%;
+  right: -20%;
+  width: 85vw;
+  height: 130vh;
+  background: linear-gradient(225deg, rgba(255, 90, 31, 0.18) 0%, rgba(255, 255, 255, 0.06) 20%, transparent 60%);
+  transform: rotate(-14deg);
+  transform-origin: top right;
+  animation: spotlightSwayRight 7s ease-in-out infinite alternate;
+}
+
+.spotlight-center {
+  top: -5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60vw;
+  max-width: 650px;
+  height: 105vh;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255, 90, 31, 0.22) 0%, rgba(255, 255, 255, 0.05) 35%, transparent 70%);
+  animation: spotlightCenterPulse 4.5s ease-in-out infinite alternate;
+}
+
+/* Atmospheric Stadium Arena Silhouette */
+.stadium-arena-silhouette {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 42%;
+  background: url('../images/stadium-silhouette-lights.webp') center bottom / cover no-repeat;
+  opacity: 0.16;
+  mix-blend-mode: screen;
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 25%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 25%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Atmospheric Arena Dust Motes */
+.stadium-dust-motes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.mote {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 8px rgba(255, 90, 31, 0.85);
+  animation: moteDrift linear infinite;
+}
+
+.mote:nth-child(1) { width: 3px; height: 3px; left: 18%; bottom: 10%; animation-duration: 9s; animation-delay: 0s; }
+.mote:nth-child(2) { width: 4px; height: 4px; left: 32%; bottom: 15%; animation-duration: 12s; animation-delay: 1.5s; }
+.mote:nth-child(3) { width: 2px; height: 2px; left: 48%; bottom: 8%;  animation-duration: 8s; animation-delay: 0.8s; }
+.mote:nth-child(4) { width: 4px; height: 4px; left: 64%; bottom: 12%; animation-duration: 11s; animation-delay: 2.2s; }
+.mote:nth-child(5) { width: 3px; height: 3px; left: 80%; bottom: 18%; animation-duration: 10s; animation-delay: 0.3s; }
+.mote:nth-child(6) { width: 2px; height: 2px; left: 24%; bottom: 25%; animation-duration: 13s; animation-delay: 3s; }
+.mote:nth-child(7) { width: 3px; height: 3px; left: 72%; bottom: 22%; animation-duration: 9.5s; animation-delay: 1.8s; }
+.mote:nth-child(8) { width: 4px; height: 4px; left: 52%; bottom: 30%; animation-duration: 10.5s; animation-delay: 2.7s; }
+
+/* ===================================================================
+   CENTRAL PRELOADER CORE
+   =================================================================== */
+.preloader-core {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  padding: 24px 20px;
+  margin: auto;
+  will-change: transform, opacity;
+}
+
+/* Emblem Stage with Circular Frame */
+.preloader-emblem-stage {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+
+/* Layer 1: Circular SVG Background Ring (concentric guidelines) */
+.preloader-circular-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.ring-track-outer {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.09);
+  stroke-width: 1.5;
+}
+
+.ring-track-inner {
+  fill: none;
+  stroke: rgba(255, 90, 31, 0.22);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 8;
+  animation: ringOrbitSpin 20s linear infinite;
+  transform-origin: 140px 140px;
+}
+
+.ring-orbit-ticks {
+  stroke: rgba(255, 90, 31, 0.7);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  animation: ringOrbitSpin 12s linear infinite reverse;
+  transform-origin: 140px 140px;
+}
+
+/* Layer 2: Dedicated Progress Ring (Always centered at 140, 140, starts at 12 o'clock) */
+.preloader-circular-progress {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.ring-progress-stroke {
+  fill: none;
+  stroke: #FF5A1F;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 780;
+  stroke-dashoffset: 780;
+  filter: drop-shadow(0 0 10px rgba(255, 90, 31, 0.95)) drop-shadow(0 0 22px rgba(255, 90, 31, 0.6));
+  transition: stroke-dashoffset 0.12s linear;
+}
+
+/* Ambient Pulsing Glow Behind Logo */
+.preloader-logo-glow {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 90, 31, 0.4) 0%, rgba(255, 90, 31, 0.1) 50%, transparent 72%);
+  filter: blur(18px);
+  z-index: 1;
+  pointer-events: none;
+  animation: stacklyGlowPulse 2.4s ease-in-out infinite;
+}
+
+/* Original STACKLY Logo Wrapper */
+.preloader-logo-wrapper {
+  position: relative;
+  z-index: 5;
+  width: 190px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform, opacity;
+}
+
+.preloader-logo-img {
+  width: 100%;
+  height: auto;
+  max-height: 56px;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  filter: drop-shadow(0 0 18px rgba(255, 90, 31, 0.5));
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+/* Premium Orange Light Sweep Across Logo */
+.preloader-logo-sheen-mask {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  overflow: hidden;
+  -webkit-mask-image: url('../images/stackly-logo-orange.webp');
+  mask-image: url('../images/stackly-logo-orange.webp');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.preloader-logo-sheen-beam {
+  position: absolute;
+  top: -50%;
+  left: -130%;
+  width: 85%;
+  height: 200%;
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    rgba(255, 90, 31, 0.3) 20%,
+    rgba(255, 90, 31, 0.95) 45%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 90, 31, 0.95) 55%,
+    rgba(255, 90, 31, 0.3) 80%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  animation: logoLightSweep 2.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  will-change: transform;
+}
+
+/* ===================================================================
+   BRAND TYPOGRAPHY & TAGLINE
+   =================================================================== */
+.preloader-brand-group {
+  margin-bottom: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.preloader-brand-title {
+  font-family: 'Bebas Neue', 'Oswald', Impact, sans-serif;
+  font-size: clamp(1.8rem, 4.8vw, 2.45rem);
+  letter-spacing: 0.18em;
+  line-height: 1.1;
+  margin: 0;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.brand-text-stackly {
+  color: #FFFFFF;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.35);
+  font-weight: 700;
+  display: inline-block;
+}
+
+.brand-text-club {
+  color: #FF5A1F;
+  text-shadow: 0 0 24px rgba(255, 90, 31, 0.85), 0 0 45px rgba(255, 90, 31, 0.45);
+  font-weight: 700;
+  display: inline-block;
+}
+
+.preloader-tagline {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(0.72rem, 1.8vw, 0.84rem);
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tagline-word {
+  display: inline-block;
+}
+
+.tagline-sep {
+  color: #FF5A1F;
+  font-weight: 900;
+  display: inline-block;
+  text-shadow: 0 0 10px rgba(255, 90, 31, 0.9);
+}
+
+/* ===================================================================
+   PROGRESS MODULE & NUMERIC COUNTER
+   =================================================================== */
+.preloader-progress-module {
+  width: 320px;
+  max-width: 86vw;
+}
+
+.preloader-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+  padding: 0 4px;
+}
+
+.preloader-stage-label {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.65);
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.preloader-counter-wrap {
+  font-family: 'Bebas Neue', 'Oswald', monospace;
+  font-size: 1.7rem;
+  line-height: 1;
+  color: #FFFFFF;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: baseline;
+}
+
+.preloader-percent-num {
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 16px rgba(255, 255, 255, 0.3);
+}
+
+.preloader-percent-unit {
+  color: #FF5A1F;
+  font-size: 1.15rem;
+  margin-left: 2px;
+  font-family: 'Oswald', sans-serif;
+  text-shadow: 0 0 12px rgba(255, 90, 31, 0.9);
+}
+
+/* Progress Bar Track */
+.preloader-bar-track {
+  width: 100%;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 90, 31, 0.28);
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.preloader-bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #c33a09 0%, #FF5A1F 65%, #ffa379 100%);
+  box-shadow: 0 0 18px rgba(255, 90, 31, 0.95), 0 0 5px #FF5A1F;
+  border-radius: 999px;
+  transition: width 0.1s linear;
+  position: relative;
+}
+
+.preloader-bar-flare {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 9px;
+  height: 9px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #ffffff, 0 0 20px #FF5A1F;
+}
+
+/* ===================================================================
+   KEYFRAME ANIMATIONS
+   =================================================================== */
+@keyframes floodlightBulbGlint {
+  0% { filter: brightness(0.9); }
+  50% { filter: brightness(1.25); box-shadow: 0 0 22px rgba(255, 255, 255, 1), 0 0 45px rgba(255, 90, 31, 0.9); }
+  100% { filter: brightness(1); }
+}
+
+@keyframes spotlightSwayLeft {
+  0% { transform: rotate(11deg); opacity: 0.7; }
+  100% { transform: rotate(18deg); opacity: 0.95; }
+}
+
+@keyframes spotlightSwayRight {
+  0% { transform: rotate(-11deg); opacity: 0.7; }
+  100% { transform: rotate(-18deg); opacity: 0.95; }
+}
+
+@keyframes spotlightCenterPulse {
+  0% { opacity: 0.65; transform: translateX(-50%) scaleX(0.95); }
+  100% { opacity: 0.9; transform: translateX(-50%) scaleX(1.05); }
+}
+
+@keyframes ringOrbitSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes stacklyGlowPulse {
+  0%, 100% {
+    transform: scale(0.95);
+    opacity: 0.7;
+    filter: blur(18px);
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.98;
+    filter: blur(24px);
+  }
+}
+
+@keyframes logoLightSweep {
+  0% {
+    left: -130%;
+  }
+  45%, 100% {
+    left: 170%;
+  }
+}
+
+@keyframes moteDrift {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-40vh) translateX(25px);
+    opacity: 0;
+  }
+}
+
+/* ===================================================================
+   RESPONSIVENESS & ACCESSIBILITY
+   =================================================================== */
+@media (max-width: 600px) {
+  .preloader-emblem-stage {
+    width: 240px;
+    height: 240px;
+    margin-bottom: 20px;
+  }
+  .preloader-logo-wrapper {
+    width: 160px;
+    height: 50px;
+  }
+  .preloader-logo-img {
+    max-height: 46px;
+  }
+  .preloader-brand-title {
+    font-size: 1.7rem;
+    letter-spacing: 0.15em;
+  }
+  .preloader-tagline {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    gap: 6px;
+  }
+  .preloader-progress-module {
+    width: 270px;
+  }
+  .preloader-counter-wrap {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .preloader-emblem-stage {
+    width: 210px;
+    height: 210px;
+  }
+  .preloader-logo-wrapper {
+    width: 140px;
+  }
+  .preloader-brand-title {
+    font-size: 1.45rem;
+  }
+}
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  #preloader,
+  #preloader.stackly-preloader {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+  .stadium-lighting-backdrop,
+  .preloader-core,
+  .preloader-logo-sheen-beam,
+  .floodlight-bulb,
+  .stadium-spotlight,
+  .ring-orbit-ticks,
+  .ring-track-inner,
+  .preloader-logo-glow {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,215 @@
+/* ==========================================================================
+   STACKLY SPORTS CLUB - Authentication Split-Screen & Role Dropdown Styles
+   ========================================================================== */
+
+/* Role Selector Dropdown Customization */
+.role-select-wrap {
+  position: relative;
+}
+
+.role-select-box {
+  width: 100%;
+  background: #141419 !important;
+  border: 1px solid var(--border-card, rgba(255, 255, 255, 0.12)) !important;
+  border-radius: var(--radius-md, 10px) !important;
+  padding: 13px 44px 13px 16px !important;
+  color: #ffffff !important;
+  font-family: var(--font-body, 'Inter', sans-serif) !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  min-height: 48px;
+}
+
+.role-select-box:focus {
+  border-color: var(--color-accent, #FF5A1F) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(255, 90, 31, 0.25) !important;
+}
+
+.role-select-box option {
+  background: #111116;
+  color: #ffffff;
+  padding: 12px;
+}
+
+.role-select-arrow {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-accent, #FF5A1F);
+  pointer-events: none;
+  font-size: 0.9rem;
+}
+
+/* Password Toggle Field Wrap */
+.password-field-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-field-wrap .form-input {
+  padding-right: 46px !important;
+  width: 100%;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: #888894;
+  padding: 8px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  transition: color 0.2s ease;
+}
+
+.password-toggle-btn:hover {
+  color: var(--color-accent, #FF5A1F);
+}
+
+/* One-Click Quick Role Switchers */
+.quick-role-picker {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.quick-role-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 8px 6px;
+  color: #a1a1aa;
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+
+.quick-role-btn i {
+  font-size: 0.95rem;
+  color: var(--color-accent, #FF5A1F);
+}
+
+.quick-role-btn:hover,
+.quick-role-btn.active {
+  background: rgba(255, 90, 31, 0.12);
+  border-color: var(--color-accent, #FF5A1F);
+  color: #ffffff;
+}
+
+/* Demo Mode Disclaimer Banner */
+.auth-demo-disclaimer {
+  background: rgba(255, 90, 31, 0.07);
+  border: 1px solid rgba(255, 90, 31, 0.25);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 0.78rem;
+  color: #a8a8b2;
+  margin-top: 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.45;
+}
+
+.auth-demo-disclaimer i {
+  color: var(--color-accent, #FF5A1F);
+  margin-top: 2px;
+  font-size: 0.9rem;
+}
+
+.auth-demo-disclaimer strong {
+  color: #ffffff;
+}
+
+/* Field Validation Indicators */
+.field-error-msg {
+  color: #ff4757;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.field-error-msg.d-none {
+  display: none !important;
+}
+
+.form-input.is-invalid,
+.form-select.is-invalid {
+  border-color: #ff4757 !important;
+  box-shadow: 0 0 0 2px rgba(255, 71, 87, 0.2) !important;
+}
+
+.form-input.is-valid,
+.form-select.is-valid {
+  border-color: #2ed573 !important;
+}
+
+
+/* ===================================================================
+   Cross-Browser Form Select & Option Contrast Fix
+   Ensures dropdown option menus have high contrast dark backgrounds 
+   and crisp white text across Chrome, Edge, Safari, and Firefox.
+   =================================================================== */
+:root {
+  color-scheme: dark;
+}
+
+select,
+.form-select,
+.role-select-box {
+  color-scheme: dark !important;
+  background-color: #0d0d12 !important;
+  color: #ffffff !important;
+}
+
+select option,
+.form-select option,
+.role-select-box option {
+  background-color: #141419 !important;
+  color: #ffffff !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 0.95rem !important;
+  padding: 12px 16px !important;
+}
+
+select option:checked,
+.form-select option:checked,
+.role-select-box option:checked {
+  background-color: #FF5A1F !important;
+  color: #ffffff !important;
+}
+
+select option:disabled,
+.form-select option:disabled,
+.role-select-box option:disabled {
+  color: #8c8c98 !important;
+  background-color: #09090c !important;
+}
+
+select optgroup,
+.form-select optgroup {
+  background-color: #09090c !important;
+  color: #FF5A1F !important;
+  font-weight: 700 !important;
+}

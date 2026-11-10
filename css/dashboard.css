@@ -1,0 +1,868 @@
+/* ==========================================================================
+   STACKLY SPORTS CLUB - Unified Dashboard Component System
+   Shared Across: Admin, User, and Trainer Dashboards
+   ========================================================================== */
+
+/* Main Dashboard Layout Container */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #09090c;
+  color: #ffffff;
+  position: relative;
+  width: 100%;
+}
+
+/* Sidebar Styling */
+.dash-sidebar {
+  width: 280px;
+  min-width: 280px;
+  background: #111116;
+  border-right: 1px solid var(--border-card, rgba(255, 255, 255, 0.08));
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 100;
+  overflow-y: auto;
+  padding: 24px 18px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dash-brand-wrap,
+.dash-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.dash-sidebar-close {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #888894;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+}
+.dash-sidebar-close:hover {
+  color: #ffffff;
+}
+
+/* User Card in Sidebar */
+.dash-user-card,
+.dash-sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 24px;
+}
+
+.dash-user-avatar {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--color-accent, #FF5A1F);
+}
+
+.dash-user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dash-online-status {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #111116;
+  background: #2ed573;
+}
+
+.dash-user-info {
+  overflow: hidden;
+}
+
+.dash-user-name {
+  font-family: var(--font-athletic, 'Oswald', sans-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dash-user-tier {
+  font-size: 0.76rem;
+  color: var(--color-accent, #FF5A1F);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Sidebar Nav Items */
+.dash-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.dash-nav-section-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6c6c78;
+  margin: 16px 8px 6px;
+}
+
+.dash-nav-item,
+.dash-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: #9f9fa9;
+  background: transparent;
+  border: none;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.dash-nav-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dash-nav-item-left i,
+.dash-nav-link i {
+  font-size: 1rem;
+  width: 18px;
+  text-align: center;
+  color: #7d7d88;
+  transition: color 0.2s ease;
+}
+
+.dash-nav-item:hover,
+.dash-nav-link:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+}
+
+.dash-nav-item:hover i,
+.dash-nav-link:hover i {
+  color: var(--color-accent, #FF5A1F);
+}
+
+.dash-nav-item.active,
+.dash-nav-link.active {
+  background: rgba(255, 90, 31, 0.14) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border-left: 3px solid var(--color-accent, #FF5A1F);
+}
+
+.dash-nav-item.active i,
+.dash-nav-link.active i {
+  color: var(--color-accent, #FF5A1F) !important;
+}
+
+.dash-nav-badge {
+  font-size: 0.68rem;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(255, 90, 31, 0.18);
+  color: var(--color-accent, #FF5A1F);
+  font-weight: 700;
+}
+
+/* Sidebar Footer */
+.dash-sidebar-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.dash-logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 14px;
+  background: rgba(255, 71, 87, 0.08);
+  border: 1px solid rgba(255, 71, 87, 0.2);
+  border-radius: 8px;
+  color: #ff4757;
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dash-logout-btn:hover {
+  background: #ff4757;
+  color: #ffffff;
+}
+
+/* Main Dashboard Workspace */
+.dash-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-x: hidden;
+  padding: 28px 32px;
+}
+
+/* Dashboard Topbar */
+.dash-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.dash-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dash-menu-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.dash-topbar-title {
+  font-family: var(--font-hero, 'Bebas Neue', sans-serif);
+  font-size: 1.7rem;
+  letter-spacing: 0.04em;
+  margin: 0;
+  color: #ffffff;
+}
+
+.dash-topbar-date {
+  font-size: 0.8rem;
+  color: #888894;
+}
+
+.dash-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* KPI Stat Bento Cards */
+.dash-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.dash-kpi-card {
+  background: #111116;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.dash-kpi-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 90, 31, 0.35);
+}
+
+.dash-kpi-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.dash-kpi-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #8c8c98;
+}
+
+.dash-kpi-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  background: rgba(255, 90, 31, 0.12);
+  color: var(--color-accent, #FF5A1F);
+}
+
+.dash-kpi-value {
+  font-family: var(--font-hero, 'Bebas Neue', sans-serif);
+  font-size: 2.2rem;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.dash-kpi-delta {
+  font-size: 0.78rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+}
+
+.dash-kpi-delta.positive {
+  color: #2ed573;
+}
+
+.dash-kpi-delta.neutral {
+  color: #a1a1aa;
+}
+
+/* Charts Bento Layout */
+.dash-charts-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.dash-chart-card {
+  background: #111116;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dash-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.dash-chart-title {
+  font-family: var(--font-athletic, 'Oswald', sans-serif);
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+.dash-chart-wrap {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  min-height: 260px;
+}
+
+/* Dual Column Content */
+.dash-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+/* Data Tables */
+.dash-table-card {
+  background: #111116;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 28px;
+}
+
+.dash-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.dash-table th {
+  text-align: left;
+  padding: 12px 14px;
+  color: #8c8c98;
+  font-weight: 600;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dash-table td {
+  padding: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: #d1d1d8;
+  vertical-align: middle;
+}
+
+.dash-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Status Badges */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.status-pill.present,
+.status-pill.active,
+.status-pill.completed {
+  background: rgba(46, 213, 115, 0.15);
+  color: #2ed573;
+}
+
+.status-pill.absent,
+.status-pill.overdue,
+.status-pill.cancelled {
+  background: rgba(255, 71, 87, 0.15);
+  color: #ff4757;
+}
+
+.status-pill.pending,
+.status-pill.excused {
+  background: rgba(255, 171, 0, 0.15);
+  color: #ffab00;
+}
+
+/* Interactive Session Card in Trainer Dashboard */
+.session-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  transition: all 0.2s ease;
+}
+
+.session-card:hover {
+  border-color: rgba(255, 90, 31, 0.3);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.session-time-col {
+  min-width: 90px;
+  font-family: var(--font-hero, 'Bebas Neue', sans-serif);
+  font-size: 1.4rem;
+  color: var(--color-accent, #FF5A1F);
+}
+
+.session-detail-col {
+  flex: 1;
+  padding: 0 16px;
+}
+
+.session-title {
+  font-family: var(--font-athletic, 'Oswald', sans-serif);
+  font-size: 1.05rem;
+  margin: 0 0 4px;
+}
+
+.session-meta {
+  font-size: 0.8rem;
+  color: #8c8c98;
+}
+
+/* Mobile Overlay Backdrop */
+.dash-sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.dash-sidebar-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===================================================================
+   STACKLY Unified Header & Athletic Avatar Icon Styles
+   =================================================================== */
+.dash-user-avatar-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  background: rgba(255, 90, 31, 0.15);
+  border: 2px solid var(--color-accent, #FF5A1F);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent, #FF5A1F);
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.dash-pill-avatar-icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  background: rgba(255, 90, 31, 0.15);
+  border: 1.5px solid var(--color-accent, #FF5A1F);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent, #FF5A1F);
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+.dash-user-pill-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.dash-user-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 5px 14px 5px 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.dash-user-pill:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 90, 31, 0.4);
+}
+.dash-search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 24px;
+  padding: 8px 18px;
+  min-width: 280px;
+  transition: all 0.3s ease;
+}
+.dash-search-box:focus-within {
+  border-color: var(--color-accent, #FF5A1F);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 16px rgba(255, 90, 31, 0.25);
+}
+.dash-search-box i {
+  color: #8c8c98;
+  font-size: 0.9rem;
+}
+.dash-search-input {
+  background: none;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 0.88rem;
+  width: 100%;
+}
+.dash-search-input::placeholder {
+  color: #6c6c78;
+}
+@media (max-width: 768px) {
+  .dash-search-box {
+    display: none;
+  }
+}
+
+
+/* ===================================================================
+   Cross-Browser Form Select & Option Contrast Fix
+   Ensures dropdown option menus have high contrast dark backgrounds 
+   and crisp white text across Chrome, Edge, Safari, and Firefox.
+   =================================================================== */
+:root {
+  color-scheme: dark;
+}
+
+select,
+.form-select,
+.role-select-box {
+  color-scheme: dark !important;
+  background-color: #0d0d12 !important;
+  color: #ffffff !important;
+}
+
+select option,
+.form-select option,
+.role-select-box option {
+  background-color: #141419 !important;
+  color: #ffffff !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 0.95rem !important;
+  padding: 12px 16px !important;
+}
+
+select option:checked,
+.form-select option:checked,
+.role-select-box option:checked {
+  background-color: #FF5A1F !important;
+  color: #ffffff !important;
+}
+
+select option:disabled,
+.form-select option:disabled,
+.role-select-box option:disabled {
+  color: #8c8c98 !important;
+  background-color: #09090c !important;
+}
+
+select optgroup,
+.form-select optgroup {
+  background-color: #09090c !important;
+  color: #FF5A1F !important;
+  font-weight: 700 !important;
+}
+
+
+/* ===================================================================
+   STACKLY UNIFIED SIDEBAR ENHANCEMENTS
+   Consistent across User, Trainer, and Admin Dashboards
+   =================================================================== */
+
+/* Body freeze when mobile sidebar drawer is open */
+body.dash-sidebar-open {
+  overflow: hidden !important;
+  touch-action: none !important;
+}
+
+/* Sidebar Desktop Collapsed State (Toggle via #dashSidebarCollapse) */
+@media (min-width: 993px) {
+  .dash-sidebar.collapsed {
+    width: 84px !important;
+    min-width: 84px !important;
+    padding: 24px 10px !important;
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+  }
+  .dash-sidebar.collapsed .brand-title-group,
+  .dash-sidebar.collapsed .dash-user-info,
+  .dash-sidebar.collapsed .dash-nav-section-title,
+  .dash-sidebar.collapsed .dash-nav-item span:not(.dash-nav-badge),
+  .dash-sidebar.collapsed .dash-nav-link span:not(.dash-nav-badge),
+  .dash-sidebar.collapsed .dash-nav-badge,
+  .dash-sidebar.collapsed .dash-logout-btn span,
+  .dash-sidebar.collapsed .badge {
+    display: none !important;
+  }
+  .dash-sidebar.collapsed .dash-sidebar-header {
+    justify-content: center;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+  }
+  .dash-sidebar.collapsed .brand-logo {
+    justify-content: center;
+  }
+  .dash-sidebar.collapsed .dash-user-card {
+    justify-content: center;
+    padding: 8px 0;
+    border-left: none !important;
+  }
+  .dash-sidebar.collapsed .dash-nav-item,
+  .dash-sidebar.collapsed .dash-nav-link {
+    justify-content: center !important;
+    padding: 12px 0 !important;
+  }
+  .dash-sidebar.collapsed .dash-nav-item-left {
+    margin: 0 auto;
+    justify-content: center;
+  }
+  .dash-sidebar.collapsed .dash-logout-btn {
+    justify-content: center;
+    padding: 12px 0;
+  }
+}
+
+/* Mobile Sidebar Drawer: Occupies 100% available width on phone screens */
+@media (max-width: 992px) {
+  .dash-sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: 320px !important;
+    max-width: 85vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    z-index: 10001 !important;
+    transform: translateX(-100%) !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: 12px 0 45px rgba(0, 0, 0, 0.95);
+  }
+  .dash-sidebar.open {
+    transform: translateX(0) !important;
+  }
+  .dash-sidebar-close {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+  .dash-menu-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Full 100% width on standard mobile viewports (< 576px) per requirement */
+@media (max-width: 576px) {
+  .dash-sidebar {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Consistent Active Nav Link Accent */
+.dash-nav-item.active,
+.dash-nav-link.active {
+  background: rgba(255, 90, 31, 0.15) !important;
+  color: #ffffff !important;
+  border-left: 3px solid var(--color-accent, #FF5A1F) !important;
+  font-weight: 600 !important;
+}
+
+.dash-nav-item.active i,
+.dash-nav-link.active i {
+  color: var(--color-accent, #FF5A1F) !important;
+  text-shadow: 0 0 10px rgba(255, 90, 31, 0.5);
+}
+
+/* Notification & Payments Cards */
+.notif-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  transition: all 0.2s ease;
+}
+.notif-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 90, 31, 0.3);
+}
+.notif-item.unread {
+  background: rgba(255, 90, 31, 0.05);
+  border-color: rgba(255, 90, 31, 0.25);
+}
+.notif-icon-box {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+.notif-icon-box.info {
+  background: rgba(46, 213, 115, 0.15);
+  color: #2ed573;
+}
+.notif-icon-box.alert {
+  background: rgba(255, 90, 31, 0.15);
+  color: #FF5A1F;
+}
+.notif-icon-box.system {
+  background: rgba(112, 161, 255, 0.15);
+  color: #70a1ff;
+}
+
+/* Payments & Invoices Styling */
+.payment-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.payment-kpi-card {
+  background: #111116;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+.payment-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.payment-card-badge.paid {
+  background: rgba(46, 213, 115, 0.15);
+  color: #2ed573;
+}
+.payment-card-badge.pending {
+  background: rgba(255, 171, 0, 0.15);
+  color: #ffab00;
+}
